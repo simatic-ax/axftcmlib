@@ -1,7 +1,14 @@
 # @simatic-ax.<Library>
 
 ## Description
+This libraray is for the "Fishertechnik-Factory-Simulation". It contains all the parts represented in the modell. 
+The current status contains only the foloowing parts of the sorting line:
+-Compressor
+-Cylinder
+-Color sensor
+The conveyorbelt/ axis is currently missing. 
 
+ 
 ## Install this package
 
 Enter:
