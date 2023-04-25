@@ -317,6 +317,11 @@
       "@ax/st-docs": "4.5.85"
     }
   },
+  "@ax/system-timer": {
+    "version": "3.0.9",
+    "resolved": "https://registry.simatic-ax.siemens.io/@ax/system-timer/-/system-timer-3.0.9.tgz",
+    "integrity": "sha512-4yXndi8SQZ0d81MVrJRvGaULPhtfGXC+5Zk6r9MJsCElMzhEIaqqrD1FQHdXvaBOqclN4otR9KW43Mq4nEf/aA=="
+  },
   "@ax/target-axunit": {
     "version": "3.0.6",
     "resolved": "https://registry.simatic-ax.siemens.io/@ax/target-axunit/-/target-axunit-3.0.6.tgz",
@@ -389,9 +394,25 @@
     "resolved": "https://registry.simatic-ax.siemens.io/@ax/third-party-licenses-build-native/-/third-party-licenses-build-native-10.1.1.tgz",
     "integrity": "sha512-Da+AT0KujH3K9bKf4K4rqPA3Z+a/WDkw9p6328AlrSqgBIUFyUZzOM3eVOwhhjKCnmNAVSmtSp0r7crDFGICTw=="
   },
+  "@simatic-ax/io": {
+    "version": "1.0.1",
+    "resolved": "https://npm.pkg.github.com/download/@simatic-ax/io/1.0.1/b5be171b86c1259ab0fcf8763e8ec6fa9ca617ba",
+    "integrity": "sha512-naUARbXPo49Dv/bNg3bDW8ycKqFip6rW7MkjOoxesoaACmnyMOtU7bdViktUVWKkSPghfHsg9+tJGXc7W3VWVg==",
+    "dependencies": {
+      "@ax/system-timer": "3.0.9"
+    }
+  },
   "@simatic-ax/snippetscollection": {
     "version": "0.0.15",
     "resolved": "https://npm.pkg.github.com/download/@simatic-ax/snippetscollection/0.0.15/6d8fb7963c2faf4668bb34c719064d44e8cba763",
     "integrity": "sha512-bjz+sEniZ9UUECJkOxxTYV5zky4Z8O1TIo1mn+HsZBEx5lEIXPLI5FvJqsIDi+Ek6qKJuWvRfC/ojfkBMF0wAw=="
+  },
+  "@simatic-ax/statemachine": {
+    "version": "2.1.1",
+    "resolved": "https://npm.pkg.github.com/download/@simatic-ax/statemachine/2.1.1/d75c55b58e94d8adaa4e43d78f8a930684257b68",
+    "integrity": "sha512-j/nGIK4xQPybj3lHp/T+O2lNIPJVCdk9jam/qtXixE5BZGXijbu5CeLK9vqByj6pCK7vjwE5S4JHBsvA/taBQg==",
+    "dependencies": {
+      "@ax/system-timer": "3.0.9"
+    }
   }
 }

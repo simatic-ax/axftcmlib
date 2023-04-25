@@ -31,3 +31,6 @@ files:
   - 'doc'
   - 'src'
   - 'snippets'
+dependencies:
+  "@simatic-ax/io": ^1.0.1
+  "@simatic-ax/statemachine": ^2.1.1
