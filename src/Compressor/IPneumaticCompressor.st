@@ -1,4 +1,4 @@
-NAMESPACE Simatic.Ax.Cylinder 
+NAMESPACE Simatic.Ax.axftcmlib
 INTERFACE IPneumaticCompressor
 
         METHOD PneumaticCompressorOn

@@ -1,10 +1,10 @@
-USING Simatic.Ax.Cylinder;
+//USING Simatic.Ax.Cylinder;
 USING Simatic.Ax.IO.Input;
 USING Simatic.Ax.axftcmlib;
 USING Simatic.Ax.IO.Output;
 USING AxUnit.Assert;
 
-NAMESPACE Simatic.Ax.Cylinder
+NAMESPACE Simatic.Ax.axftcmlib
 
     {TestFixture}
     CLASS MyCylinderTest
@@ -32,11 +32,48 @@ NAMESPACE Simatic.Ax.Cylinder
         END_METHOD
 
         {Test}
-        METHOD PUBLIC TestNull //TODO
-            //Cylinder ohne zugewiesenem BInoutput
-            //CPU darf keinen Fehler Werfen bei Seton()/ SetOff()
+        METHOD PUBLIC TestZylinderNotAsigned_Expected_ErrorFound_is_True
+            VAR 
+                Test : BOOL;
+            END_VAR
+            _testPneumaticCylinder.ErrorFound();
+            Test := _testPneumaticCylinder.ErrorState;
+
+            IF Test <> TRUE THEN 
+                _testPneumaticCylinder.PneumaticCylinderRetract();
+            END_IF;
+
+            AxUnit.Assert.Equal(Expected := TRUE, actual := Test);
+         
             ;
         END_METHOD
+
+        {Test}
+        METHOD PUBLIC TestPneumaticCylinderError_Expected_ErrorFound_TRUE
+            VAR 
+                Test : BOOL;
+            END_VAR
+
+            THIS.SetUp();
+            _testPneumaticCylinder.ErrorFound();
+            Test := _testPneumaticCylinder.ErrorState;
+            AxUnit.Assert.Equal(Expected := FALSE, actual := Test);
+            ;
+        END_METHOD
+
+        {Test}
+        METHOD PUBLIC TestPneumaticCylinderNullReferenceExpected_ErrorFoundTRUE
+            VAR 
+                Test : BOOL;
+            END_VAR
+
+            _testPneumaticCylinder.PneumaticCylinderRetract();
+            _testPneumaticCylinder.ErrorFound();
+            Test := _testPneumaticCylinder.ErrorState;
+            AxUnit.Assert.Equal(Expected := TRUE, actual := Test);
+            ;
+        END_METHOD
+
     END_CLASS
 
 END_NAMESPACE

@@ -1,19 +1,19 @@
+USING Simatic.Ax.IO;
 USING Simatic.Ax.axftcmlib;
 USING Simatic.Ax.IO.Output;
 USING Simatic.Ax.StateFramework;
-NAMESPACE Simatic.Ax.Cylinder 
+NAMESPACE Simatic.Ax.axftcmlib
 
     CLASS PneumaticCylinder EXTENDS ControlModuleAbstract  IMPLEMENTS IPneumaticCylinder
         VAR PUBLIC
             CoilPushing : IBinOutput; // = Used Valve
             ActivationTime : TIME := T#1s; //Delay for Coil beeing pushed
-            
+            ErrorState : BOOL;
         END_VAR
 
         VAR PROTECTED
-            _ctrl : StateController;            
+            _ctrl : StateController;          
             
-
             // State Retracted --> initial state
             _retracted : StateRetracted;
             _retractedToPush : Transition;
@@ -62,13 +62,21 @@ NAMESPACE Simatic.Ax.Cylinder
   
               // Set initial state
               _ctrl.InitialState := _retracted; //Giving statecontroller the initialization --> Start
+
+              
             ;
         END_METHOD
 
+        METHOD PUBLIC ErrorFound 
+          IF THIS.CoilPushing <> NULL THEN
+            ErrorState:= FALSE;
+          ELSE 
+            ErrorState := TRUE;
+          END_IF;
+        END_METHOD  
+
         METHOD PROTECTED OVERRIDE RunCyclicCustom
-
             _ctrl.Execute();
-
         END_METHOD
 
         METHOD PUBLIC Start
@@ -77,11 +85,17 @@ NAMESPACE Simatic.Ax.Cylinder
         END_METHOD
 
         METHOD PUBLIC PneumaticCylinderPush
-            coilPushing.SetOn(); //BinOutput--> _state = true
+            THIS.ErrorFound();
+            IF ErrorState = FALSE THEN
+                coilPushing.SetOn();
+            END_IF;
         END_METHOD
 
         METHOD PUBLIC PneumaticCylinderRetract
-            coilPushing.SetOff(); //BinOutput--> _state = false
+            THIS.ErrorFound();
+            IF ErrorState = FALSE THEN
+                coilPushing.SetOff();
+            END_IF;
         END_METHOD
     END_CLASS
 

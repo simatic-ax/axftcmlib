@@ -1,4 +1,4 @@
-NAMESPACE Simatic.Ax.Cylinder
+NAMESPACE Simatic.Ax.axftcmlib
     INTERFACE IPneumaticCylinder
         METHOD PneumaticCylinderPush
         END_METHOD

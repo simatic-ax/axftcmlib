@@ -1,6 +1,6 @@
 USING Simatic.Ax.StateFramework;
 
-NAMESPACE Simatic.Ax.Cylinder
+NAMESPACE Simatic.Ax.axftcmlib
     
     CLASS INTERNAL StatePushing EXTENDS State1Transition
         VAR PUBLIC

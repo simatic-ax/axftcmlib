@@ -1,7 +1,7 @@
 USING Simatic.Ax.IO.Input;
-USING Simatic.Ax.axftcmlib;
+
 USING Simatic.Ax.IO.Output;
-NAMESPACE Simatic.Ax.Cylinder 
+NAMESPACE Simatic.Ax.axftcmlib
 
     CLASS  PneumaticCompressor IMPLEMENTS  IPneumaticCompressor
 
