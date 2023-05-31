@@ -3,6 +3,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD MoveDuration
             VAR_INPUT
                 ActiveTime : TIME;
+                Triggeraction : BOOL;
             END_VAR
         END_METHOD
         METHOD MoveAbsolute

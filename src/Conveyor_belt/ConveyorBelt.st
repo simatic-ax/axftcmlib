@@ -1,39 +1,41 @@
 USING System.Timer;
+USING Simatic.Ax.IO.Output;
 NAMESPACE Simatic.Ax.axftcmlib
 
 CLASS ConveyorBelt IMPLEMENTS IConveyorBelt
 
     VAR PUBLIC
         ConveyorIdle : BOOL;
-        ConveyorBeltMototor : BOOL;
+        ConveyorBeltMotor : IBinOutput;
         IsHomed : BOOL;
-        tOff : OffDelay;
+        Trigger: Pulse;
         HomingPoint : BOOL;
     END_VAR
 
-    METHOD PUBLIC MoveDuration //MoveRelative
+    METHOD PUBLIC MoveDuration//MoveRelative
         VAR_INPUT
             ActiveTime : TIME;
+            TriggerAction : BOOL;
         END_VAR
-        tOff(signal := TRUE, duration := ActiveTime);
-        IF(tOff.output) THEN
-        ConveyorBeltMototor := TRUE;
-        ConveyorIdle := TRUE;
-        IsHomed := FALSE;
-        ELSE
-            ConveyorBeltMototor := FALSE;
-            ConveyorIdle := FALSE;   
-        END_IF;
-        ;
+       Trigger(Signal :=TriggerAction, duration := ActiveTime);
+         IF Trigger.output = TRUE THEN
+         ConveyorBeltMotor.SetOn();
+         ConveyorIdle := TRUE;
+         IsHomed := FALSE;
+         ELSE
+        ConveyorBeltMotor.SetOff();
+        ConveyorIdle := FALSE; 
+         END_IF;    
     END_METHOD
 
     METHOD PROTECTED Homing //"Basic Idea"
         IF IsHomed = FALSE THEN
-            WHILE HomingPoint = FALSE DO
-                 ConveyorBeltMototor := TRUE;
+            IF HomingPoint = FALSE THEN
+                ConveyorBeltMotor.SetOn();
                  ConveyorIdle := TRUE;
-            END_WHILE;
+            END_IF;
         END_IF;
+        ConveyorBeltMotor.SetOff();
         IsHomed := TRUE;
         ConveyorIdle := FALSE;
     END_METHOD
@@ -49,14 +51,8 @@ CLASS ConveyorBelt IMPLEMENTS IConveyorBelt
             THIS.Homing();
         END_IF;
         
-        FOR TickCounter := 0 TO TargetPosition DO
-            ConveyorBeltMototor := TRUE;
-            ConveyorIdle := TRUE;
-        END_FOR;
-
-        ConveyorBeltMototor := FALSE;
-        ConveyorIdle := FALSE;
-        IsHomed := FALSE;
+        THIS.MoveRelative(TargetPosition); 
+        
     END_METHOD
 
     METHOD PUBLIC MoveRelative //"Basic Idea"
@@ -67,14 +63,19 @@ CLASS ConveyorBelt IMPLEMENTS IConveyorBelt
             TickCounter : INT;
         END_VAR;
         
-        FOR TickCounter := 0 TO TargetPosition DO
-            ConveyorBeltMototor := TRUE;
+        FOR TickCounter := 0 TO TargetPosition DO //TODO endlos?
+            ConveyorBeltMotor.SetOn();
             ConveyorIdle := TRUE;
         END_FOR;
 
-        ConveyorBeltMototor := FALSE;
+        ConveyorBeltMotor.SetOff();
         ConveyorIdle := FALSE;
         IsHomed := FALSE;
+    END_METHOD
+
+    METHOD PUBLIC TurnOff
+        ConveyorBeltMotor.SetOff();
+        ConveyorIdle := FALSE;
     END_METHOD
 
 END_CLASS
