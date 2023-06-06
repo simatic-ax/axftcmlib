@@ -235,6 +235,11 @@
       "@ax/target-mc7plus": "4.4.114"
     }
   },
+  "@ax/simatic-1500-clocks": {
+    "version": "3.0.6",
+    "resolved": "https://registry.simatic-ax.siemens.io/@ax/simatic-1500-clocks/-/simatic-1500-clocks-3.0.6.tgz",
+    "integrity": "sha512-kh1LWR+jMvYgRjr7RkdNRHX0pJn3KcDl0U2sTxA6CEKvuIBcWPZGsSWYcVyPFORzYTshA7p4oDuxYx4GwnOoKw=="
+  },
   "@ax/sld": {
     "version": "0.13.3",
     "resolved": "https://registry.simatic-ax.siemens.io/@ax/sld/-/sld-0.13.3.tgz",
@@ -400,6 +405,15 @@
     "integrity": "sha512-naUARbXPo49Dv/bNg3bDW8ycKqFip6rW7MkjOoxesoaACmnyMOtU7bdViktUVWKkSPghfHsg9+tJGXc7W3VWVg==",
     "dependencies": {
       "@ax/system-timer": "3.0.9"
+    }
+  },
+  "@simatic-ax/simple-control-modules": {
+    "version": "2.0.0",
+    "resolved": "https://npm.pkg.github.com/download/@simatic-ax/simple-control-modules/2.0.0/cf297d32e3c5bdb892e2d856744ed6dd26d4196d",
+    "integrity": "sha512-nMk2eeYXq3s3fOwtp+Xj35d7C09zVOT1zwodm0pOjdGJK1F2jZ1W6NOphskgHldDEQUl42v5xC6FXiuw9k6tMA==",
+    "dependencies": {
+      "@ax/system-timer": "3.0.9",
+      "@simatic-ax/io": "1.0.1"
     }
   },
   "@simatic-ax/snippetscollection": {

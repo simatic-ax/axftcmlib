@@ -16,7 +16,7 @@ variables:
 targets:
   - '1500'
   - 'axunit-llvm'
-  - 'llvm'
+  # - 'llvm'
 # Dependencies
 devDependencies:
   '@ax/sdk': 3.0.17
@@ -34,3 +34,5 @@ files:
 dependencies:
   "@simatic-ax/io": ^1.0.1
   "@simatic-ax/statemachine": ^2.1.1
+  "@simatic-ax/simple-control-modules": ^2.0.0
+  "@ax/simatic-1500-clocks": ^3.0.1
