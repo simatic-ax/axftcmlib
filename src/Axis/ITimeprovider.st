@@ -1,40 +1,39 @@
 USING Siemens.Simatic.S71500.Clocks;
+
 NAMESPACE Simatic.Ax.axftcmlib
 
     INTERFACE ITimeprovider
-        Method GetElapsedSeconds :LREAL
+        METHOD GetElapsedSeconds : LREAL
         END_METHOD
     END_INTERFACE
 
+    /// Timeprovider based on RuntimeMeasurement
+    CLASS TimeProvider
+        IMPLEMENTS ITimeprovider
+        VAR
+            _measurement : RuntimeMeasurement;
+            _elapsedTimeInSeconds : LREAL;
+        END_VAR
 
-    CLASS TimeProvider Implements ITimeprovider
-
-    VAR
-     _measurement : RuntimeMeasurement;
-     _timeOfOperations : LTIME;
-    END_VAR 
-
-    METHOD PUBLIC GetElapsedSeconds : LREAL
-            _timeOfOperations := _measurement.Stop();
-            GetElapsedSeconds := _measurement.GetElapsedSeconds();//time passed in seconds
+        // mus be called in every cycle
+        METHOD PUBLIC Evaluate
+            _measurement.Stop();
+            _elapsedTimeInSeconds := _measurement.GetElapsedSeconds(); //time passed in seconds
             _measurement.Start();
-    END_METHOD
+        END_METHOD
 
+        METHOD PUBLIC GetElapsedSeconds : LREAL
+            GetElapsedSeconds := _elapsedTimeInSeconds;
+        END_METHOD
     END_CLASS
 
-    CLASS TimeProviderMOCK_100ms_const Implements ITimeprovider
+    /// Mock for a ITimePrivider wich returns always 100ms.
+    CLASS TimeProviderMOCK_100ms_const
+        IMPLEMENTS ITimeprovider
 
-        VAR
-         _measurement : RuntimeMeasurement;
-         _timeOfOperations : LTIME;
-        END_VAR 
-    
         METHOD PUBLIC GetElapsedSeconds : LREAL
-              GetElapsedSeconds := 0.1;
+            GetElapsedSeconds := 0.1;
         END_METHOD
-    
-        END_CLASS
+    END_CLASS
 
 END_NAMESPACE
-
-
