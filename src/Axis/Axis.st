@@ -89,16 +89,10 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC MoveVelocity
             VAR_INPUT
                 velocity : LREAL;
-                // direction : Direction;
-                direction : INT; // 0 Forwrd, 1: Reverse
+                direction : Direction;
             END_VAR
             _velocity := velocity;
-            IF (direction = 0) THEN
-                _direction := Direction#Forward;
-            ELSE
-                _direction := Direction#Reverse;
-            END_IF;
-            // _direction := direction;
+             _direction := direction;
             _motionMode := MotionMode#MoveVelocity;
         END_METHOD
         METHOD PUBLIC MoveRelative : BOOL
@@ -122,15 +116,10 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC Homing : BOOL
             VAR_INPUT
                 velocity : LREAL;
-                // direction : Direction;
-                direction : INT;
+                direction : Direction;
             END_VAR
             _velocity := velocity;
-            IF (direction = 0) THEN
-                _direction := Direction#Forward;
-            ELSE
-                _direction := Direction#Reverse;
-            END_IF;
+            _direction := direction;
             _motionMode := MotionMode#Homing;
         END_METHOD
         METHOD PUBLIC Homing : BOOL
@@ -140,10 +129,12 @@ NAMESPACE Simatic.Ax.axftcmlib
             Encoder.SetValue(value := Position);
             _stateHoming := StatesHoming#Done;
             _plcOpenState := PlcOpenState#Done;
+            _isHomed := TRUE;
         END_METHOD
         METHOD PUBLIC Halt
             Motor.Halt();
             _motionMode := MotionMode#Stopped;
+            _plcOpenState := PlcOpenState#Done;
         END_METHOD
         METHOD PUBLIC IsHomed : BOOL
             IsHomed := _isHomed;
@@ -229,8 +220,6 @@ NAMESPACE Simatic.Ax.axftcmlib
                         Encoder.SetValue(value := 0);
                         _stateHoming := StatesHoming#Done;
                     END_IF;
-// _homing := TRUE;
-// END_IF;
                 StatesHoming#Done:
                     _homing := TRUE;
                     _stateHoming := StatesHoming#Idle;

@@ -13,14 +13,12 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC SetUp
             VAR
                 velocity : LREAL;
-                dummyValue : INT;
             END_VAR
-            dummyValue := 0;
             velocity := 1.0;
             _testEncoderStatic.velocity := 1.0;
             _testEncoderStatic.TimeProvider := _staticTimeProvider;
             _testEncoderStatic.EncoderAxis := _staticAxis;
-            _testEncoderStatic.EncoderAxis.MoveVelocity(velocity, dummyvalue);
+            _testEncoderStatic.EncoderAxis.MoveVelocity(velocity, Direction#Forward);
         END_METHOD
 
         {Test}

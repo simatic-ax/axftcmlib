@@ -18,8 +18,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC MoveVelocity
             VAR_INPUT
                 velocity : LREAL;
-                // direction : Direction;
-                direction : INT; // 0 Forwrd, 1: Reverse
+                direction : Direction;
             END_VAR
             ;
         END_METHOD
@@ -40,8 +39,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC Homing : BOOL
             VAR_INPUT
                 velocity : LREAL;
-                // direction : Direction;
-                direction : INT;
+                direction : Direction;
             END_VAR
 ;
         END_METHOD
@@ -60,6 +58,14 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC IsRunning : BOOL
             IsRunning := State = PlcOpenstate#Busy;
         END_METHOD
-    END_CLASS
+    
+        METHOD PUBLIC Homing : BOOL
+            VAR_INPUT
+                Position : LINT;
+            END_VAR
+
+            ;
+        END_METHOD
+END_CLASS
 
 END_NAMESPACE
