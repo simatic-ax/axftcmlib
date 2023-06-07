@@ -31,6 +31,11 @@ NAMESPACE Simatic.Ax.axftcmlib
                 direction : INT;
             END_VAR
         END_METHOD
+        METHOD Homing : BOOL
+            VAR_INPUT
+                Position : LINT;
+            END_VAR
+        END_METHOD
         METHOD IsHomed : BOOL
         END_METHOD
         METHOD IsRunning : BOOL

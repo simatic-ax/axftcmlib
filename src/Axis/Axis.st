@@ -133,6 +133,14 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_IF;
             _motionMode := MotionMode#Homing;
         END_METHOD
+        METHOD PUBLIC Homing : BOOL
+            VAR_INPUT
+                Position : LINT;
+            END_VAR
+            Encoder.SetValue(value := Position);
+            _stateHoming := StatesHoming#Done;
+            _plcOpenState := PlcOpenState#Done;
+        END_METHOD
         METHOD PUBLIC Halt
             Motor.Halt();
             _motionMode := MotionMode#Stopped;
