@@ -43,8 +43,16 @@ NAMESPACE Simatic.Ax.axftcmlib
                 // direction : Direction;
                 direction : INT;
             END_VAR
-;
+            ;
         END_METHOD
+
+        METHOD PUBLIC Homing : BOOL
+            VAR_INPUT
+                Position : LINT;
+            END_VAR
+            ;
+        END_METHOD
+
         METHOD PUBLIC Halt
             ;
         END_METHOD
