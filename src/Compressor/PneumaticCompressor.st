@@ -18,18 +18,4 @@ NAMESPACE Simatic.Ax.axftcmlib
         END_METHOD
     END_CLASS
 
-
-//     class BinSignalGuard implements IGuard
-
-//     var PUBLIC signal : IBinSignal;
-//     end_var
-//     METHOD PUBLIC Check : BOOL
-//         Check := signal.Q();
-//     END_METHOD
-
-//     METHOD PUBLIC Reset
-//         ;
-//     END_METHOD
-// END_CLASS
-
 END_NAMESPACE

@@ -66,14 +66,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC IsRunning : BOOL
             IsRunning := State = PlcOpenstate#Busy;
         END_METHOD
-    
-        METHOD PUBLIC Homing : BOOL
-            VAR_INPUT
-                Position : LINT;
-            END_VAR
 
-            ;
-        END_METHOD
 END_CLASS
 
 END_NAMESPACE
