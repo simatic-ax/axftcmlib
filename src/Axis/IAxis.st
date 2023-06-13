@@ -8,7 +8,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD MoveVelocity
             VAR_INPUT
                 velocity : LREAL;
-                direction : INT;
+                direction : Direction;
             END_VAR
         END_METHOD
         METHOD MoveRelative : BOOL
@@ -28,7 +28,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD Homing : BOOL
             VAR_INPUT
                 velocity : LREAL;
-                direction : INT;
+                direction : Direction;
             END_VAR
         END_METHOD
         METHOD Homing : BOOL

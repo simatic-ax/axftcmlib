@@ -1,7 +1,8 @@
 # @simatic-ax.<Library>
 
 ## Description
-This libraray is for the "Fishertechnik-Factory-Simulation-24V". It contains all the parts represented in the modell. 
+
+This libraray is for the "Fishertechnik-Factory-Simulation-24V". It contains all the parts represented in the modell.
 The current status contains only the following parts of the sorting line:
 -Compressor
 -Cylinder
@@ -9,7 +10,6 @@ The current status contains only the following parts of the sorting line:
 -Conveyorbelt
  With these elements, the "Sortingline" is completed.
 
- 
 ## Install this package
 
 Enter:
