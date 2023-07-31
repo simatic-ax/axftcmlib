@@ -8,6 +8,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         VAR PUBLIC
             State : PlcOpenState;
         END_VAR
+        
         VAR PROTECTED
         
         END_VAR
