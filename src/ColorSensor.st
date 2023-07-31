@@ -9,7 +9,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         ColorRange : STRUCT
             _from : INT;
             _to : INT;
-            color : colors; //=Int würde auch funktionieren
+            color : colors;
         END_STRUCT;
     END_TYPE
 

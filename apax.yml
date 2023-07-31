@@ -19,8 +19,9 @@ targets:
   # - 'llvm'
   # Dependencies
 devDependencies:
-  '@ax/sdk': 3.0.18
-  "@simatic-ax/snippetscollection": 0.1.3
+  '@ax/sdk': ^4.0.3
+  "@simatic-ax/snippetscollection": ^0.1.3
+
 # Registry information, where the package will be published
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
@@ -32,7 +33,8 @@ files:
   - 'src'
   - 'snippets'
 dependencies:
-  "@simatic-ax/io": ^1.0.1
-  "@simatic-ax/statemachine": ^2.1.1
-  "@simatic-ax/simple-control-modules": ^2.0.0
-  "@ax/simatic-1500-clocks": 3.0.6
+
+  "@ax/simatic-1500-clocks": ^4.0.1
+  "@simatic-ax/simple-control-modules": ^4.0.1
+  "@simatic-ax/statemachine": ^4.0.1
+  "@simatic-ax/io": ^4.0.1
