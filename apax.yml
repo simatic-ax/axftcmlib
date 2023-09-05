@@ -33,7 +33,6 @@ files:
   - 'src'
   - 'snippets'
 dependencies:
-
   "@ax/simatic-1500-clocks": ^4.0.1
   "@simatic-ax/simple-control-modules": ^4.0.1
   "@simatic-ax/statemachine": ^4.0.1

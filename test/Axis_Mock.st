@@ -13,9 +13,6 @@ NAMESPACE Simatic.Ax.axftcmlib
         
         END_VAR
 
-      
-        //-----------------------------------------
-        // interface implementation
         METHOD PUBLIC MoveVelocity
             VAR_INPUT
                 velocity : LREAL;
@@ -59,9 +56,6 @@ NAMESPACE Simatic.Ax.axftcmlib
             ;
         END_METHOD
       
-     
-        //-------------------------------------------------------------------------------
-        // Section for private methods
       
 
         METHOD PUBLIC IsRunning : BOOL
@@ -71,3 +65,5 @@ NAMESPACE Simatic.Ax.axftcmlib
 END_CLASS
 
 END_NAMESPACE
+
+    

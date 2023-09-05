@@ -19,6 +19,9 @@ NAMESPACE Simatic.Ax.axftcmlib
         PlcOpenState : (Ready, Busy, Done, Error) := Ready;
     END_TYPE
 
+    ///Class contains all functions necessary for realisng a motion axis
+    ///The motor is used for "powering" the axis
+    ///The encoder is needed to monitor the current position 
     CLASS Axis
         IMPLEMENTS IAxis
         VAR PUBLIC
@@ -40,6 +43,7 @@ NAMESPACE Simatic.Ax.axftcmlib
             _statusRefSwitch : BOOL;
         END_VAR
 
+        ///Outputs the current status of the axis and executes the protected methods(must be called in every cicle)
         METHOD PUBLIC RunCyclic
             _statusRefSwitch := ReferenceSwitch.Q();
             CASE _motionMode OF
@@ -84,8 +88,9 @@ NAMESPACE Simatic.Ax.axftcmlib
 
             END_CASE;
         END_METHOD
-        //-----------------------------------------
-        // interface implementation
+
+        ///Moves axis with a velocity
+        /// Has to be stopped manually with Halt()
         METHOD PUBLIC MoveVelocity
             VAR_INPUT
                 velocity : LREAL;
@@ -95,6 +100,8 @@ NAMESPACE Simatic.Ax.axftcmlib
              _direction := direction;
             _motionMode := MotionMode#MoveVelocity;
         END_METHOD
+
+        ///Moves axis to a new position based on the current position
         METHOD PUBLIC MoveRelative : BOOL
             VAR_INPUT
                 velocity : LREAL;
@@ -104,6 +111,9 @@ NAMESPACE Simatic.Ax.axftcmlib
             _distance := distance;
             _motionMode := MotionMode#MoveRelative;
         END_METHOD
+
+        ///Moves axis to a new position based on the default position 
+        ///homing the axis beforehand is needed to execute this function
         METHOD PUBLIC MoveAbsolute : BOOL
             VAR_INPUT
                 velocity : LREAL;
@@ -113,6 +123,8 @@ NAMESPACE Simatic.Ax.axftcmlib
             _position := position;
             _motionMode := MotionMode#MoveAbsolute;
         END_METHOD
+
+        ///Moves axis to the default "homing" position (needed for moveAbsolute())
         METHOD PUBLIC Homing : BOOL
             VAR_INPUT
                 velocity : LREAL;
@@ -122,6 +134,9 @@ NAMESPACE Simatic.Ax.axftcmlib
             _direction := direction;
             _motionMode := MotionMode#Homing;
         END_METHOD
+
+        ///Homes axis without moving it into default position 
+        ///Sets position to given value
         METHOD PUBLIC Homing : BOOL
             VAR_INPUT
                 Position : LINT;
@@ -131,19 +146,25 @@ NAMESPACE Simatic.Ax.axftcmlib
             _plcOpenState := PlcOpenState#Done;
             _isHomed := TRUE;
         END_METHOD
+
+        ///Stops movement of the axis
+        ///needs to be called manually for MoveVelocity() 
         METHOD PUBLIC Halt
             Motor.Halt();
             _motionMode := MotionMode#Stopped;
             _plcOpenState := PlcOpenState#Done;
         END_METHOD
+        ///Checks whether the axis is homed or not
         METHOD PUBLIC IsHomed : BOOL
             IsHomed := _isHomed;
         END_METHOD
       
      
-        //-------------------------------------------------------------------------------
-        // Section for private methods
-        METHOD PUBLIC _moveVelocity
+       //Protected methods are executed by RunCyclic()
+       
+       ///Moves axis with a velocity
+        /// Has to be stopped manually with Halt()
+        METHOD PROTECTED _moveVelocity  
             VAR_INPUT
                 velocity : LREAL;
                 direction : Direction;
@@ -151,13 +172,17 @@ NAMESPACE Simatic.Ax.axftcmlib
             Motor.Move(velocity, direction);
         END_METHOD
 
+        ///Moves axis to a new position based on the current position
         METHOD PROTECTED _moveRelative : BOOL
             VAR_INPUT
                 velocity : LREAL;
                 distance : LINT;
             END_VAR
-            _moveRelative := THIS._moveAbsolute(velocity := velocity, posititon := Encoder.GetValue() + distance);//TODO
+            _moveRelative := THIS._moveAbsolute(velocity := velocity, posititon := Encoder.GetValue() + distance);
         END_METHOD
+
+        ///Moves axis to a new position based on the default position 
+        ///homing the axis beforehand is needed to execute this function
         METHOD PROTECTED _moveAbsolute : BOOL
             VAR_INPUT
                 velocity : LREAL;
@@ -168,7 +193,7 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_VAR
             CASE _stateMoveAbsolute OF
                 StateMoveAbsolute#Idle:
-                    IF (posititon = Encoder.GetValue()) THEN //TODO GetValue FUnktion
+                    IF (posititon = Encoder.GetValue()) THEN 
                         _stateMoveAbsolute := StateMoveAbsolute#Done;
                         _moveAbsolute := TRUE;
                         Motor.Halt();
@@ -176,22 +201,22 @@ NAMESPACE Simatic.Ax.axftcmlib
                         _stateMoveAbsolute := StateMoveAbsolute#Moving;
                         Motor.Move(velocity, dir);
                     END_IF;
-                StateMoveAbsolute#Moving:
+                    StateMoveAbsolute#Moving:
                     dir := THIS.DecideDirection(enc := Encoder, setPoint := posititon);
                     Motor.Move(velocity, dir);
-                    IF (Encoder.GetValue() = posititon) THEN //TODO Adapt
+                    IF (Encoder.GetValue() = posititon) THEN 
                         _stateMoveAbsolute := StateMoveAbsolute#Done;
                         Motor.Halt();
-                        // _moveAbsolute := TRUE;
                     END_IF;
-                StateMoveAbsolute#Done:
+                    StateMoveAbsolute#Done:
                     _moveAbsolute := TRUE;
                     _stateMoveAbsolute := StateMoveAbsolute#Idle;
                     ;
             END_CASE;
         END_METHOD
 
-
+        ///Homes axis without moving it into default position 
+        ///Sets position to given value
         METHOD PROTECTED _homing : BOOL
             VAR_INPUT
                 velocity : LREAL;
@@ -208,7 +233,7 @@ NAMESPACE Simatic.Ax.axftcmlib
                         _stateHoming := StatesHoming#FindReferenceSensor;
                     END_IF;
                 StatesHoming#MoveOutOfSensor:
-                    Motor.Move(direction := THIS.OppositDirection(direction := direction));
+                    Motor.Move(direction := THIS._oppositDirection(direction := direction));
                     IF (ReferenceSwitch.QFal()) THEN
                         Motor.Halt();
                         _stateHoming := StatesHoming#FindReferenceSensor;
@@ -226,16 +251,20 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_CASE;
             ;
         END_METHOD
-        METHOD PROTECTED OppositDirection : Direction
+
+        ///inverts the current direction
+        METHOD PROTECTED _oppositDirection : Direction
             VAR_INPUT
                 direction : Direction;
             END_VAR
             IF (direction = Direction#Forward) THEN
-                OppositDirection := Direction#Reverse;
+                _oppositDirection := Direction#Reverse;
             ELSE
-                OppositDirection := Direction#Forward;
+                _oppositDirection := Direction#Forward;
             END_IF;
         END_METHOD
+
+        ///decides the needed direction to reach setpoint
         METHOD PROTECTED DecideDirection : Direction
             VAR_INPUT
                 enc : IEncoder;
@@ -247,10 +276,12 @@ NAMESPACE Simatic.Ax.axftcmlib
                 DecideDirection := Direction#Reverse;
             END_IF;
         END_METHOD
+
+        ///Outputs current status of the PLC
         METHOD PUBLIC GetPlcOpenState : PlcOpenState
             GetPlcOpenState := _plcOpenState;
         END_METHOD
-
+        ///Returns whether the axis is busy with a movement command
         METHOD PUBLIC IsRunning : BOOL
             IsRunning := _plcOpenState = PlcOpenstate#Busy;
         END_METHOD

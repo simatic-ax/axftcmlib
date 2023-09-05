@@ -6,9 +6,9 @@ NAMESPACE Simatic.Ax.axftcmlib
     CLASS MyColorSensorTest
         VAR PROTECTED
             _testColorSensor : ColorSensor;
-            _SetOfColors : ARRAY[0..3] OF ColorRange := [(_from := 0, _to := 1, color := Colors#UNKNOWN),
-            (_from := 2, _to := 3, color := Colors#WHITE),(_from := 4, _to := 5, color := Colors#RED),
-            (_from := 6, _to := 7, color := Colors#BLUE)];
+            _SetOfColors : ARRAY[0..3] OF ColorRange := [(StartValue := 0, EndValue := 1, color := Colors#UNKNOWN),
+            (StartValue := 2, EndValue := 3, color := Colors#WHITE),(StartValue := 4, EndValue := 5, color := Colors#RED),
+            (StartValue := 6, EndValue := 7, color := Colors#BLUE)];
         END_VAR
 
         {Test}

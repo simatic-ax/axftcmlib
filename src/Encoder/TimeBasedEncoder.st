@@ -4,9 +4,10 @@ USING Simatic.Ax.IO.Input;
 USING System.Timer;
 
 NAMESPACE Simatic.Ax.axftcmlib
-
-    CLASS TimeBasedEncoder
-        IMPLEMENTS IEncoder
+    ///Used to track the Position of the axis based on time
+    ///Encoder used to mimic the regular encoder featured in the Fischertechnik modell
+    /// Needs to have acces to the status of the used axis 
+    CLASS TimeBasedEncoder IMPLEMENTS IEncoder
         VAR PUBLIC
             Velocity : LREAL; // m/s
             EncoderAxis : IAxis;
@@ -15,28 +16,27 @@ NAMESPACE Simatic.Ax.axftcmlib
         VAR PROTECTED
             _position : LREAL; // pos in [m]eter
         END_VAR
-        /// Reset encoder position to zero
 
+        /// Reset encoder position to zero
         METHOD PUBLIC Reset
             _position := 0.0;
         END_METHOD
+
         /// Set encoder to specific position
         /// value : Position which is set
-
         METHOD PUBLIC SetValue
             VAR_INPUT
                 value : LINT;
             END_VAR
             _position := TO_LREAL(value);
         END_METHOD
-        /// Returns the actual encoder position
-        /// Actual encoder position
 
+        /// Returns the actual encoder position
         METHOD PUBLIC GetValue : LINT  // [mm]
             GetValue := TO_LINT(_position * 1000.0); // Convert m to mm 
         END_METHOD
-        /// Evaluate encoder signals
 
+        //Calculates the change in position based on the passed time and the velocity
         METHOD PUBLIC Evaluate
             VAR_TEMP
                 ds : LREAL;
@@ -50,25 +50,18 @@ NAMESPACE Simatic.Ax.axftcmlib
                 END_IF;
             END_IF;
         END_METHOD
-        //=========================================================
-        /// Returns if the encoder has moved
-        /// Encoder has moved
 
+        ///The following methods are implemented because of the Interface 
+        /// currently they serve no other purpose 
         METHOD PUBLIC HasMoved : BOOL
-            // HasMoved := _encoderHasMoved;
-            // _encoderHasMoved := FALSE;
             ;
         END_METHOD
-        /// Counts the relative pulses since the last Reset or ResetRelative command
 
         METHOD PUBLIC RelativeCount : LINT
-            //RelativeCount := _encoderRelativeCounter.CounterValue() MOD Modulo;
             ;
         END_METHOD
-        /// Reset the relative counter
 
         METHOD PUBLIC ResetRelative
-            //_encoderRelativeCounter.SetCounterValue(LINT#0);
             ;
         END_METHOD
 

@@ -1,23 +1,24 @@
 USING Simatic.Ax.StateFramework;
 
 NAMESPACE Simatic.Ax.axftcmlib
-    
+    ///Guard used to start the actual statemachine
+    /// Is used in the pneumatic cylinder class
     CLASS StartGuard IMPLEMENTS IGuard
         
         VAR 
-            _isStarted : BOOL;
+            IsStarted : BOOL;
         END_VAR
     
         METHOD PUBLIC Check : BOOL
-            Check := _isStarted;
+            Check := IsStarted;
         END_METHOD
 
         METHOD PUBLIC Reset
-            _isStarted := FALSE;
+            IsStarted := FALSE;
         END_METHOD
 
         METHOD PUBLIC Start   
-            _isStarted := TRUE;
+            IsStarted := TRUE;
         END_METHOD
     END_CLASS
 

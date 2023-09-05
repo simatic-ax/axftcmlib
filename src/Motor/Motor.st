@@ -3,14 +3,17 @@ USING Simatic.Ax.axftcmlib;
 
 NAMESPACE Simatic.Ax.axftcmlib
 
-    CLASS MotorFT
-        IMPLEMENTS IMotor
+    ///Class for creating a basic Motor 
+    /// It supports two directions 
+    /// It is used to power the axis
+    CLASS MotorFT IMPLEMENTS IMotor
         VAR PUBLIC
             Forward : IBinOutput;
             Reverse : IBinOutput;
         END_VAR
         VAR PROTECTED
         END_VAR
+        ///Starts the Motor with a given direction and velocity
         METHOD PUBLIC Move
             VAR_INPUT
                 velocity : LREAL;
@@ -25,6 +28,7 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_IF;
             ;
         END_METHOD
+        ///Stops every movement of the Motor
         METHOD PUBLIC Halt
             Reverse.SetOff();
             Forward.SetOff();

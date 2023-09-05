@@ -1,7 +1,7 @@
 USING Simatic.Ax.StateFramework;
 
 NAMESPACE Simatic.Ax.axftcmlib
-    
+    //State: coil is beeing pushe out
     CLASS INTERNAL StatePushing EXTENDS State1Transition
         VAR PUBLIC
             Cylinder : IPneumaticCylinder;

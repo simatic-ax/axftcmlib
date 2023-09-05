@@ -3,7 +3,9 @@ USING Simatic.Ax.axftcmlib;
 USING Simatic.Ax.IO.Output;
 USING Simatic.Ax.StateFramework;
 NAMESPACE Simatic.Ax.axftcmlib
-
+    ///Class contains basic functions for a pneumatic cyliner
+    ///contains a statemachine that can be used to generate a working cylinder
+    /// Is used for the Fischertechnik Factorysimulation 24V
     CLASS PneumaticCylinder EXTENDS ControlModuleAbstract  IMPLEMENTS IPneumaticCylinder
         VAR PUBLIC
             CoilPushing : IBinOutput; // = Used Valve
@@ -35,7 +37,9 @@ NAMESPACE Simatic.Ax.axftcmlib
             _retractingToRetractedGuard : TrueGuard;
         END_VAR
 
-        METHOD PROTECTED OVERRIDE Constructor //Inititializing with Values 
+        ///Mimics a constructor and asigns the values
+        /// Executed by the Controlmodule
+        METHOD PROTECTED OVERRIDE _constructor //Inititializing with Values 
               // State Retracted
               _retracted.Cylinder := THIS; 
               _retracted.Transition1 := _retractedToPush; 
@@ -67,6 +71,7 @@ NAMESPACE Simatic.Ax.axftcmlib
             ;
         END_METHOD
 
+        ///Returns TRUE if the coil is not working 
         METHOD PUBLIC ErrorFound 
           IF THIS.CoilPushing <> NULL THEN
             ErrorState:= FALSE;
@@ -75,22 +80,27 @@ NAMESPACE Simatic.Ax.axftcmlib
           END_IF;
         END_METHOD  
 
-        METHOD PROTECTED OVERRIDE RunCyclicCustom
+        ///Is executed by the ControlmoduleAbstract: RunCyclic()
+        ///initializes the first state
+        METHOD PROTECTED OVERRIDE _runCyclicCustom
             _ctrl.Execute();
         END_METHOD
 
+        ///Starts the statemachine
         METHOD PUBLIC Start
             _pushedToRetractingGuard.timeout := ActivationTime;
             _retractedToPushGuard.Start();
         END_METHOD
 
+        //Activates valve to push the coil
         METHOD PUBLIC PneumaticCylinderPush
             THIS.ErrorFound();
             IF ErrorState = FALSE THEN
                 coilPushing.SetOn();
             END_IF;
         END_METHOD
-
+        
+        //deactivates the valve to retract the cylinder
         METHOD PUBLIC PneumaticCylinderRetract
             THIS.ErrorFound();
             IF ErrorState = FALSE THEN

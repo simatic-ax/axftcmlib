@@ -1,4 +1,6 @@
 NAMESPACE Simatic.Ax.axftcmlib
+    ///Provides basic functionality for programming on a plc
+    /// has acces to the protected Methods and "Contructors" of the classes
     CLASS ABSTRACT ControlModuleAbstract
         VAR PUBLIC
             
@@ -9,18 +11,18 @@ NAMESPACE Simatic.Ax.axftcmlib
         
         METHOD PUBLIC RunCyclic
             IF (NOT _init) THEN
-                THIS.Constructor();
+                THIS._constructor();
                 _init := TRUE;
             END_IF;
-           THIS.RunCyclicCustom();
+           THIS._runCyclicCustom();
             ;
         END_METHOD
 
-        METHOD PROTECTED ABSTRACT RunCyclicCustom
+        METHOD PROTECTED ABSTRACT _runCyclicCustom
             
         END_METHOD
 
-        METHOD PROTECTED ABSTRACT Constructor
+        METHOD PROTECTED ABSTRACT _constructor
             
         END_METHOD
     END_CLASS
