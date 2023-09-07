@@ -3,11 +3,8 @@
 ## Description
 This library was created for the “Fischertechnik Factorysimulation 24V”. It contains classes for the basic elements of this Model. In the current state only the “Sortingline” is finished and can be fully implemented using this library. 
 This library includes the following classes: 
--Cylinder
--Compressor
--Color sensor	
--Axis + Motor + Encoder 
-Note: Since the Encoder included with the model could not be accessed due to hardware limitations, the library includes TimebasedEncoder as well as Timeprovider to substitute this. Those classes can be used for the calculation of the position based on the time. 
+Cylinder, Compressor, Color sensor and Axis + Motor + Encoder. 
+*Note: Since the Encoder included with the model could not be accessed due to hardware limitations, the library includes TimebasedEncoder as well as Timeprovider to substitute this. Those classes can be used for the calculation of the position based on the time. 
 
 ## Install this package
 
