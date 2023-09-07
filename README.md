@@ -1,27 +1,26 @@
-# @simatic-ax.<Library>
+# @simatic-ax.axftcmlib
 
 ## Description
-
-This libraray is for the "Fishertechnik-Factory-Simulation-24V". It contains all the parts represented in the modell.
-The current status contains only the following parts of the sorting line:
--Compressor
+This library was created for the “Fischertechnik Factorysimulation 24V”. It contains classes for the basic elements of this Model. In the current state only the “Sortingline” is finished and can be fully implemented using this library. 
+This library includes the following classes: 
 -Cylinder
--Color sensor
--Conveyorbelt
- With these elements, the "Sortingline" is completed.
+-Compressor
+-Color sensor	
+-Axis + Motor + Encoder 
+Note: Since the Encoder included with the model could not be accessed due to hardware limitations, the library includes TimebasedEncoder as well as Timeprovider to substitute this. Those classes can be used for the calculation of the position based on the time. 
 
 ## Install this package
 
 Enter:
 
 ```cli
-apax add @simatic-ax/<Library>
+apax add @simatic-ax/axftcmlib
 ```
 
 ## Namespace
 
 ```iec-st
-Simatic.Ax.<Library>;
+Simatic.Ax.axftcmlib
 ```
 
 ## Objects
