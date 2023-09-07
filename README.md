@@ -2,6 +2,14 @@
 
 ## Description
 
+This libraray is for the "Fishertechnik-Factory-Simulation-24V". It contains all the parts represented in the modell.
+The current status contains only the following parts of the sorting line:
+-Compressor
+-Cylinder
+-Color sensor
+-Conveyorbelt
+ With these elements, the "Sortingline" is completed.
+
 ## Install this package
 
 Enter:
