@@ -30,11 +30,11 @@ apax add @simatic-ax/axftcmlib
 Simatic.Ax.axftcmlib
 ```
 
-## Objects
+## Classes
 
-## Example
+### Class PneumaticCylinder
 
-Pneumatic Cylinder (*Note: Needs an active compressor to function with the model)
+PneumaticCylinder (*Note: Needs an active compressor to function with the model)
 
 |Method|Description|
 |-|-|
@@ -64,7 +64,8 @@ Pneumatic Cylinder (*Note: Needs an active compressor to function with the model
 
 </details>
 
-Pneumatic compressor:
+### PneumaticCompressor
+
 |Method|Description|
 |-|-|
 |PneumaticCompressorOn()|Turns the compressor on|
@@ -91,7 +92,8 @@ Pneumatic compressor:
 
 </details>
 
-ColorSensor:
+### ColorSensor
+
 |Method|Description|
 |-|-|
 |DetectColor(DetectedColor : INT, ColorArray : ARRAY[*] OF ColorRange) : INT |Takes INT-value from sensor and compares it to a Array to find the correct color. ColorArray is a Array of ColorRanges which contains the thresholds for the corresponding color |
@@ -138,7 +140,7 @@ ColorSensor:
 
 </details>
 
-Axis:
+### Class Axis
 
 The Axis consists of a motor and an Encoder
 
@@ -174,7 +176,7 @@ The motor is usually completely controlled through the Axis but needs to manuall
 
 If you haven't a hardware encoder for the Axis, then you can simulate this hardware encoder by the `TimeBasedEncoder` which calculates the position based on time. The time will be provided by a TimeProvider. This `TimeProvider` is based on the PLC cycle time
 
-TimeBasedEncoder:
+### Class TimeBasedEncoder
 
 |Method|Description|
 |-|-|
@@ -183,7 +185,7 @@ TimeBasedEncoder:
 |GetValue() : LINT|Outputs current value as LINT in mm|
 |Evaluate()|Measures change in position based on the velocity and cycle time (from the encoder)|
 
-TimeProvider:
+### Class TimeProvider
 
 |Method|Description|
 |-|-|
