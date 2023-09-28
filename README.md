@@ -64,7 +64,7 @@ PneumaticCylinder (*Note: Needs an active compressor to function with the model)
 
 </details>
 
-### PneumaticCompressor
+### Class PneumaticCompressor
 
 |Method|Description|
 |-|-|
@@ -92,7 +92,7 @@ PneumaticCylinder (*Note: Needs an active compressor to function with the model)
 
 </details>
 
-### ColorSensor
+### Class ColorSensor
 
 |Method|Description|
 |-|-|
