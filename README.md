@@ -114,26 +114,29 @@ ColorSensor:
     //outputs the detected color as an INT/ TYPE Colors (from Lib)
   END_PROGRAM
 ```
+
 </details>
 
 <details><summary>Colors and ColorRange ... </summary>
+
 ```iec-st
-    ///Contains all Colors that the Sensor should know -> Can be expanded 
-    TYPE
-        Colors : INT (UNKNOWN := 10, WHITE := 1, RED := 2,  BLUE := 3); // default value = UNKNOWN
-    END_TYPE
 
-    ///Defines the area in which the values equals a certain color
-    TYPE
-        ColorRange : STRUCT
-            StartValue : INT;
-            EndValue : INT;
-            Color : colors;
-        END_STRUCT;
-    END_TYPE
+  ///Contains all Colors that the Sensor should know -> Can be expanded
+  TYPE
+      Colors : INT (UNKNOWN := 10, WHITE := 1, RED := 2,  BLUE := 3); // default value = UNKNOWN
+  END_TYPE
+
+  ///Defines the area in which the values equals a certain color
+  TYPE
+      ColorRange : STRUCT
+          StartValue : INT;
+          EndValue : INT;
+          Color : colors;
+      END_STRUCT;
+  END_TYPE
 ```
-</details>
 
+</details>
 
 Axis:
 
@@ -169,7 +172,7 @@ The motor is usually completely controlled through the Axis but needs to manuall
 
 <details><summary>Encoder + TimeProvider ... </summary>
 
-If you haven't a hardware encoder for the Axis, then you can simulate this hardware encoder by the `TimeBasedEncoder` which calculates the position based on time. The time will be provided by a TimeProvider. This `TimeProvider` is based on the PLC cycle time 
+If you haven't a hardware encoder for the Axis, then you can simulate this hardware encoder by the `TimeBasedEncoder` which calculates the position based on time. The time will be provided by a TimeProvider. This `TimeProvider` is based on the PLC cycle time
 
 TimeBasedEncoder:
 
