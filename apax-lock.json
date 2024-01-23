@@ -611,13 +611,5 @@
     "version": "1.0.0",
     "resolved": "https://npm.pkg.github.com/download/@simatic-ax/snippetscollection/1.0.0/60302d7e0da15a914ce0126503398063a42e1917",
     "integrity": "sha512-8BNldIIGZuuLSiMjJxcBmHt7sL7kSlc0dss88BcrfnL/7iXPmHwhlnh4XobcVoOHXaz5f8cbMbXCUrffBIwecQ=="
-  },
-  "@simatic-ax/statemachine": {
-    "version": "5.0.0",
-    "resolved": "https://npm.pkg.github.com/download/@simatic-ax/statemachine/5.0.0/0fd13378ef5af659a4ef7301c32440f236d4761c",
-    "integrity": "sha512-JYrBAcecUQPZbEmQx3/AKmmJl6xoJ90P0cPIgjDFe3Iso7LbrBHlQecBSy2v27313Azu+1VSPRNHumcS9xCUFQ==",
-    "dependencies": {
-      "@ax/system-timer": "6.0.94"
-    }
   }
 }
