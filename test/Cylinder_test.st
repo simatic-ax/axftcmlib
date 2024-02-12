@@ -1,5 +1,4 @@
 //USING Simatic.Ax.Cylinder;
-USING Simatic.Ax.IO.Input;
 USING Simatic.Ax.axftcmlib;
 USING Simatic.Ax.IO.Output;
 USING AxUnit.Assert;
@@ -9,26 +8,32 @@ NAMESPACE Simatic.Ax.axftcmlib
     {TestFixture}
     CLASS MyCylinderTest
         VAR PROTECTED
-            _testPneumaticCylinder : PneumaticCylinder;
-            _testSubject : BinOutput;
+            _actuator : ActuatorTimeBased;
+            _actuatorStateLess : ActuatorTimeBased;
+            _output : BinOutput;
         END_VAR
 
+        {TestSetup}
         METHOD PUBLIC SetUp
-            _testPneumaticCylinder.CoilPushing := _testSubject;
+            _actuator := _actuatorStateLess;
+            _actuator.ControlPush := _output;
         END_METHOD
 
-        {Test}
+                {Test}
         METHOD PUBLIC TestTurnPneumaticCylinderPush_Expect_state_is_On
             THIS.SetUp();
-            _testPneumaticCylinder.PneumaticCylinderPush();
-            AxUnit.Assert.Equal(expected := TRUE, actual := _testSubject.IsOn());
+            _actuator.Enable();
+            _actuator.RunCyclic();
+            AxUnit.Assert.Equal(expected := TRUE, actual := _output.IsOn());
         END_METHOD
 
         {Test}
         METHOD PUBLIC TestTurnPneumaticCylinderRetract_Expect_state_is_Off
             THIS.SetUp();
-            _testPneumaticCylinder.PneumaticCylinderRetract();
-            AxUnit.Assert.Equal(expected := FALSE, actual := _testSubject.IsOn());
+            THIS.TestTurnPneumaticCylinderPush_Expect_state_is_On();
+            _actuator.Disable();
+            _actuator.RunCyclic();
+            AxUnit.Assert.Equal(expected := FALSE, actual := _output.IsOn());
         END_METHOD
 
         {Test}
@@ -36,15 +41,9 @@ NAMESPACE Simatic.Ax.axftcmlib
             VAR 
                 Test : BOOL;
             END_VAR
-            _testPneumaticCylinder.ErrorFound();
-            Test := _testPneumaticCylinder.ErrorState;
-
-            IF Test <> TRUE THEN 
-                _testPneumaticCylinder.PneumaticCylinderRetract();
-            END_IF;
-
-            AxUnit.Assert.Equal(Expected := TRUE, actual := Test);
-         
+            _actuator.ControlPush := NULL;
+            _actuator.RunCyclic();
+            AxUnit.Assert.Equal(Expected := TRUE, actual := _actuator.HasError());
             ;
         END_METHOD
 
@@ -55,22 +54,8 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_VAR
 
             THIS.SetUp();
-            _testPneumaticCylinder.ErrorFound();
-            Test := _testPneumaticCylinder.ErrorState;
+            Test := _actuator.HasError();
             AxUnit.Assert.Equal(Expected := FALSE, actual := Test);
-            ;
-        END_METHOD
-
-        {Test}
-        METHOD PUBLIC TestPneumaticCylinderNullReferenceExpected_ErrorFoundTRUE
-            VAR 
-                Test : BOOL;
-            END_VAR
-
-            _testPneumaticCylinder.PneumaticCylinderRetract();
-            _testPneumaticCylinder.ErrorFound();
-            Test := _testPneumaticCylinder.ErrorState;
-            AxUnit.Assert.Equal(Expected := TRUE, actual := Test);
             ;
         END_METHOD
 
