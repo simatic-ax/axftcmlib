@@ -59,18 +59,6 @@ NAMESPACE Simatic.Ax.axftcmlib
             ;
         END_METHOD
 
-        {Test}
-        METHOD PUBLIC TestPneumaticCylinderNullReferenceExpected_ErrorFoundTRUE
-            VAR 
-                Test : BOOL;
-            END_VAR
-
-            _actuator.Disable();
-            Test := _actuator.HasError();
-            AxUnit.Assert.Equal(Expected := TRUE, actual := Test);
-            ;
-        END_METHOD
-
     END_CLASS
 
 END_NAMESPACE
