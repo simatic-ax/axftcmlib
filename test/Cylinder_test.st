@@ -23,13 +23,16 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC TestTurnPneumaticCylinderPush_Expect_state_is_On
             THIS.SetUp();
             _actuator.Enable();
+            _actuator.RunCyclic();
             AxUnit.Assert.Equal(expected := TRUE, actual := _output.IsOn());
         END_METHOD
 
         {Test}
         METHOD PUBLIC TestTurnPneumaticCylinderRetract_Expect_state_is_Off
             THIS.SetUp();
+            THIS.TestTurnPneumaticCylinderPush_Expect_state_is_On();
             _actuator.Disable();
+            _actuator.RunCyclic();
             AxUnit.Assert.Equal(expected := FALSE, actual := _output.IsOn());
         END_METHOD
 
@@ -38,13 +41,9 @@ NAMESPACE Simatic.Ax.axftcmlib
             VAR 
                 Test : BOOL;
             END_VAR
-            Test := _actuator.HasError();
-            IF Test <> TRUE THEN 
-                _actuator.Disable();
-            END_IF;
-
-            AxUnit.Assert.Equal(Expected := TRUE, actual := Test);
-         
+            _actuator.ControlPush := NULL;
+            _actuator.RunCyclic();
+            AxUnit.Assert.Equal(Expected := TRUE, actual := _actuator.HasError());
             ;
         END_METHOD
 
