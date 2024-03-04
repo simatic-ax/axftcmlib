@@ -599,6 +599,15 @@
       "x64"
     ]
   },
+  "@simatic-ax/commands": {
+    "version": "0.0.1",
+    "resolved": "https://npm.pkg.github.com/download/@simatic-ax/commands/0.0.1/e2cd48a208fbf4d331fd469a249a923de75cf278",
+    "integrity": "sha512-YcwsDWvIz+An8WF7VT54eRNEonGeze+iLcvoFiUMSSG7OLztKJ+SM25FgB9vjKqQmBRh1zsn2JH6/Fbep9FbRw==",
+    "dependencies": {
+      "@ax/system-timer": "6.0.94",
+      "@simatic-ax/io": "5.0.0"
+    }
+  },
   "@simatic-ax/io": {
     "version": "6.0.0",
     "resolved": "https://npm.pkg.github.com/download/@simatic-ax/io/6.0.0/a41b213542c3e91485f6500466bba00cc630cd61",

@@ -22,7 +22,7 @@ NAMESPACE Simatic.Ax.axftcmlib
     ///Class contains all functions necessary for realisng a motion axis
     ///The motor is used for "powering" the axis
     ///The encoder is needed to monitor the current position 
-    CLASS Axis
+    CLASS Axis2
         IMPLEMENTS IAxis
         VAR PUBLIC
             Motor : IMotor;
