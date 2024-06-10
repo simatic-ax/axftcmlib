@@ -32,7 +32,7 @@ files:
   - 'src'
   - 'snippets'
 dependencies:
-  "@ax/simatic-1500-clocks": 6.0.37
+  "@ax/simatic-1500-clocks": 7.0.4
   "@simatic-ax/simple-control-modules": 5.0.1
   "@simatic-ax/io": 5.0.0
   "@ax/system-timer": 6.0.94
