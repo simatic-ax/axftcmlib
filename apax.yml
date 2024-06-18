@@ -9,6 +9,9 @@ type: lib
 repository:
   type: git
   url: https://github.com/simatic-ax/axftcmlib
+# Registry information, where the package will be published
+registries:
+  '@simatic-ax': 'https://npm.pkg.github.com/'
 # Environment variables
 variables:
   APAX_BUILD_ARGS:
@@ -16,14 +19,15 @@ variables:
 targets:
   - '1500'
   - 'llvm'
-  # Dependencies
+# Dependencies
 devDependencies:
-  '@ax/sdk': 2311.0.1
+  '@ax/sdk': 2405.0.0
   "@simatic-ax/snippetscollection": 1.0.0
-
-# Registry information, where the package will be published
-registries:
-  '@simatic-ax': 'https://npm.pkg.github.com/'
+dependencies:
+  "@ax/simatic-1500-clocks": 7.0.4
+  "@simatic-ax/simple-control-modules": 6.0.0
+  "@simatic-ax/io": 6.0.0
+  "@ax/system-timer": 7.0.17
 # Files, which will be shipped with the library
 files:
   - 'README.md'
@@ -31,8 +35,3 @@ files:
   - 'doc'
   - 'src'
   - 'snippets'
-dependencies:
-  "@ax/simatic-1500-clocks": 6.0.37
-  "@simatic-ax/simple-control-modules": 5.0.1
-  "@simatic-ax/io": 5.0.0
-  "@ax/system-timer": 6.0.94
