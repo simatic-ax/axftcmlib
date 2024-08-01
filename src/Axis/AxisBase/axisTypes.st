@@ -1,7 +1,7 @@
 NAMESPACE Simatic.Ax.axftcmlib.Motion
 
     TYPE
-        Direction : (Forward, Reverse, Undefined) := Forward;
+        Direction : (PositiveDirection, NegativeDirection) := PositiveDirection;
     END_TYPE
 END_NAMESPACE
 

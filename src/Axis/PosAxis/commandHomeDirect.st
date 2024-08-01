@@ -2,24 +2,21 @@ USING Simatic.Ax.Commands;
 
 NAMESPACE Simatic.Ax.axftcmlib.Motion
 
-    CLASS INTERNAL commandMoveVelovity
+    CLASS INTERNAL commandHomeDirect
         EXTENDS ExecuteCommand
         VAR
-            _AxisRef : REF_TO TO_SpeedAxis;
-            _velocity : LReal;
-            _direction : Direction;
+            _AxisRef : REF_TO TO_PosAxis;
+            _position : LReal;
         END_VAR
 
 
         METHOD PUBLIC Start : itfCommand
             VAR_INPUT
-                AxisRef : REF_TO TO_SpeedAxis;
-                Velocity : LReal  := LReal#100.0;
-                Direction : Direction := Direction#PositiveDirection;
+                AxisRef : REF_TO TO_PosAxis;
+                Position : LREAL := 0.0;
             END_VAR
             _AxisRef := AxisRef;
-            _velocity := Velocity;
-            _direction := Direction;
+            _position := Position;
             THIS.ExecuteWithRisingEdge();
             Start := THIS;
         END_METHOD
@@ -38,10 +35,10 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             END_VAR
             IF (NOT _AxisRef^.isPowerdOn) THEN
                 THIS.SetError(WORD#16#8001);
+            ELSIF (_AxisRef^.IsRunning()) THEN
+                THIS.SetError(WORD#16#8002);  // Con not be homed because axis is not stillstanding
             ELSE
-                _AxisRef^.Run(TRUE);
-                _AxisRef^.Velocity := _velocity;
-                _AxisRef^.Direction := _direction;
+                _Done := _AxisRef^.SetPosition(value := _position);
             END_IF;
             
         END_METHOD

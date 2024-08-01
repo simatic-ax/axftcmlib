@@ -7,7 +7,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
     METHOD MoveVelocity : itfCommand 
         VAR_INPUT
             Velocity : LReal := 100.0;
-            Direction : Direction := Direction#Forward;
+            Direction : Direction := Direction#PositiveDirection;
         END_VAR
     END_METHOD
 

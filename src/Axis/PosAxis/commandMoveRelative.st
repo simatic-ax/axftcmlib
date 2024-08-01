@@ -2,24 +2,24 @@ USING Simatic.Ax.Commands;
 
 NAMESPACE Simatic.Ax.axftcmlib.Motion
 
-    CLASS INTERNAL commandMoveVelovity
+    CLASS INTERNAL commandMoveRelative
         EXTENDS ExecuteCommand
         VAR
-            _AxisRef : REF_TO TO_SpeedAxis;
+            _AxisRef : REF_TO TO_PosAxis;
             _velocity : LReal;
-            _direction : Direction;
+            _distance : LREAL;
         END_VAR
 
 
         METHOD PUBLIC Start : itfCommand
             VAR_INPUT
-                AxisRef : REF_TO TO_SpeedAxis;
+                AxisRef : REF_TO TO_PosAxis;
                 Velocity : LReal  := LReal#100.0;
-                Direction : Direction := Direction#PositiveDirection;
+                Distance : LREAL := 0.0;
             END_VAR
             _AxisRef := AxisRef;
             _velocity := Velocity;
-            _direction := Direction;
+            _distance := Distance;
             THIS.ExecuteWithRisingEdge();
             Start := THIS;
         END_METHOD
@@ -41,7 +41,6 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             ELSE
                 _AxisRef^.Run(TRUE);
                 _AxisRef^.Velocity := _velocity;
-                _AxisRef^.Direction := _direction;
             END_IF;
             
         END_METHOD
