@@ -5,7 +5,7 @@ USING Simatic.Ax.Io.Output;
 NAMESPACE Simatic.Ax.axftcmlib
     CLASS ActuatorTimeBased
         EXTENDS ControlModuleAbstract
-        IMPLEMENTS IActuator
+        IMPLEMENTS itfActuator
         VAR PUBLIC
             ControlPush : IBinOutput;
             OnDuration : TIME;
