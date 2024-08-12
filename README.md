@@ -64,29 +64,33 @@ PneumaticCylinder (*Note: Needs an active compressor to function with the model)
 
 </details>
 
-### Class PneumaticCompressor
+### Class Compressor
 
 |Method|Description|
 |-|-|
-|PneumaticCompressorOn()|Turns the compressor on|
-|PneumaticCompressorOff()|Turns the compressor off|
+|PowerOn()     | Turns the compressor on  |
+|PowerOff()    | Turns the compressor off |
+|IsPoweredOn() | Returns `true` when the compressor is switched on |
+
+|Properties|Description|
+|-|-|
+|ControlQ : IBinOutput | Contains the binary output to control the compressor  |
 
 <details><summary>Example for the class Compressor ... </summary>
   
 ```iec-st
 
   VAR_GLOBAL
-    SortingLineCompressor : BOOL; //Actual PLC-variable
-    CompressorOutputWriter : BinOutput; //Used to write on the PLC-variable
-    CompressorClassInstance : PneumaticCompressor := (ActiveCompressor := CompressorOutputWriter); // Class instance initialized with the needed OutputWriter
-    EnableCCompressor : BOOL;
+    QOut AT %Q0.0 : BOOL;
+    QComp : BinOutput;
+    CompressorInst : Compressor := (ActiveCompressor := QComp);
   END_VAR
 
   PROGRAM
-    IF (EnableCCompressor) THEN
-      CompressorClassInstance.PneumaticCompressorOn(); //Turning on the compressor -> Call only when needed (Off works the same way)
+    IF (NOT(CompressorInst.IsPoweredOn())) THEN
+      CompressorInst.PneumaticCompressorOn();
     END_IF;
-    CompressorOutputWriter.WriteCyclic(Q => SortingLineCompressor);//Writing on the Actual PLC-variable ->needs to be called in every cycle
+    CompressorOutputWriter.WriteCyclic(Q => QOut);
   END_PROGRAM
 ```
 
