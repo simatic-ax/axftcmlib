@@ -5,7 +5,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
     CLASS SpeedAxis
         EXTENDS SpeedAxisImpl
 
-        METHOD INTERNAL Attach : BOOL
+        METHOD PUBLIC Attach : BOOL
             VAR_INPUT
                 axis : REF_TO TO_SpeedAxis;
             END_VAR

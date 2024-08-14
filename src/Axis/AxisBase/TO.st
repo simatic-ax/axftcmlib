@@ -3,7 +3,7 @@ USING Simatic.Ax.Commands;
 
 NAMESPACE Simatic.Ax.axftcmlib.Motion
 
-    CLASS TO_Axis
+    CLASS INTERNAL TO_Axis
         VAR PUBLIC
             isPowerdOn : BOOL; // Axis is powered on
         END_VAR        
@@ -13,6 +13,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         VAR PUBLIC
             Velocity : LReal  := LReal#100.0;
             Direction : Direction := Direction#PositiveDirection;
+            Motor : IMotor;
         END_VAR        
         VAR PROTECTED
             _isRuning : BOOL;
@@ -23,6 +24,16 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             END_VAR
             
             _isRuning := exec;
+
+            IF (Motor <> NULL) THEN                
+                IF (_isRuning) THEN
+                    // Motor.Move(direction := Direction, velocity := Velocity);
+                    Motor.Move(velocity := Velocity, direction := Direction);
+                ELSE
+                    Motor.Halt();
+                END_IF;
+            END_IF;
+
         END_METHOD
         METHOD PUBLIC IsRunning : BOOL
             IsRunning := _isRuning;

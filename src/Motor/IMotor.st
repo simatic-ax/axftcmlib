@@ -1,5 +1,5 @@
 
-NAMESPACE Simatic.Ax.axftcmlib
+NAMESPACE Simatic.Ax.axftcmlib.Motion
     ///This interface can be used to implement a motor for the axis
     /// It contains basic functions that are needed for the axis 
     INTERFACE IMotor

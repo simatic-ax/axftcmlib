@@ -2,7 +2,7 @@ USING Simatic.Ax.IO.Input;
 USING System.Timer;
 USING Simatic.Ax.SimpleControlModules;
 
-NAMESPACE Simatic.Ax.axftcmlib
+NAMESPACE Simatic.Ax.axftcmlib.Motion
     TYPE INTERNAL
         StatesHoming : (Idle, MoveOutOfSensor, FindReferenceSensor, Done) := Idle;
     END_TYPE
@@ -257,10 +257,10 @@ NAMESPACE Simatic.Ax.axftcmlib
             VAR_INPUT
                 direction : Direction;
             END_VAR
-            IF (direction = Direction#Forward) THEN
-                _oppositDirection := Direction#Reverse;
+            IF (direction = Direction#PositiveDirection) THEN
+                _oppositDirection := Direction#NegativeDirection;
             ELSE
-                _oppositDirection := Direction#Forward;
+                _oppositDirection := Direction#PositiveDirection;
             END_IF;
         END_METHOD
 
@@ -271,9 +271,9 @@ NAMESPACE Simatic.Ax.axftcmlib
                 setpoint : LINT;
             END_VAR
             IF (setpoint >= enc.GetValue()) THEN
-                DecideDirection := Direction#Forward;
+                DecideDirection := Direction#PositiveDirection;
             ELSE
-                DecideDirection := Direction#Reverse;
+                DecideDirection := Direction#NegativeDirection;
             END_IF;
         END_METHOD
 

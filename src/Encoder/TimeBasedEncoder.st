@@ -2,6 +2,7 @@ USING Simatic.Ax.SimpleControlModules;
 USING Simatic.Ax.IO.Output;
 USING Simatic.Ax.IO.Input;
 USING System.Timer;
+USING Simatic.Ax.axftcmlib.Motion;
 
 NAMESPACE Simatic.Ax.axftcmlib
     ///Used to track the Position of the axis based on time
