@@ -74,6 +74,17 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         END_METHOD
 
 
+        METHOD PUBLIC GetRelativePosition : LREAL
+            VAR_TEMP
+                _pulses : LINT;
+            END_VAR
+            
+            IF (Encoder <> NULL) THEN
+                _pulses := Encoder.RelativeCount();
+                GetRelativePosition := EncoderResolution * TO_LREAL(_pulses);
+            END_IF;
+        END_METHOD
+
         METHOD PUBLIC GetPosition : LREAL
             VAR_TEMP
                 _pulses : LINT;

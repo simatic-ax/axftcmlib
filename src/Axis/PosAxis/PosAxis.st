@@ -23,6 +23,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         VAR PROTECTED
             _PosAxisRef : REF_TO TO_PosAxis;
             _commandMoveRelative : commandMoveRelative;
+            _commandMoveAbsolute : commandMoveAbsolute;
             _commandHomeDirect : commandHomeDirect;
         END_VAR
 
@@ -35,7 +36,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 Position : LREAL;
                 Velocity : LREAL := 100.0;
             END_VAR
-            MoveAbsolute := NULL;
+            MoveAbsolute := _commandMoveAbsolute.Start(AxisRef := _PosAxisRef, Position := Position, Velocity := Velocity);
             ;
         END_METHOD
 
@@ -44,7 +45,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 Distance : LREAL := 0.0;
                 Velocity : LREAL := 100.0;
             END_VAR
-            MoveRelative := _commandMoveRelative.Start(AxisRef := _PosAxisRef);
+            MoveRelative := _commandMoveRelative.Start(AxisRef := _PosAxisRef, Distance := Distance, Velocity := Velocity);
             ;
         END_METHOD
 

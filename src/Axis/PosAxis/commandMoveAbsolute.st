@@ -2,12 +2,12 @@ USING Simatic.Ax.Commands;
 
 NAMESPACE Simatic.Ax.axftcmlib.Motion
 
-    CLASS INTERNAL commandMoveRelative
+    CLASS INTERNAL commandMoveAbsolute
         EXTENDS ExecuteCommand
         VAR
             _AxisRef : REF_TO TO_PosAxis;
             _velocity : LReal;
-            _distance : LREAL;
+            _position : LREAL;
         END_VAR
 
 
@@ -15,11 +15,11 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             VAR_INPUT
                 AxisRef : REF_TO TO_PosAxis;
                 Velocity : LReal  := LReal#100.0;
-                Distance : LREAL := 0.0;
+                Position : LREAL := 0.0;
             END_VAR
             _AxisRef := AxisRef;
             _velocity := Velocity;
-            _distance := Distance;
+            _position := Position;
             THIS.ExecuteWithRisingEdge();
             Start := THIS;
         END_METHOD
@@ -28,7 +28,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             IF (NOT _AxisRef^.isPowerdOn) THEN
                 THIS.SetError(WORD#16#8001);
             ELSE
-                IF (_AxisRef^.GetRelativePosition() >= _distance) THEN
+                IF (_AxisRef^.GetRelativePosition() >= _position) THEN
                     THIS.SetDone();
                 END_IF;
             END_IF;
@@ -41,17 +41,12 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             IF (NOT _AxisRef^.isPowerdOn) THEN
                 THIS.SetError(WORD#16#8001);
             ELSE
-                IF (_distance > 0) THEN
-                    _AxisRef^.Direction := Direction#PositiveDirection;
-                ELSIF (_distance < 0) THEN
-                    _AxisRef^.Direction := Direction#NegativeDirection;
-                ELSE  // distance = 0 --> do nothing
+                IF (_position = _AxisRef^.GetPosition()) THEN
                     THIS.SetDone();
                     RETURN;
                 END_IF;
                 _AxisRef^.Run(TRUE);
                 _AxisRef^.Velocity := _velocity;
-                _AxisRef^.Encoder.ResetRelative();
             END_IF;
             
         END_METHOD
