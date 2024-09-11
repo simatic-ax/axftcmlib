@@ -22,12 +22,23 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             _distance := Distance;
             THIS.ExecuteWithRisingEdge();
             Start := THIS;
+            _AxisRef^.Encoder.ResetRelative();
         END_METHOD
 
         METHOD PROTECTED OVERRIDE Execute
-            IF (NOT _AxisRef^.isPowerdOn) THEN
-                THIS.SetError(WORD#16#8001);
-            ELSE
+            IF (NOT THIS._Error) THEN
+                IF (_distance > 0) THEN
+                    _AxisRef^.Direction := Direction#PositiveDirection;
+                ELSIF (_distance < 0) THEN
+                    _AxisRef^.Direction := Direction#NegativeDirection;
+                ELSE  // distance = 0 --> do nothing
+                    THIS.SetDone();
+                    RETURN;
+                END_IF;
+                
+                _AxisRef^.Velocity := _velocity;
+                _AxisRef^.Run(TRUE);
+            
                 IF (_AxisRef^.GetRelativePosition() >= _distance) THEN
                     THIS.SetDone();
                 END_IF;
@@ -38,22 +49,14 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             VAR_INPUT
                 exec : BOOL;
             END_VAR
+            THIS._Error := FALSE;
             IF (NOT _AxisRef^.isPowerdOn) THEN
                 THIS.SetError(WORD#16#8001);
-            ELSE
-                IF (_distance > 0) THEN
-                    _AxisRef^.Direction := Direction#PositiveDirection;
-                ELSIF (_distance < 0) THEN
-                    _AxisRef^.Direction := Direction#NegativeDirection;
-                ELSE  // distance = 0 --> do nothing
-                    THIS.SetDone();
-                    RETURN;
-                END_IF;
-                _AxisRef^.Run(TRUE);
-                _AxisRef^.Velocity := _velocity;
-                _AxisRef^.Encoder.ResetRelative();
+                RETURN;
+            ELSIF (NOT _AxisRef^.IsHomed()) THEN
+                THIS.SetError(WORD#16#8003);
+                RETURN;
             END_IF;
-            
         END_METHOD
     END_CLASS
 

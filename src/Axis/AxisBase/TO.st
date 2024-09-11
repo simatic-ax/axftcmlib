@@ -95,6 +95,8 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 GetPosition := EncoderResolution * TO_LREAL(_pulses);
             END_IF;
         END_METHOD
-    
+        METHOD PUBLIC IsHomed : BOOL
+            IsHomed := _isHomed;
+        END_METHOD
     END_CLASS
 END_NAMESPACE

@@ -5,7 +5,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
     CLASS PosAxis
         EXTENDS PosAxisImpl
 
-        METHOD INTERNAL Attach : BOOL
+        METHOD PUBLIC Attach : BOOL
             VAR_INPUT
                 axis : REF_TO TO_PosAxis;
             END_VAR

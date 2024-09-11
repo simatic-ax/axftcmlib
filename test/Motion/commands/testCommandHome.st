@@ -49,6 +49,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         END_VAR
         VAR PROTECTED
             _value : LINT;
+            _RelativeCount : LINT;
         END_VAR
         
         METHOD PUBLIC MyMethod
@@ -68,6 +69,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 value : LINT;
             END_VAR
             _value := value;
+            _RelativeCount := value;
             ;
         END_METHOD
     
@@ -84,11 +86,11 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         END_METHOD
     
         METHOD PUBLIC RelativeCount : LINT
-            ;
+            RelativeCount := _RelativeCount;
         END_METHOD
     
         METHOD PUBLIC ResetRelative
-            ;
+            _RelativeCount := LINT#0;
         END_METHOD
     
         METHOD PUBLIC GetModulo : LINT

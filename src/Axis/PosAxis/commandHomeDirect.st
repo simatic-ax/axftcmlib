@@ -39,6 +39,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 THIS.SetError(WORD#16#8002);  // Con not be homed because axis is not stillstanding
             ELSE
                 _Done := _AxisRef^.SetPosition(value := _position);
+
             END_IF;
             
         END_METHOD
