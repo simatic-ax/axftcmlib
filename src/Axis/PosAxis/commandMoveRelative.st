@@ -27,6 +27,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
 
         METHOD PROTECTED OVERRIDE Execute
             IF (NOT THIS._Error) THEN
+                ;
                 IF (_distance > 0) THEN
                     _AxisRef^.Direction := Direction#PositiveDirection;
                 ELSIF (_distance < 0) THEN

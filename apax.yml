@@ -25,6 +25,7 @@ apaxVersion: 3.2.1
 # Dependencies
 devDependencies:
   '@ax/sdk': 2405.0.0
+  "@ax/axunitst": ^5.1.23
   "@simatic-ax/snippetscollection": 1.0.0
 dependencies:
   "@ax/simatic-1500-clocks": 7.0.4
@@ -44,3 +45,4 @@ dependencies:
   "@simatic-ax/io": 6.0.0
   "@ax/system-timer": 7.0.17
   "@simatic-ax/commands": 1.0.0
+installStrategy: overridable

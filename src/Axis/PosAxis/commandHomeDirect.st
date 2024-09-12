@@ -33,6 +33,9 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             VAR_INPUT
                 exec : BOOL;
             END_VAR
+            IF (_AxisRef = NULL) THEN
+                RETURN;
+            END_IF;
             IF (NOT _AxisRef^.isPowerdOn) THEN
                 THIS.SetError(WORD#16#8001);
             ELSIF (_AxisRef^.IsRunning()) THEN

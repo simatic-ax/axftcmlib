@@ -6,49 +6,45 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         EXTENDS ExecuteCommand
         VAR
             _AxisRef : REF_TO TO_PosAxis;
-            _velocity : LReal;
+            _velocity : LREAL;
             _position : LREAL;
         END_VAR
-
+        VAR PRIVATE
+            _execute : BOOL;
+        END_VAR
 
         METHOD PUBLIC Start : itfCommand
             VAR_INPUT
                 AxisRef : REF_TO TO_PosAxis;
-                Velocity : LReal  := LReal#100.0;
+                Velocity : LREAL := LREAL#100.0;
                 Position : LREAL := 0.0;
             END_VAR
             _AxisRef := AxisRef;
             _velocity := Velocity;
             _position := Position;
+            // Determine Direction
+            IF (_position < THIS._AxisRef^.GetPosition()) THEN
+                _AxisRef^.Direction := Direction#NegativeDirection;
+            ELSIF (_position > THIS._AxisRef^.GetPosition()) THEN
+                _AxisRef^.Direction := Direction#PositiveDirection;
+            ELSE // distance = 0 --> do nothing
+                THIS.SetDone();
+                RETURN;
+            END_IF;
             THIS.ExecuteWithRisingEdge();
             Start := THIS;
-            _AxisRef^.Encoder.ResetRelative();
         END_METHOD
 
         METHOD PROTECTED OVERRIDE Execute
-            IF (NOT THIS._Error) THEN
-                IF (_position < THIS._AxisRef^.GetPosition()) THEN
-                    _AxisRef^.Direction := Direction#PositiveDirection;
-                ELSIF (_position > THIS._AxisRef^.GetPosition()) THEN
-                    _AxisRef^.Direction := Direction#NegativeDirection;
-                ELSE  // distance = 0 --> do nothing
-                    THIS.SetDone();
-                    RETURN;
-                END_IF;
-                
-                _AxisRef^.Velocity := _velocity;
-                _AxisRef^.Run(TRUE);
-            
-                IF (_AxisRef^.GetPosition() >= _position) THEN
-                    THIS.SetDone();
-                END_IF;
-            END_IF;
-        END_METHOD
-
-        METHOD PROTECTED OVERRIDE SetExecute
-            VAR_INPUT
-                exec : BOOL;
+            VAR_TEMP
+                _x : LREAL;
             END_VAR
+            IF NOT (_execute) THEN
+                THIS._Done := FALSE;
+                THIS._Error := FALSE;
+                RETURN;
+            END_IF;
+            
             THIS._Error := FALSE;
             IF (NOT _AxisRef^.isPowerdOn) THEN
                 THIS.SetError(WORD#16#8001);
@@ -57,6 +53,27 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 THIS.SetError(WORD#16#8003);
                 RETURN;
             END_IF;
+            _AxisRef^.Velocity := _velocity;
+            _AxisRef^.Run(TRUE);
+            _x := _AxisRef^.GetPosition();
+            IF (_AxisRef^.Direction = Direction#NegativeDirection) THEN
+                IF (_AxisRef^.GetPosition() <= _position) THEN
+                    THIS.SetDone();
+                    _AxisRef^.Run(FALSE);
+                END_IF;
+            ELSE
+                IF (_AxisRef^.GetPosition() >= _position) THEN
+                    THIS.SetDone();
+                    _AxisRef^.Run(FALSE);
+                END_IF;
+            END_IF;
+        END_METHOD
+
+        METHOD PROTECTED OVERRIDE SetExecute
+            VAR_INPUT
+                exec : BOOL;
+            END_VAR
+            _execute := exec;
         END_METHOD
     END_CLASS
 
