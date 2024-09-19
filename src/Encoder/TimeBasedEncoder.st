@@ -54,6 +54,7 @@ NAMESPACE Simatic.Ax.axftcmlib
             IF (TO_Axis <> NULL) THEN
                 IF (TO_Axis^.IsRunning()) THEN //If Axis is running
                     _position := _position + ds;
+                    _positionRelative := _positionRelative + ds;
                 END_IF;
             END_IF;
         END_METHOD

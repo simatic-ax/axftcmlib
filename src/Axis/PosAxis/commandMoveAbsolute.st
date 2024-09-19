@@ -45,7 +45,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 RETURN;
             END_IF;
             
-            THIS._Error := FALSE;
+            // Axis must be powerd on and homed
             IF (NOT _AxisRef^.isPowerdOn) THEN
                 THIS.SetError(WORD#16#8001);
                 RETURN;
