@@ -1,8 +1,8 @@
+USING Simatic.Ax.Commands;
 USING System.Timer;
 USING Simatic.Ax.Io.Output;
 
 NAMESPACE Simatic.Ax.axftcmlib
-
     CLASS ActuatorTimeBased
         EXTENDS ControlModuleAbstract
         IMPLEMENTS IActuator
@@ -15,11 +15,11 @@ NAMESPACE Simatic.Ax.axftcmlib
             _state : ActuatorState;
         END_VAR
 
-        METHOD PROTECTED OVERRIDE _constructor
+        METHOD PROTECTED OVERRIDE _initmethod
             ;
         END_METHOD
 
-        METHOD PROTECTED OVERRIDE _runCyclicCustom
+        METHOD PROTECTED OVERRIDE _executeCustom
             IF (ControlPush = NULL) THEN 
                 THIS.SetError(WORD#16#8101);
                 RETURN;
@@ -42,7 +42,14 @@ NAMESPACE Simatic.Ax.axftcmlib
                 ActuatorState#Retracting:
                     ControlPush.SetOff();
                     _state := ActuatorState#Retracted;
+                    THIS.SetDone();
             END_CASE;
+        END_METHOD
+
+        METHOD PUBLIC Start : itfCommand
+            THIS.InitState();
+            THIS.Enable();
+            Start := THIS;
         END_METHOD
 
         METHOD PUBLIC Enable
@@ -56,6 +63,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC GetState : ActuatorState
             GetState := _state;
         END_METHOD
+    
     END_CLASS
 
 END_NAMESPACE
