@@ -4,19 +4,19 @@ USING Simatic.Ax.IO.Output;
 NAMESPACE Simatic.Ax.axftcmlib
     ///Implementation of the Compressor interface
     /// needs an IBinOutout that is used to write on the PLC-Variables
-    CLASS  PneumaticCompressor IMPLEMENTS  IPneumaticCompressor
+    CLASS  Compressor IMPLEMENTS  ICompressor
 
         VAR PUBLIC
              ActiveCompressor : IBinOutput;
         END_VAR
         
         ///turns the compressor on
-        METHOD PUBLIC PneumaticCompressorOn
+        METHOD PUBLIC Enable
            ActiveCompressor.SetOn() ;
         END_METHOD
 
         ///turns the compressor off
-        METHOD PUBLIC PneumaticCompressorOff
+        METHOD PUBLIC Disable
             ActiveCompressor.SetOff();
         END_METHOD
     END_CLASS

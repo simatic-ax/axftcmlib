@@ -2,13 +2,13 @@
 ///contains the basic functions neede for the Fischertechnik models  
 /// Is used to power a pneumatic cylinder 
 NAMESPACE Simatic.Ax.axftcmlib
-INTERFACE IPneumaticCompressor
+INTERFACE ICompressor
         ///turns the compressor on
-        METHOD PneumaticCompressorOn
+        METHOD Enable
         END_METHOD
 
         ///turns the compressor off
-        METHOD PneumaticCompressorOff
+        METHOD Disable
         END_METHOD
     END_INTERFACE
 
