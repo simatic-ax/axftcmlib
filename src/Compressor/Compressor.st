@@ -35,17 +35,15 @@ NAMESPACE Simatic.Ax.axftcmlib
             ELSE
                 IsPoweredOn := FALSE;
             END_IF;
-        END_METHOD
-
-        METHOD PROTECTED OVERRIDE _runCyclicCustom
-            ;
-        END_METHOD
-
-        METHOD PROTECTED OVERRIDE _constructor
+        END_METHOD    
+    
+        METHOD PROTECTED OVERRIDE _executeCustom
             ;
         END_METHOD
     
-
+        METHOD PROTECTED OVERRIDE _initmethod
+            ;
+        END_METHOD
     END_CLASS
 
 END_NAMESPACE
