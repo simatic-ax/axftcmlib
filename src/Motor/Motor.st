@@ -1,7 +1,7 @@
 USING Simatic.Ax.IO.Output;
 USING Simatic.Ax.axftcmlib;
 
-NAMESPACE Simatic.Ax.axftcmlib
+NAMESPACE Simatic.Ax.axftcmlib.Motion
 
     ///Class for creating a basic Motor 
     /// It supports two directions 
@@ -19,7 +19,7 @@ NAMESPACE Simatic.Ax.axftcmlib
                 velocity : LREAL;
                 direction : Direction;
             END_VAR
-            IF (direction = Direction#Forward) THEN
+            IF (direction = Direction#PositiveDirection) THEN
                 Forward.SetOn();
                 Reverse.SetOff();
             ELSE

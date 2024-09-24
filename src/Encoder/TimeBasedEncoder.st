@@ -1,7 +1,9 @@
+USING Simatic.Ax.axftcmlib.Motion;
 USING Simatic.Ax.SimpleControlModules;
 USING Simatic.Ax.IO.Output;
 USING Simatic.Ax.IO.Input;
 USING System.Timer;
+USING Simatic.Ax.axftcmlib.Motion;
 
 NAMESPACE Simatic.Ax.axftcmlib
     ///Used to track the Position of the axis based on time
@@ -10,11 +12,12 @@ NAMESPACE Simatic.Ax.axftcmlib
     CLASS TimeBasedEncoder IMPLEMENTS IEncoder
         VAR PUBLIC
             Velocity : LREAL; // m/s
-            EncoderAxis : IAxis;
+            TO_Axis : REF_TO TO_PosAxis;
             TimeProvider : ITimeprovider;
         END_VAR
         VAR PROTECTED
             _position : LREAL; // pos in [m]eter
+            _positionRelative : LREAL;
         END_VAR
 
         /// Reset encoder position to zero
@@ -44,9 +47,14 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_VAR
             dt := TimeProvider.GetElapsedSeconds(); //time passed in seconds
             ds := Velocity * dt;
-            IF (EncoderAxis <> NULL) THEN
-                IF (EncoderAxis.IsRunning()) THEN //If Axis is running
+            
+            IF (TO_Axis^.Direction = Motion.Direction#NegativeDirection) THEN
+                ds := ds * -1.0;
+            END_IF;
+            IF (TO_Axis <> NULL) THEN
+                IF (TO_Axis^.IsRunning()) THEN //If Axis is running
                     _position := _position + ds;
+                    _positionRelative := _positionRelative + ds;
                 END_IF;
             END_IF;
         END_METHOD
@@ -58,11 +66,11 @@ NAMESPACE Simatic.Ax.axftcmlib
         END_METHOD
 
         METHOD PUBLIC RelativeCount : LINT
-            ;
+            RelativeCount := TO_LINT(_positionRelative * 1000.0);;
         END_METHOD
 
         METHOD PUBLIC ResetRelative
-            ;
+            _positionRelative := 0.0;
         END_METHOD
 
         METHOD PUBLIC SetDirection

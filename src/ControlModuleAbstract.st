@@ -1,7 +1,9 @@
+USING Simatic.Ax.Commands;
+
 NAMESPACE Simatic.Ax.axftcmlib
     ///Provides basic functionality for programming on a plc
     /// has acces to the protected Methods and "Contructors" of the classes
-    CLASS ABSTRACT ControlModuleAbstract
+    CLASS ABSTRACT ControlModuleAbstract EXTENDS ExecuteCommand
         VAR PUBLIC
             
         END_VAR
@@ -9,46 +11,37 @@ NAMESPACE Simatic.Ax.axftcmlib
             _init : BOOL;
             _hasError : BOOL;
             _errorState : WORD;
+            _exec : BOOL;
         END_VAR
         
-        METHOD PUBLIC RunCyclic
+        METHOD PROTECTED OVERRIDE Execute
             IF (NOT _init) THEN
-                THIS._constructor();
+                THIS._initmethod();
                 _init := TRUE;
             END_IF;
-           THIS._runCyclicCustom();
+           THIS._executeCustom();
             ;
         END_METHOD
 
-        METHOD PROTECTED ABSTRACT _runCyclicCustom
+        METHOD PROTECTED OVERRIDE SetExecute
+            VAR_INPUT
+                exec : BOOL;
+            END_VAR
+            _exec := exec;
+            IF (_exec) THEN
+                THIS.InitState();
+            END_IF;
+            ;
+        END_METHOD
+
+        METHOD PROTECTED ABSTRACT _executeCustom
             
         END_METHOD
 
-        METHOD PROTECTED ABSTRACT _constructor
+        METHOD PROTECTED ABSTRACT _initmethod
             
         END_METHOD
 
-        METHOD PROTECTED SetError
-            VAR_INPUT
-                ErrorCode : WORD;
-            END_VAR
-            _errorState := ErrorCode;
-            _hasError := TRUE;
-            ;
-        END_METHOD
-
-        METHOD PROTECTED SetError
-            VAR_INPUT
-                Set : BOOL;
-            END_VAR
-            _hasError := Set;
-            ;
-        END_METHOD
-
-        // control module has an error
-        METHOD PUBLIC HasError : BOOL;
-            HasError := _hasError;
-        END_METHOD
 
         METHOD PUBLIC GetErrorStatus : WORD
             GetErrorStatus := _errorState;

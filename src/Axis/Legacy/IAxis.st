@@ -1,8 +1,4 @@
-NAMESPACE Simatic.Ax.axftcmlib
-
-    TYPE
-        Direction : (Forward, Reverse, Undefined) := Forward;
-    END_TYPE
+NAMESPACE Simatic.Ax.axftcmlib.Motion
 
     ///Interface for implementing an axis 
     ///Contains basic functions needed for realising an axis

@@ -1,0 +1,907 @@
+[info]: 🏃 Following AxunitST dependency workflow
+[debug]: Subsbcribed to topic siemens.axunit/test-discovery
+[info]: 🏃 Tests run initiated using LLVM
+[debug]: Starting test execution for selected tests
+[info]: Running tests...
+[debug]: Creating temp playlist in 'c:\Users\sjuergen\AppData\Roaming\AX Code\User\workspaceStorage\0dfc52b241436e9a1bbdd0fe5cdd5d64\siemens.axunit-vscode\9120052d-ebab-493e-92b9-facc6d56aba1\playlist.xml'
+[debug]: apax test,-e=llvm,-l=debug
+[debug]: Engine used: LLVM
+[debug]: - Verifying signatures...
+[debug]: 
+[debug]: i Skipping signature check for @simatic-ax. No public key provided in apax.yml.
+[debug]: √ Package verification succeeded.
+[debug]: 🐞[DEBUG]: Args used: --machine-readable,--nologo,--playlist-file,"c:\Users\sjuergen\AppData\Roaming\AX Code\User\workspaceStorage\0dfc52b241436e9a1bbdd0fe5cdd5d64\siemens.axunit-vscode\9120052d-ebab-493e-92b9-facc6d56aba1\playlist.xml",-i,d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib
+[debug]: 🐞[DEBUG]: Node Version: v18.15.0
+[debug]: Current loglevel: Debug
+[debug]: 👉 Used engine: llvm
+[debug]: 
+[debug]: 👉 Paths set. 
+[debug]: Testprojectdir: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts
+[debug]: Testresultfolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\test-results
+[debug]: EningeFolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm
+[debug]: 
+[debug]: 
+[debug]:     _          _   _       _ _       ____ _____ 
+[debug]:    / \   __  _| | | |_ __ (_) |_    / ___|_   _|
+[debug]:   / _ \  \ \/ / | | | '_ \| | __|___\___ \ | |  
+[debug]:  / ___ \  >  <| |_| | | | | | ||_____|__) || |  
+[debug]: /_/   \_\/_/\_\\___/|_| |_|_|\__|   |____/ |_|  
+[debug]: 
+[debug]: 👉 Paths set. 
+[debug]: Testprojectdir: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts
+[debug]: Testresultfolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\test-results
+[debug]: EningeFolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm
+[debug]: 
+[debug]: 💡  Engine: Llvm
+[debug]: 
+[debug]: 💡  The active log level is: Debug
+[debug]: 
+[debug]: 🕐 Starting test process...
+[debug]: 
+[debug]: 🕑 Prepare test environment...
+[debug]: 
+[debug]: 
+[debug]: ⏳ Create folder structure for tests.
+[debug]: 
+[debug]: 14:15:15 warn: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] ⚠️ [Warning] Target path 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts' already exists. Trying to delete directory, to have a clean state.
+[debug]: 
+[debug]: 14:15:16 warn: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] ⚠️ [Warning] Access to the path 'apax-build' is denied.
+[debug]: 14:15:16 dbug: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] Creating target path 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts'.
+[debug]: 
+[debug]: 14:15:16 dbug: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] Copying src folder from 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib' to 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts'.
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\ColorSensor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\ControlModuleAbstract.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Actuator\ActuatorStates.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Actuator\ActuatorTimeBased.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Actuator\IActuator.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\AxisBase.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\axisTypes.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\itfAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\TO.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\Legacy\Axis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\Legacy\IAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\commandHomeDirect.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\commandMoveRelative.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\itfPosAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\PosAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\commandMoveVelovity.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\commandStop.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\itfSpeedAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\SpeedAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Compressor\IPneumaticCompressor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Compressor\PneumaticCompressor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Encoder\ITimeprovider.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Encoder\TimeBasedEncoder.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Encoder\Timeprovider.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Motor\IMotor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Motor\Motor.st
+[debug]: 
+[debug]: 14:15:16 dbug: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] Copy apax.yml from d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib to d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts.
+[debug]: 
+[debug]: Folder structure created in 1 seconds
+[debug]: 
+[debug]: 14:15:16 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 14:15:16 dbug: ApaxTestDirector.Cli.MultiProjectWorkspaceHandler[0] The directory d:\Git\AxCommunity\axftcmlib-workspace is a workspace project.
+[debug]: 
+[debug]: 14:15:16 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 14:15:16 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 
+[debug]: 🕒 Getting information about tests...
+[debug]: 
+[debug]: 
+[debug]: ⏳ Create apax.yml to generate symbol info.
+[debug]: 
+[debug]: 14:15:17 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 14:15:17 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 👉  apax.yml generation for symbol info finished in 0 seconds
+[debug]: 
+[debug]: ⏳ Starting apax install for symbolInfo
+[debug]: 
+[debug]: Envoking:install tooks: 42sec
+[debug]: 
+[debug]: 👉 apax install output
+[debug]: 
+[debug]: 
+[debug]: 
+[debug]: 
+[debug]: 👉  Apax install for generating symbol-info finished in 42 seconds
+[debug]: 
+[debug]: ⏳ Executing first apax build.
+[debug]: 
+[debug]: Envoking:build tooks: 16sec
+[debug]: 
+[debug]: 👉 apax build output
+[debug]: using targets
+[debug]: ┌─────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                               Values                                                               │
+[debug]: ├─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-llvm-win-x64\\bin\\'   │
+[debug]: │    1    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-mc7plus-win-x64\\bin\\' │
+[debug]: └─────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\1500\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\1500\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\1500\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\1500\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\1500\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\1500\ax-system-datetime.lib --target s7generic --output bin\1500 --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:7:17 'Motor' does not exist or is invalid in current context.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 5 error(s).
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\llvm\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\llvm\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\llvm\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\llvm\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\llvm\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\llvm\ax-system-datetime.lib --target llvm --output bin\llvm --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:14:18 'oStateLess' is not of type MotorFT.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:28:15 'PowerOff' does not exist or is invalid in current context.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:27:15 'PowerOn' does not exist or is invalid in current context.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:21:15 'PowerOn' does not exist or is invalid in current context.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:15:15 'Attach' does not exist or is invalid in current context.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 9 error(s).
+[debug]: 
+[debug]: 
+[debug]: 
+[debug]: ❌apax build for symbolInfo failed!- Verifying signatures...
+[debug]: 
+[debug]: i Skipping signature check for @simatic-ax. No public key provided in apax.yml.
+[debug]: √ Package verification succeeded.
+[debug]: ✘ An error occurred while attempting to run apax-build. Exitcode: 9
+[debug]: 
+[debug]: using targets
+[debug]: ┌─────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                               Values                                                               │
+[debug]: ├─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-llvm-win-x64\\bin\\'   │
+[debug]: │    1    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-mc7plus-win-x64\\bin\\' │
+[debug]: └─────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+[debug]: ─────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\1500\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\1500\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\1500\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\1500\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\1500\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\1500\ax-system-datetime.lib --target s7generic --output bin\1500 --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:7:17 'Motor' does not exist or is invalid in current context.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 5 error(s).
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\llvm\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\llvm\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\llvm\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\llvm\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\llvm\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\llvm\ax-system-datetime.lib --target llvm --output bin\llvm --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:14:18 'oStateLess' is not of type MotorFT.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:28:15 'PowerOff' does not exist or is invalid in current context.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:27:15 'PowerOn' does not exist or is invalid in current context.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:21:15 'PowerOn' does not exist or is invalid in current context.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:15:15 'Attach' does not exist or is invalid in current context.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 9 error(s).
+[debug]: 
+[debug]: 
+[debug]: 
+[debug]: [ERROR]: apax build for symbolInfo failed!- Verifying signatures...
+[debug]: 
+[debug]: i Skipping signature check for @simatic-ax. No public key provided in apax.yml.
+[debug]: V Package verification succeeded.
+[debug]: ? An error occurred while attempting to run apax-build. Exitcode: 9
+[debug]: 
+[debug]: using targets
+[debug]: ����������������������������������������������������������������������������������������������������������������������������������������������Ŀ
+[debug]: � (index) �                                                               Values                                                               �
+[debug]: ����������������������������������������������������������������������������������������������������������������������������������������������Ĵ
+[debug]: �    0    �  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-llvm-win-x64\\bin\\'   �
+[debug]: �    1    � 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-mc7plus-win-x64\\bin\\' �
+[debug]: ������������������������������������������������������������������������������������������������������������������������������������������������
+[debug]: using stc plugins
+[debug]: �������������������������������������������������������������������������������������������������������������������������������������������������Ŀ
+[debug]: � (index) �                                                                Values                                                                 �
+[debug]: �������������������������������������������������������������������������������������������������������������������������������������������������Ĵ
+[debug]: �    0    � 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' �
+[debug]: �    1    �  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  �
+[debug]: ���������������������������������������������������������������������������������������������������������������������������������������������������
+[debug]: using stc plugins
+[debug]: �������������������������������������������������������������������������������������������������������������������������������������������������Ŀ
+[debug]: � (index) �                                                                Values                                                                 �
+[debug]: �������������������������������������������������������������������������������������������������������������������������������������������������Ĵ
+[debug]: �    0    � 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib
+[debug]: [ERROR]: \\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' �
+[debug]: �    1    �  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  �
+[debug]: ���������������������������������������������������������������������������������������������������������������������������������������������������
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\1500\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\1500\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\1500\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\1500\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\1500\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\1500\ax-system-datetime.lib --target s7generic --output bin\1500 --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:7:17 'Motor' does not exist or is invalid in current context.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 5 error(s).
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\llvm\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\llvm\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\llvm\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\llvm\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\llvm\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\llvm\ax-system-datetime.lib --target llvm --output bin\llvm --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:14:18 'oStateLess' is not of type MotorFT.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:36:35 'MakeAxisAbstract' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:36:35 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl.MakeAxisAbstract'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motion\testAxis.st:34:11 'AxisBaseTestImpl' is already in use in the current context.
+[debug]: See:
+[debug]:     d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:34:11 Declaration of 'Simatic.Ax.axftcmlib.Motion.AxisBaseTestImpl'
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:28:15 'PowerOff' does not exist or is invalid in current context.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:27:15 'PowerOn' does not exist or is invalid in current context.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:21:15 'PowerOn' does not exist or is invalid in current context.
+[debug]: [Error]: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test\Motor\testMotor.st:15:15 'Attach' does not exist or is invalid in current context.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 9 error(s).
+[debug]: 
+[debug]: 
+[debug]: i using apax version: 3.3.1
+[debug]: [31m[1mUsage Error[22m[39m: An error occurred while attempting to run apax-test. Exitcode: 2147483647
+[debug]: 
+[debug]: [1m$ [22mapax test [--ignore-scripts] [-e,--engine #0] [-t,--targetIP #0] [-u,--username #0] [--password #0] [-C,--certificate #0] [-p,--playlist #0] [-c,--coverage] [-l,--loglevel #0] [-f,--filter #0]
+[debug]: Exiting compile operation
+[info]: ⚠️⚠️⚠️Test(s) run resulted in error(s)⚠️⚠️⚠️. Please scroll up and look for error(❌) messages.
+[info]: 🏁 Tests run completed
+[info]: 🏃 Tests run initiated using LLVM
+[debug]: Starting test execution for selected tests
+[info]: Running tests...
+[debug]: Creating temp playlist in 'c:\Users\sjuergen\AppData\Roaming\AX Code\User\workspaceStorage\0dfc52b241436e9a1bbdd0fe5cdd5d64\siemens.axunit-vscode\4f35f3b9-576b-471f-a33b-1f499601a22a\playlist.xml'
+[debug]: apax test,-e=llvm,-l=debug
+[debug]: Engine used: LLVM
+[debug]: - Verifying signatures...
+[debug]: 
+[debug]: i Skipping signature check for @simatic-ax. No public key provided in apax.yml.
+[debug]: √ Package verification succeeded.
+[debug]: 🐞[DEBUG]: Args used: --machine-readable,--nologo,--playlist-file,"c:\Users\sjuergen\AppData\Roaming\AX Code\User\workspaceStorage\0dfc52b241436e9a1bbdd0fe5cdd5d64\siemens.axunit-vscode\4f35f3b9-576b-471f-a33b-1f499601a22a\playlist.xml",-i,d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib
+[debug]: 🐞[DEBUG]: Node Version: v18.15.0
+[debug]: Current loglevel: Debug
+[debug]: 👉 Used engine: llvm
+[debug]: 
+[debug]: 👉 Paths set. 
+[debug]: Testprojectdir: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts
+[debug]: Testresultfolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\test-results
+[debug]: EningeFolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm
+[debug]: 
+[debug]: 
+[debug]:     _          _   _       _ _       ____ _____ 
+[debug]:    / \   __  _| | | |_ __ (_) |_    / ___|_   _|
+[debug]:   / _ \  \ \/ / | | | '_ \| | __|___\___ \ | |  
+[debug]:  / ___ \  >  <| |_| | | | | | ||_____|__) || |  
+[debug]: /_/   \_\/_/\_\\___/|_| |_|_|\__|   |____/ |_|  
+[debug]: 
+[debug]: 👉 Paths set. 
+[debug]: Testprojectdir: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts
+[debug]: Testresultfolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\test-results
+[debug]: EningeFolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm
+[debug]: 
+[debug]: 💡  Engine: Llvm
+[debug]: 
+[debug]: 💡  The active log level is: Debug
+[debug]: 
+[debug]: 🕐 Starting test process...
+[debug]: 
+[debug]: 🕑 Prepare test environment...
+[debug]: 
+[debug]: 
+[debug]: ⏳ Create folder structure for tests.
+[debug]: 
+[debug]: 14:20:57 warn: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] ⚠️ [Warning] Target path 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts' already exists. Trying to delete directory, to have a clean state.
+[debug]: 
+[debug]: 14:20:57 warn: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] ⚠️ [Warning] Access to the path 'apax-build' is denied.
+[debug]: 14:20:57 dbug: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] Creating target path 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts'.
+[debug]: 
+[debug]: 14:20:57 dbug: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] Copying src folder from 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib' to 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts'.
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\ColorSensor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\ControlModuleAbstract.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Actuator\ActuatorStates.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Actuator\ActuatorTimeBased.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Actuator\IActuator.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\AxisBase.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\axisTypes.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\itfAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\TO.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\Legacy\Axis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\Legacy\IAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\commandHomeDirect.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\commandMoveRelative.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\itfPosAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\PosAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\commandMoveVelovity.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\commandStop.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\itfSpeedAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\SpeedAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Compressor\IPneumaticCompressor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Compressor\PneumaticCompressor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Encoder\ITimeprovider.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Encoder\TimeBasedEncoder.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Encoder\Timeprovider.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Motor\IMotor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Motor\Motor.st
+[debug]: 
+[debug]: 14:20:57 dbug: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] Copy apax.yml from d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib to d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts.
+[debug]: 
+[debug]: Folder structure created in 0 seconds
+[debug]: 
+[debug]: 14:20:58 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 14:20:58 dbug: ApaxTestDirector.Cli.MultiProjectWorkspaceHandler[0] The directory d:\Git\AxCommunity\axftcmlib-workspace is a workspace project.
+[debug]: 
+[debug]: 14:20:58 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 14:20:58 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 
+[debug]: 🕒 Getting information about tests...
+[debug]: 
+[debug]: 
+[debug]: ⏳ Create apax.yml to generate symbol info.
+[debug]: 
+[debug]: 14:20:58 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 14:20:58 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 👉  apax.yml generation for symbol info finished in 0 seconds
+[debug]: 
+[debug]: ⏳ Starting apax install for symbolInfo
+[debug]: 
+[debug]: Envoking:install tooks: 49sec
+[debug]: 
+[debug]: 👉 apax install output
+[debug]: 
+[debug]: 
+[debug]: 
+[debug]: 
+[debug]: 👉  Apax install for generating symbol-info finished in 49 seconds
+[debug]: 
+[debug]: ⏳ Executing first apax build.
+[debug]: 
+[debug]: Envoking:build tooks: 30sec
+[debug]: 
+[debug]: 👉 apax build output
+[debug]: using targets
+[debug]: ┌─────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                               Values                                                               │
+[debug]: ├─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │  'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-llvm-win-x64\\bin\\'   │
+[debug]: │    1    │ 'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-mc7plus-win-x64\\bin\\' │
+[debug]: └─────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬──────────────────────────────────────────────────────────────────────────────────────────
+[debug]: ─────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\1500\ax-simatic-1500-clocks.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\1500\ax-system-timer.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\1500\ax-axunitst-library.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\1500\ax-system-strings.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\1500\ax-system-math.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\1500\ax-system-datetime.lib --target s7generic --output bin\1500 --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 0 error(s).
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\llvm\ax-simatic-1500-clocks.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\llvm\ax-system-timer.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\llvm\ax-axunitst-library.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\llvm\ax-system-strings.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\llvm\ax-system-math.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\llvm\ax-system-datetime.lib --target llvm --output bin\llvm --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 0 error(s).
+[debug]: 
+[debug]: 👉  apax build to get meta-information finisehd in 30 seconds
+[debug]: 
+[debug]: 🕔 Creating test environment...
+[debug]: 
+[debug]: 
+[debug]: ⏳ Generating axunit.st: -input: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm, -output: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp, -engine: Llvm, -playlist: c:\Users\sjuergen\AppData\Roaming\AX Code\User\workspaceStorage\0dfc52b241436e9a1bbdd0fe5cdd5d64\siemens.axunit-vscode\4f35f3b9-576b-471f-a33b-1f499601a22a\playlist.xml, -filter: , --coverage: False
+[debug]: 
+[debug]: Test meta written to: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp\TestCasesMeta.xml
+[debug]: 
+[debug]: 
+[debug]: Test environment written to: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp\axunit.st
+[debug]: 
+[debug]: 
+[debug]: 👉  Generating our test app finished in 1 seconds
+[debug]: 
+[debug]: 
+[debug]: 🕗 Creating test application...
+[debug]: 
+[debug]: ⏳ Create apax.yml for the test execution.
+[debug]: 
+[debug]: 14:22:19 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 👉  Creating apax.yml for testing finished in 0 seconds
+[debug]: 
+[debug]: ⏳ Start apax build for the test project.
+[debug]: 
+[debug]: Envoking:build tooks: 37sec
+[debug]: 
+[debug]: 
+[debug]: ❌apax build for testing failed!- Verifying signatures...
+[debug]: 
+[debug]: i Skipping signature check for @simatic-ax. No public key provided in apax.yml.
+[debug]: √ Package verification succeeded.
+[debug]: ✘ An error occurred while attempting to run apax-build. Exitcode: 2147483647
+[debug]: 
+[debug]: using targets
+[debug]: ┌─────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                               Values                                                               │
+[debug]: ├─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │  'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-llvm-win-x64\\bin\\'   │
+[debug]: │    1    │ 'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-mc7plus-win-x64\\bin\\' │
+[debug]: └─────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+[debug]: ───────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\1500\ax-simatic-1500-clocks.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\1500\ax-system-timer.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\1500\ax-axunitst-library.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\1500\ax-system-strings.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\1500\ax-system-math.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\1500\ax-system-datetime.lib --target s7generic --output bin\1500 --compile-to app:simatic-ax-axftcmlib-symbolinfogeneration-testingstep-testingstep:0.0.0-placeholder --debug -i D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 0 error(s).
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\llvm\ax-simatic-1500-clocks.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\llvm\ax-system-timer.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\llvm\ax-axunitst-library.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\llvm\ax-system-strings.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\llvm\ax-system-math.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\llvm\ax-system-datetime.lib --target llvm --output bin\llvm --compile-to app:simatic-ax-axftcmlib-symbolinfogeneration-testingstep-testingstep:0.0.0-placeholder --debug -i D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: fail: stc[0]
+[debug]:       Access to the path 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\obj\Simatic.Ax.IO.Input.LRealInput.ReadCyclic.pfc' is denied.
+[debug]: 
+[debug]: 
+[debug]: 
+[debug]: [ERROR]: apax build for testing failed!- Verifying signatures...
+[debug]: 
+[debug]: i Skipping signature check for @simatic-ax. No public key provided in apax.yml.
+[debug]: V Package verification succeeded.
+[debug]: ? An error occurred while attempting to run apax-build. Exitcode: 2147483647
+[debug]: 
+[debug]: using targets
+[debug]: ����������������������������������������������������������������������������������������������������������������������������������������������Ŀ
+[debug]: � (index) �                                                               Values                                                               �
+[debug]: ����������������������������������������������������������������������������������������������������������������������������������������������Ĵ
+[debug]: �    0    �  'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-llvm-win-x64\\bin\\'   �
+[debug]: �    1    � 'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-mc7plus-win-x64\\bin\\' �
+[debug]: ������������������������������������������������������������������������������������������������������������������������������������������������
+[debug]: using stc plugins
+[debug]: �������������������������������������������������������������������������������������������������������������������������������������������������Ŀ
+[debug]: � (index) �                                                                Values                                                                 �
+[debug]: �������������������������������������������������������������������������������������������������������������������������������������������������Ĵ
+[debug]: �    0    � 'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' �
+[debug]: �    1    �  'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  �
+[debug]: ���������������������������������������������������������������������������������������������������������������������������������������������������
+[debug]: using stc plugins
+[debug]: �������������������������������������������������������������������������������������������������������������������������������������������������Ŀ
+[debug]: � (index) �                                                                Values                  
+[debug]: [ERROR]:                                                �
+[debug]: �������������������������������������������������������������������������������������������������������������������������������������������������Ĵ
+[debug]: �    0    � 'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' �
+[debug]: �    1    �  'D:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  �
+[debug]: ���������������������������������������������������������������������������������������������������������������������������������������������������
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\1500\ax-simatic-1500-clocks.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\1500\ax-system-timer.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\1500\ax-axunitst-library.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\1500\ax-system-strings.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\1500\ax-system-math.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\1500\ax-system-datetime.lib --target s7generic --output bin\1500 --compile-to app:simatic-ax-axftcmlib-symbolinfogeneration-testingstep-testingstep:0.0.0-placeholder --debug -i D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 0 error(s).
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\llvm\ax-simatic-1500-clocks.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\llvm\ax-system-timer.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\llvm\ax-axunitst-library.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\llvm\ax-system-strings.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\llvm\ax-system-math.lib --lib D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\llvm\ax-system-datetime.lib --target llvm --output bin\llvm --compile-to app:simatic-ax-axftcmlib-symbolinfogeneration-testingstep-testingstep:0.0.0-placeholder --debug -i D:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: fail: stc[0]
+[debug]:       Access to the path 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\obj\Simatic.Ax.IO.Input.LRealInput.ReadCyclic.pfc' is denied.
+[debug]: 
+[debug]: 
+[debug]: [31m[1mUsage Error[22m[39m: An error occurred while attempting to run apax-test. Exitcode: 2147483647
+[debug]: 
+[debug]: [1m$ [22mapax test [--ignore-scripts] [-e,--engine #0] [-t,--targetIP #0] [-u,--username #0] [--password #0] [-C,--certificate #0] [-p,--playlist #0] [-c,--coverage] [-l,--loglevel #0] [-f,--filter #0]
+[debug]: i using apax version: 3.3.1
+[debug]: Exiting compile operation
+[info]: ⚠️⚠️⚠️Test(s) run resulted in error(s)⚠️⚠️⚠️. Please scroll up and look for error(❌) messages.
+[info]: 🏁 Tests run completed
+[info]: 🏃 Tests run initiated using LLVM
+[debug]: Starting test execution for selected tests
+[info]: Running tests...
+[debug]: Creating temp playlist in 'c:\Users\sjuergen\AppData\Roaming\AX Code\User\workspaceStorage\0dfc52b241436e9a1bbdd0fe5cdd5d64\siemens.axunit-vscode\cafc770e-9e8e-44a3-ac49-dcf351e51dd9\playlist.xml'
+[debug]: apax test,-e=llvm,-l=debug
+[debug]: Engine used: LLVM
+[debug]: - Verifying signatures...
+[debug]: 
+[debug]: i Skipping signature check for @simatic-ax. No public key provided in apax.yml.
+[debug]: √ Package verification succeeded.
+[debug]: 🐞[DEBUG]: Args used: --machine-readable,--nologo,--playlist-file,"c:\Users\sjuergen\AppData\Roaming\AX Code\User\workspaceStorage\0dfc52b241436e9a1bbdd0fe5cdd5d64\siemens.axunit-vscode\cafc770e-9e8e-44a3-ac49-dcf351e51dd9\playlist.xml",-i,d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib
+[debug]: 🐞[DEBUG]: Node Version: v18.15.0
+[debug]: Current loglevel: Debug
+[debug]: 👉 Used engine: llvm
+[debug]: 
+[debug]: 👉 Paths set. 
+[debug]: Testprojectdir: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts
+[debug]: Testresultfolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\test-results
+[debug]: EningeFolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm
+[debug]: 
+[debug]: 
+[debug]:     _          _   _       _ _       ____ _____ 
+[debug]:    / \   __  _| | | |_ __ (_) |_    / ___|_   _|
+[debug]:   / _ \  \ \/ / | | | '_ \| | __|___\___ \ | |  
+[debug]:  / ___ \  >  <| |_| | | | | | ||_____|__) || |  
+[debug]: /_/   \_\/_/\_\\___/|_| |_|_|\__|   |____/ |_|  
+[debug]: 
+[debug]: 👉 Paths set. 
+[debug]: Testprojectdir: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts
+[debug]: Testresultfolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\test-results
+[debug]: EningeFolder: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm
+[debug]: 
+[debug]: 💡  Engine: Llvm
+[debug]: 
+[debug]: 💡  The active log level is: Debug
+[debug]: 
+[debug]: 🕐 Starting test process...
+[debug]: 
+[debug]: 🕑 Prepare test environment...
+[debug]: 
+[debug]: 
+[debug]: ⏳ Create folder structure for tests.
+[debug]: 
+[debug]: 14:28:09 warn: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] ⚠️ [Warning] Target path 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts' already exists. Trying to delete directory, to have a clean state.
+[debug]: 
+[debug]: 14:28:11 warn: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] ⚠️ [Warning] Access to the path 'apax-build' is denied.
+[debug]: 14:28:11 dbug: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] Creating target path 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts'.
+[debug]: 
+[debug]: 14:28:11 dbug: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] Copying src folder from 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib' to 'd:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts'.
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\ColorSensor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\ControlModuleAbstract.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Actuator\ActuatorStates.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Actuator\ActuatorTimeBased.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Actuator\IActuator.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\AxisBase.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\axisTypes.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\itfAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\AxisBase\TO.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\Legacy\Axis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\Legacy\IAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\commandHomeDirect.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\commandMoveRelative.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\itfPosAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\PosAxis\PosAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\commandMoveVelovity.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\commandStop.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\itfSpeedAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Axis\SpeedAxis\SpeedAxis.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Compressor\IPneumaticCompressor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Compressor\PneumaticCompressor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Encoder\ITimeprovider.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Encoder\TimeBasedEncoder.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Encoder\Timeprovider.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Motor\IMotor.st
+[debug]: 
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src\Motor\Motor.st
+[debug]: 
+[debug]: 14:28:11 dbug: ApaxTestDirector.Cli.Steps.TestProjectPreparation[0] Copy apax.yml from d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib to d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts.
+[debug]: 
+[debug]: Folder structure created in 2 seconds
+[debug]: 
+[debug]: 14:28:12 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 14:28:12 dbug: ApaxTestDirector.Cli.MultiProjectWorkspaceHandler[0] The directory d:\Git\AxCommunity\axftcmlib-workspace is a workspace project.
+[debug]: 
+[debug]: 14:28:12 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 14:28:12 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 
+[debug]: 🕒 Getting information about tests...
+[debug]: 
+[debug]: 
+[debug]: ⏳ Create apax.yml to generate symbol info.
+[debug]: 
+[debug]: 14:28:12 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 14:28:12 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 👉  apax.yml generation for symbol info finished in 0 seconds
+[debug]: 
+[debug]: ⏳ Starting apax install for symbolInfo
+[debug]: 
+[debug]: Envoking:install tooks: 43sec
+[debug]: 
+[debug]: 👉 apax install output
+[debug]: 
+[debug]: 
+[debug]: 
+[debug]: 
+[debug]: 👉  Apax install for generating symbol-info finished in 43 seconds
+[debug]: 
+[debug]: ⏳ Executing first apax build.
+[debug]: 
+[debug]: Envoking:build tooks: 24sec
+[debug]: 
+[debug]: 👉 apax build output
+[debug]: using targets
+[debug]: ┌─────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                               Values                                                               │
+[debug]: ├─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-llvm-win-x64\\bin\\'   │
+[debug]: │    1    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-mc7plus-win-x64\\bin\\' │
+[debug]: └─────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\1500\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\1500\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\1500\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\1500\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\1500\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\1500\ax-system-datetime.lib --target s7generic --output bin\1500 --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 0 error(s).
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\llvm\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\llvm\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\llvm\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\llvm\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\llvm\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\llvm\ax-system-datetime.lib --target llvm --output bin\llvm --compile-to lib:simatic-ax-axftcmlib-symbolinfogeneration:0.0.0-placeholder --debug -fskip-code-gen -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 0 error(s).
+[debug]: 
+[debug]: 👉  apax build to get meta-information finisehd in 24 seconds
+[debug]: 
+[debug]: 
+[debug]: 🕔 Creating test environment...
+[debug]: 
+[debug]: 
+[debug]: ⏳ Generating axunit.st: -input: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm, -output: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp, -engine: Llvm, -playlist: c:\Users\sjuergen\AppData\Roaming\AX Code\User\workspaceStorage\0dfc52b241436e9a1bbdd0fe5cdd5d64\siemens.axunit-vscode\cafc770e-9e8e-44a3-ac49-dcf351e51dd9\playlist.xml, -filter: , --coverage: False
+[debug]: 
+[debug]: Test meta written to: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp\TestCasesMeta.xml
+[debug]: 
+[debug]: 
+[debug]: Test environment written to: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp\axunit.st
+[debug]: 
+[debug]: 
+[debug]: 👉  Generating our test app finished in 0 seconds
+[debug]: 
+[debug]: 
+[debug]: 🕗 Creating test application...
+[debug]: 
+[debug]: ⏳ Create apax.yml for the test execution.
+[debug]: 
+[debug]: 14:29:20 dbug: ApaxTestDirector.Cli.Yml.ApaxYmlReader[0] The apax.yml file has been parsed.
+[debug]: 
+[debug]: 👉  Creating apax.yml for testing finished in 0 seconds
+[debug]: 
+[debug]: ⏳ Start apax build for the test project.
+[debug]: 
+[debug]: Envoking:build tooks: 44sec
+[debug]: 
+[debug]: 👉 apax build output
+[debug]: using targets
+[debug]: ┌─────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                               Values                                                               │
+[debug]: ├─────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-llvm-win-x64\\bin\\'   │
+[debug]: │    1    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\target-mc7plus-win-x64\\bin\\' │
+[debug]: └─────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: using stc plugins
+[debug]: ┌─────────┬───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+[debug]: │ (index) │                                                                Values                                                                 │
+[debug]: ├─────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+[debug]: │    0    │ 'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\simatic-pragma-stc-plugin\\bin\\' │
+[debug]: │    1    │  'd:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\bin\\axunit-artifacts\\.apax\\packages\\@ax\\st-resources.stc-plugin\\bin\\'  │
+[debug]: └─────────┴───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\1500\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\1500\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\1500\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\1500\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\1500\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\1500\ax-system-datetime.lib --target s7generic --output bin\1500 --compile-to app:simatic-ax-axftcmlib-symbolinfogeneration-testingstep:0.0.0-placeholder --debug -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 0 error(s).
+[debug]: stc --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\src --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\simple-control-modules\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\io\src\ --input d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@simatic-ax\commands\src\ --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\simatic-1500-clocks\bin\llvm\ax-simatic-1500-clocks.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-timer\bin\llvm\ax-system-timer.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\axunitst-library\bin\llvm\ax-axunitst-library.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-strings\bin\llvm\ax-system-strings.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-math\bin\llvm\ax-system-math.lib --lib d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\.apax\packages\@ax\system-datetime\bin\llvm\ax-system-datetime.lib --target llvm --output bin\llvm --compile-to app:simatic-ax-axftcmlib-symbolinfogeneration-testingstep:0.0.0-placeholder --debug -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\test -i d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\tmp
+[debug]: AX Structured Text (ST) compiler V7.0.52.28545.
+[debug]: info: stc[0]
+[debug]:       Compile finished with 0 error(s).
+[debug]: 
+[debug]: 
+[debug]: 👉  apax build for our test app finished in 104 seconds
+[debug]: 
+[debug]: 
+[debug]: ⏳ Generating the llvm build native.
+[debug]: 
+[debug]: 👉 Generating llvm build native output
+[debug]: 
+[debug]: 
+[debug]: Envoking:compile-app d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm\simatic-ax-axftcmlib-symbolinfogeneration-testingstep.app d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm\llvm_app.c -o d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm\tests.exe tooks: 30sec
+[debug]: 
+[debug]: Build test.exe
+[debug]: compile-app called with
+[debug]:    profile: false
+[debug]:    app: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm\simatic-ax-axftcmlib-symbolinfogeneration-testingstep.app
+[debug]:    additional arguments: d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm\llvm_app.c,-o,d:\Git\AxCommunity\axftcmlib-workspace\axftcmlib\bin\axunit-artifacts\bin\llvm\tests.exe
+[debug]: unpacking to folder: C:\Users\sjuergen\AppData\Local\Temp\ax-app-extractedfoUieB
+[debug]: compiling to native
+[debug]: 
+[debug]: 👉  Generating llvm build native finished in 30 seconds
+[debug]: 
+[debug]: 🕙 Executing the tests...
+[debug]: 
+[debug]: {"testResults":[{"testCase":11,"status":"passed","name":"Simatic.Ax.axftcmlib.MyColorSensorTest.TestDetectionUnknown_Expect_True","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":12,"status":"passed","name":"Simatic.Ax.axftcmlib.MyColorSensorTest.TestDetectionWhite_Expect_True","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":10,"status":"passed","name":"Simatic.Ax.axftcmlib.MyColorSensorTest.TestDetectionRed_Expect_True","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":9,"status":"passed","name":"Simatic.Ax.axftcmlib.MyColorSensorTest.TestDetectionBlue_Expect_True","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":14,"status":"passed","name":"Simatic.Ax.axftcmlib.MyCompressorTest.TestTurnCompressorOn_Expect_state_is_On","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":13,"status":"passed","name":"Simatic.Ax.axftcmlib.MyCompressorTest.TestTurnCompressorOff_Expect_state_is_Off","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":16,"status":"passed","name":"Simatic.Ax.axftcmlib.MyCylinderTest.TestTurnPneumaticCylinderPush_Expect_state_is_On","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":17,"status":"passed","name":"Simatic.Ax.axftcmlib.MyCylinderTest.TestTurnPneumaticCylinderRetract_Expect_state_is_Off","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":18,"status":"passed","name":"Simatic.Ax.axftcmlib.MyCylinderTest.TestZylinderNotAsigned_Expected_ErrorFound_is_True","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":15,"status":"passed","name":"Simatic.Ax.axftcmlib.MyCylinderTest.TestPneumaticCylinderError_Expected_ErrorFound_TRUE","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":1,"status":"passed","name":"Simatic.Ax.axftcmlib.Motion.TestAxis.PowerOn_Leads_To_Powered_Axis","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":0,"status":"passed","name":"Simatic.Ax.axftcmlib.Motion.TestAxis.PowerOff_Leads_To_Off_Powered_Axis","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":6,"status":"passed","name":"Simatic.Ax.axftcmlib.Motion.TestSpeedAxis.MoveVelocity_WithoutPower_LeadsToAnError","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":7,"status":"passed","name":"Simatic.Ax.axftcmlib.Motion.TestSpeedAxis.MoveVelocity_Withpower_StartsAxis","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":8,"status":"passed","name":"Simatic.Ax.axftcmlib.Motion.TestSpeedAxis.StopARunningAxis","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":5,"status":"passed","name":"Simatic.Ax.axftcmlib.Motion.TestMotor.StartMotorPos","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":4,"status":"failed","name":"Simatic.Ax.axftcmlib.Motion.TestMotor.StartMotorNeg","parameters":"","message":"Expected false, but found true","assertLocation":{"SourceName":"d:\\Git\\AxCommunity\\axftcmlib-workspace\\axftcmlib\\test\\Motor\\testMotor.st","StartLine":36}},{"testCase":3,"status":"passed","name":"Simatic.Ax.axftcmlib.Motion.testCommandHome.CommandHome_To_100_Set_Position_to_100","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}},{"testCase":2,"status":"passed","name":"Simatic.Ax.axftcmlib.Motion.testCommandHome.An_running_Axis_cant_be_homed","parameters":"","message":"","assertLocation":{"SourceName":"","StartLine":-1}}]}
+[debug]: 👉  Executing tests finished in 4 seconds
+[debug]: Copying d:\Git\AxCommunity\axftcmlib-workspace\TestResult.xml
+[debug]: 
+[debug]: 
+[debug]: 🕛 Testing finished in 211 seconds
+[debug]: 
+[debug]: 
+[debug]: ❗️ At least 1 failing test has been found! ❗️
+[debug]: 
+[debug]: i using apax version: 3.3.1
+[debug]: [31m[1mUsage Error[22m[39m: An error occurred while attempting to run apax-test. Exitcode: 255
+[debug]: 
+[debug]: [1m$ [22mapax test [--ignore-scripts] [-e,--engine #0] [-t,--targetIP #0] [-u,--username #0] [--password #0] [-C,--certificate #0] [-p,--playlist #0] [-c,--coverage] [-l,--loglevel #0] [-f,--filter #0]
+[debug]: Exiting compile operation
+[info]: 🏁 Tests run completed
