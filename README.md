@@ -60,7 +60,6 @@ title: ActuatorTimeBased
 ---
 classDiagram
     ControlModuleAbstract <|-- ActuatorTimeBased
-    ActuatorTimeBased --* BinOutput
     class ControlModuleAbstract{
         +WORD GetErrorStatus()
     }
