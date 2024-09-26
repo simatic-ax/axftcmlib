@@ -4,10 +4,10 @@ USING Simatic.Ax.Io.Output;
 
 NAMESPACE Simatic.Ax.axftcmlib
     CLASS ActuatorTimeBased
-        EXTENDS ControlModuleAbstract
+        EXTENDS ExecuteControlModuleAbstract
         IMPLEMENTS IActuator
         VAR PUBLIC
-            ControlPush : IBinOutput;
+            QControl : IBinOutput;
             OnDuration : TIME;
         END_VAR
         VAR
@@ -20,27 +20,27 @@ NAMESPACE Simatic.Ax.axftcmlib
         END_METHOD
 
         METHOD PROTECTED OVERRIDE _executeCustom
-            IF (ControlPush = NULL) THEN 
+            IF (QControl = NULL) THEN 
                 THIS.SetError(WORD#16#8101);
                 RETURN;
             ELSE
                 THIS.SetError(FALSE);
             END_IF;
-            _tonOnDuration(signal := ControlPush.IsOn(), Duration := OnDuration);
+            _tonOnDuration(signal := QControl.IsOn(), Duration := OnDuration);
             CASE _state OF
                 ActuatorState#Retracted:
                     // IF () 
-                    ControlPush.SetOff();
+                    QControl.SetOff();
                 ActuatorState#Activating:
-                    ControlPush.SetOn();
+                    QControl.SetOn();
                     _state := ActuatorState#Activated;
                 ActuatorState#Activated:
                     IF (_tonOnDuration.output) THEN
                         _state := ActuatorState#Retracting;
-                        ControlPush.SetOff();
+                        QControl.SetOff();
                     END_IF;
                 ActuatorState#Retracting:
-                    ControlPush.SetOff();
+                    QControl.SetOff();
                     _state := ActuatorState#Retracted;
                     THIS.SetDone();
             END_CASE;
@@ -48,16 +48,8 @@ NAMESPACE Simatic.Ax.axftcmlib
 
         METHOD PUBLIC Start : itfCommand
             THIS.InitState();
-            THIS.Enable();
-            Start := THIS;
-        END_METHOD
-
-        METHOD PUBLIC Enable
             _state := ActuatorState#Activating;
-        END_METHOD
-
-        METHOD PUBLIC Disable
-            _state := ActuatorState#Retracted;
+            Start := THIS;
         END_METHOD
 
         METHOD PUBLIC GetState : ActuatorState

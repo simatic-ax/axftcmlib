@@ -3,7 +3,7 @@ USING Simatic.Ax.Commands;
 NAMESPACE Simatic.Ax.axftcmlib
     ///Provides basic functionality for programming on a plc
     /// has acces to the protected Methods and "Contructors" of the classes
-    CLASS ABSTRACT ExecuteControlModuleAbstract EXTENDS ExecuteCommand
+    CLASS ABSTRACT EnablingControlModuleAbstract EXTENDS Command
         VAR PUBLIC
             
         END_VAR
@@ -23,16 +23,6 @@ NAMESPACE Simatic.Ax.axftcmlib
             ;
         END_METHOD
 
-        METHOD PROTECTED OVERRIDE SetExecute
-            VAR_INPUT
-                exec : BOOL;
-            END_VAR
-            _exec := exec;
-            IF (_exec) THEN
-                THIS.InitState();
-            END_IF;
-            ;
-        END_METHOD
 
         METHOD PROTECTED ABSTRACT _executeCustom
             

@@ -32,32 +32,66 @@ Simatic.Ax.axftcmlib
 
 ## Classes
 
-### Class PneumaticCylinder
+## ControlModuleAbstract
 
-PneumaticCylinder (*Note: Needs an active compressor to function with the model)
+This is a base class for all control modules
+
+```mermaid
+---
+title: ControlModuleAbstract
+---
+classDiagram
+    ExecuteCommand <|-- ControlModuleAbstract
+    class ControlModuleAbstract{
+        +WORD GetErrorStatus()
+    }
+    class ExecuteCommand{
+        +BOOL Busy()
+        +BOOL Done()
+        +BOOL Error()
+        +WORD ErrorID()
+    }
+```
+
+### Class ActuatorTimeBased
+
+```mermaid
+---
+title: ActuatorTimeBased
+---
+classDiagram
+    ControlModuleAbstract <|-- ActuatorTimeBased
+    class ControlModuleAbstract{
+        +WORD GetErrorStatus()
+    }
+    class ActuatorTimeBased{
+        +QControl : IBinOutput;
+        +OnDuration : TIME;
+        +itfCommand Start()
+    }
+```
 
 |Method|Description|
 |-|-|
-|PneumaticCylinderPush()|Cylinder pushes|
-|PneumaticCylinderRetract()|Cylinder retracts|
-|Start()| Activates StateMachine and executes it once|
+|Start()|Actuator will be activated for the time `OnDuration`|
 
 <details><summary>Example for the class Cylinder ... </summary>
   
 ```iec-st
   VAR_GLOBAL
-      SortingLineValveEjector : BOOL; //Actual PLC-variable
-      CylinderOutputWriter : BinOutput; //Used to write on the PLC-variable
-      CylinderClassInstance : PneumaticCylinder := (CoilPushing := CylinderOutputWriter); //Class instance initialized with the needed OutputWriter
-      EnableCylinder : BOOL;
+      Actuator : ActuatorTimeBased := (QControl := Q_Actuator) ;
+      Q_Actuator : BinOutput;
+      DQ : BOOL;
   END_VAR
 
   PROGRAM
-    CylinderClassInstance.RunCyclic(); //Class Setup-> needs to be called in every cycle
-    IF (EnableCylinder) THEN
-      CylinderClassInstance.Start(); // start pushing the cylinder for a configured time
+    cmd := Actuator.Start();
+    IF NOT(cmd.Busy()) THEN 
+      IF (cmd.Done()) THEN
+        ; // your code
+      END_IF;
     END_IF;
-    CylinderOutputWriter.WriteCyclic(Q => SortingLineValveEjector); //Writing on the Actual PLC-variable ->needs to be called in every cycle
+    DQ := Q_Actuator.Q();  // True if actuator is active
   END_PROGRAM
   
 ```
