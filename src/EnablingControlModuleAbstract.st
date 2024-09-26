@@ -3,7 +3,7 @@ USING Simatic.Ax.Commands;
 NAMESPACE Simatic.Ax.axftcmlib
     ///Provides basic functionality for programming on a plc
     /// has acces to the protected Methods and "Contructors" of the classes
-    CLASS ABSTRACT EnableControlModuleAbstract EXTENDS Command
+    CLASS ABSTRACT EnablingControlModuleAbstract EXTENDS Command
         VAR PUBLIC
             
         END_VAR
