@@ -76,7 +76,7 @@ classDiagram
 
 |Method|Description|
 |-|-|
-|Start()|Actuator will push for the time `OnDuration`|
+|Start()|Actuator will be activated for the time `OnDuration`|
 
 <details><summary>Example for the class Cylinder ... </summary>
   
