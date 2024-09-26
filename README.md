@@ -68,9 +68,6 @@ classDiagram
         +QControl : IBinOutput;
         +OnDuration : TIME;
         +itfCommand Start()
-        +BOOL Done()
-        +BOOL Error()
-        +WORD ErrorID()
     }
 ```
 
