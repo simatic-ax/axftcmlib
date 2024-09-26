@@ -4,7 +4,7 @@ USING Simatic.Ax.Io.Output;
 
 NAMESPACE Simatic.Ax.axftcmlib
     CLASS ActuatorTimeBased
-        EXTENDS ControlModuleAbstract
+        EXTENDS ExecuteControlModuleAbstract
         IMPLEMENTS IActuator
         VAR PUBLIC
             QControl : IBinOutput;
