@@ -13,7 +13,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         VAR PUBLIC
             Velocity : LReal  := LReal#100.0;
             Direction : Direction := Direction#PositiveDirection;
-            Motor : IMotor;
+            Motor : IMotorBiDiretional;
         END_VAR        
         VAR PROTECTED
             _isRuning : BOOL;

@@ -6,9 +6,8 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
     ///Class for creating a basic Motor 
     /// It supports two directions 
     /// It is used to power the axis
-    CLASS MotorFT IMPLEMENTS IMotor
+    CLASS MotorFT EXTENDS MotorUniDirectional IMPLEMENTS IMotorBiDiretional
         VAR PUBLIC
-            Forward : IBinOutput;
             Reverse : IBinOutput;
         END_VAR
         VAR PROTECTED
@@ -29,7 +28,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             ;
         END_METHOD
         ///Stops every movement of the Motor
-        METHOD PUBLIC Halt
+        METHOD PUBLIC OVERRIDE Halt
             Reverse.SetOff();
             Forward.SetOff();
             ;
