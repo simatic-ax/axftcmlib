@@ -40,4 +40,6 @@ dependencies:
   "@ax/system-timer": 7.0.17
   "@simatic-ax/commands": 1.0.0
   "@simatic-ax/statemachine": ^6.0.1
+  "@simatic-ax/types": ^1.0.0
+  "@ax/simatic-1500-technology-objects": ^0.1.52
 installStrategy: overridable
