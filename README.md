@@ -7,11 +7,11 @@ This library was created for the `Fischertechnik Factorysimulation 24V`. It cont
 In the current state only the `SortingLine` is finished and can be fully implemented using this library.
 This library includes the following classes:
 
-- Cylinder
+- Actuator
 - Compressor
 - ColorSensor
 - Axis
-- Encoder
+- TimeBasedEncoder
 - Motor
 
 Those classes can be used for the calculation of the position based on the time.
@@ -98,31 +98,34 @@ classDiagram
 
 </details>
 
-### Class PneumaticCompressor
+### Class Compressor
 
 |Method|Description|
 |-|-|
-|PneumaticCompressorOn()|Turns the compressor on|
-|PneumaticCompressorOff()|Turns the compressor off|
+|Enable()|Turns the compressor on|
+|Disable()|Turns the compressor off|
 
 <details><summary>Example for the class Compressor ... </summary>
   
 ```iec-st
-
   VAR_GLOBAL
-    SortingLineCompressor : BOOL; //Actual PLC-variable
-    CompressorOutputWriter : BinOutput; //Used to write on the PLC-variable
-    CompressorClassInstance : PneumaticCompressor := (ActiveCompressor := CompressorOutputWriter); // Class instance initialized with the needed OutputWriter
-    EnableCCompressor : BOOL;
+      Compressor : Compressor := (QControl := Q_Compressor) ;
+      Q_Compressor : BinOutput;
+      DQ : BOOL;
   END_VAR
 
   PROGRAM
-    IF (EnableCCompressor) THEN
-      CompressorClassInstance.PneumaticCompressorOn(); //Turning on the compressor -> Call only when needed (Off works the same way)
+    cmd := Compressor.Enable();
+    IF NOT(cmd.Busy()) THEN 
+      IF (cmd.Done()) THEN
+        ; // your code
+      END_IF;
     END_IF;
-    CompressorOutputWriter.WriteCyclic(Q => SortingLineCompressor);//Writing on the Actual PLC-variable ->needs to be called in every cycle
+    DQ := Q_Compressor.Q();  // True if compressor is active
+    cmd := Compressor.Disable();
+    DQ := Q_Compressor.Q();  // returns False
   END_PROGRAM
-```
+  
 
 </details>
 
