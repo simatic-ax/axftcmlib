@@ -1,3 +1,4 @@
+USING Simatic.Ax.IO.Input;
 USING Simatic.Ax.Commands;
 
 NAMESPACE Simatic.Ax.axftcmlib.Motion
@@ -25,6 +26,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             _commandMoveRelative : commandMoveRelative;
             _commandMoveAbsolute : commandMoveAbsolute;
             _commandHomeDirect : commandHomeDirect;
+            _commandActiveHoming : commandActiveHoming;
         END_VAR
 
         METHOD PROTECTED OVERRIDE MakeAxisAbstract
@@ -54,7 +56,15 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 Position : LREAL;
             END_VAR
             HomeDirect := _commandHomeDirect.Start(AxisRef := _PosAxisRef, Position := Position);
-            
+        END_METHOD
+
+        METHOD PUBLIC ActiveHoming : itfCommand
+            VAR_INPUT
+                Position : LREAL;
+                Direction : Direction;
+                RefSensor : IBinSignal;
+            END_VAR
+            ActiveHoming := _commandActiveHoming.Start(AxisRef := _PosAxisRef, Direction := Direction, Position := Position, RefSensor := RefSensor);
         END_METHOD
     END_CLASS
 

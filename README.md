@@ -1,6 +1,9 @@
 
 # @simatic-ax.axftcmlib
 
+![GitHub branch status](https://img.shields.io/github/checks-status/sjuergen/https%3A%2F%2Fgithub.com%2Fsimatic-ax%2Faxftcmlib/main)
+
+
 ## Description
 
 This library was created for the `Fischertechnik Factorysimulation 24V`. It contains classes for the basic elements of this Model.
@@ -32,7 +35,7 @@ Simatic.Ax.axftcmlib
 
 ## Classes
 
-## ControlModuleAbstract
+### ControlModuleAbstract
 
 This is a base class for all control modules
 
@@ -177,9 +180,51 @@ classDiagram
 
 </details>
 
-### Class Axis
+## Axis
 
-The Axis consists of a motor and an Encoder
+This Axis concept has the same look and feel like the Motion Control Library in Siamtic AX. It is designed for Fischertechnik Models whre just a simple On/Off-Motor is used.
+
+### Class Diagram 
+
+```mermaid
+classDiagram  
+  class itfAxis {
+    +PowerOn()
+    +PowerOff()
+  }
+  class AxisBase {  
+    <<abstract>> 
+    + Attach()
+    + IsAttached()
+    + TO_Axis
+  }  
+  class SpeedAxis {  
+    +MoveVelocity()
+    +TO_SpeedAxis
+  }  
+  class PosAxis {  
+    +MoveRelative()
+    +MoveAbsolute()
+    +TO_PosAxis
+  }  
+
+  AxisBase <|-- SpeedAxis
+  SpeedAxis <|-- PosAxis    
+  itfAxis <|-- AxisBase    
+  TO_Axis <|-- TO_SpeedAxis  
+  TO_SpeedAxis <|-- TO_PosAxis  
+  AxisBase --> TO_Axis
+  SpeedAxis --> TO_SpeedAxis
+  PosAxis --> TO_PosAxis
+  SpeedAxis --|> itfSpeedAxis
+  PosAxis --|> itfPosAxis
+```
+
+### SpeedAxis
+
+### PosAxis
+
+### MotorBiDirectional
 
 <details><summary>Motor ... </summary>
   
@@ -241,50 +286,6 @@ If you haven't a hardware encoder for the Axis, then you can simulate this hardw
     TimebasedEncoderForAxis.Evaluate(); //Checking the position every cycle -> must be called every cycle
     TimeProviderForAxis.Evaluate();    //Checking the cycle time -> must be called every cycle
    //Axis uses this information for the monitoring of the current position
-  END_PROGRAM
-
-```
-
-</details>
-
-|Method|Description|
-|-|-|
-|RunCyclic()| Execute the cyclic evaluation of the axis|
-|MoveVelocity(Velocity : LREAL, direction : Direction)| moves the axis with given speed into certain direction until Halt() is called|
-|MoveRelative(velocity : LREAL, distance : LINT) : BOOL|moves the axis for a distance based on the current position|
-|MoveAbsolute(velocity : LREAL, position : LINT) : BOOL|moves the axis based on a default point -> Axis needs to be homed|
-|Homing(velocity : LREAL, direction : Direction) : BOOL|moves the axis into its homing position|
-|Homing(Position : LINT) : BOOL| homes the axes without movement -> position is set to given value|
-|Halt()|Stops all movement|
-|GetPlcOpenState() : PlcOpenState | Returns current status of axis: Ready, busy, done, error|
-|IsRUnning() : BOOL| Checks, if the  axis is currently moving|
-
-<details><summary>Example for the class Axis ... </summary>
-  
-```iec-st
-
-  VAR_GLOBAL
-    SortingLineMotor : BOOL; //Actual PLC-variable
-    MotorOutputWriterForward : BinOutput; //Used to write on the PLC-variable
-    MotorOutputWriterReverse : BinOutput; //Used to write on the PLC-variable
-    MotorClassInstance : MotorFT := (Forward := MotorOutputWriterForward, Reverse := MotorOutputWriterReverse ); //Class instance initialized with the needed OutputWriter
-  
-    TimeProviderForAxis : TimeProvider; //Class instance
-    TimebasedEncoderForAxis         : TimeBasedEncoder  := (TimeProvider := TimeProviderForAxis, EncoderAxis := ConveyorbeltForSortingLine, Velocity := 1.0); //Class instance
-
-    AxisReferenceSwitch  : BinSignal;
-    ConveyorbeltForSortingLine : Axis := (Motor :=  MotorForAxis, Encoder := TimebasedEncoderForAxis, ReferenceSwitch := AxisReferenceswitch);
-  END_VAR
-
-  PROGRAM
-    TimebasedEncoderForAxis.Evaluate(); //Checking the position every cycle -> must be called every cycle
-    TimeProviderForAxis.Evaluate();    //Checking the cycle time -> must be called every cycle
-  
-    ConveyorbeltForSortingLine.RunCyclic(); //Must be called every cycle
-    ConveyorbeltForSortingLine.Homing(Position := 0);
-    ConveyorbeltForSortingLine.MoveAbsolute(Velocity := 1.0, Position := 4000); 
-
-     MotorForwardOutputWriter.WriteCyclic(Q => SortingLineMotorForConveyor); // Write output signals 
   END_PROGRAM
 
 ```
