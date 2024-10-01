@@ -39,6 +39,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             END_IF;
             Equal(expected := TRUE, actual := toAxis.IsRunning());
 
+            // set the encoder position manually to 100
             encoder.SetValue(100);
 
             Equal(expected := FALSE, actual := command.Done());
