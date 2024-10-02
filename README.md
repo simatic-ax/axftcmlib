@@ -3,7 +3,6 @@
 
 ![GitHub branch status](https://img.shields.io/github/checks-status/sjuergen/https%3A%2F%2Fgithub.com%2Fsimatic-ax%2Faxftcmlib/main)
 
-
 ## Description
 
 This library was created for the `Fischertechnik Factorysimulation 24V`. It contains classes for the basic elements of this Model.
@@ -184,7 +183,7 @@ classDiagram
 
 This Axis concept has the same look and feel like the Motion Control Library in Siamtic AX. It is designed for Fischertechnik Models whre just a simple On/Off-Motor is used.
 
-### Class Diagram 
+### Class Diagram
 
 ```mermaid
 classDiagram  
