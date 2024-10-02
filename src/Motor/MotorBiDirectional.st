@@ -6,11 +6,11 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
     ///Class for creating a basic Motor 
     /// It supports two directions 
     /// It is used to power the axis
-    CLASS MotorFT
+    CLASS MotorBiDirectional
         IMPLEMENTS IMotorBiDiretional
         VAR PUBLIC
-            Forward : IBinOutput;
-            Reverse : IBinOutput;
+            QForward : IBinOutput;
+            QReverse : IBinOutput;
         END_VAR
         VAR PROTECTED
         END_VAR
@@ -22,18 +22,18 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 direction : Direction;
             END_VAR
             IF (direction = Direction#PositiveDirection) THEN
-                IF (Forward <> NULL) THEN
-                    Forward.SetOn();
+                IF (QForward <> NULL) THEN
+                    QForward.SetOn();
                 END_IF;
-                IF (Reverse <> NULL) THEN
-                    Reverse.SetOff();
+                IF (QReverse <> NULL) THEN
+                    QReverse.SetOff();
                 END_IF;
             ELSE
-                IF (Forward <> NULL) THEN
-                    Forward.SetOff();
+                IF (QForward <> NULL) THEN
+                    QForward.SetOff();
                 END_IF;
-                IF (Reverse <> NULL) THEN
-                    Reverse.SetOn();
+                IF (QReverse <> NULL) THEN
+                    QReverse.SetOn();
                 END_IF;
             END_IF;
             ;
@@ -41,11 +41,11 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         ///Stops every movement of the Motor
 
         METHOD PUBLIC Halt
-              IF (Forward <> NULL) THEN
-                    Forward.SetOff();
+              IF (QForward <> NULL) THEN
+                    QForward.SetOff();
                 END_IF;
-                IF (Reverse <> NULL) THEN
-                    Reverse.SetOff();
+                IF (QReverse <> NULL) THEN
+                    QReverse.SetOff();
                 END_IF;
             ;
         END_METHOD

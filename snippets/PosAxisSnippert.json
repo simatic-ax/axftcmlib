@@ -1,0 +1,21 @@
+{
+    "NamespaceSupport": {
+    "scope": "st",
+    "prefix": ["Create a temlate for a PosAxis"],
+    "body": [
+        "$0_DQ_MFwd AT %Q$1.$2 : BOOL;",
+        "$0_DQ_MRvs AT %Q$3.$4 : BOOL;",
+        "$0_Q_MFwd : BinOutput;",
+        "$0_Q_MRvs : BinOutput;",
+        "$0_Motor : MotorBiDirectional := (QForward := $0_Q_MFwd, QReverse := $0_Q_MRvs);",
+        "$0_To_Axis : TO_PosAxis := (Motor := $0_Motor, Encoder := $0_timeBasedEncoder);",
+        "$0_Axis : PosAxis;",
+        "$0_TimeProvider : TimeProvider;",
+        "$0_TimeBasedEncoder : TimeBasedEncoder := (",
+            "Velocity := 0.065,",
+            "TO_Axis := REF($0_To_Axis),",
+            "TimeProvider := $0_TimeProvider);"
+    ],
+    "description": "Creates an namespace template"
+    }    
+}

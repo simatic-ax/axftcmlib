@@ -25,7 +25,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         END_METHOD
 
         METHOD PROTECTED OVERRIDE Execute
-            IF (NOT _AxisRef^.isPowerdOn) THEN
+            IF (NOT _AxisRef^.IsPoweredOn()) THEN
                 THIS.SetError(WORD#16#8001);
             ELSE
                 ;
@@ -36,7 +36,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             VAR_INPUT
                 exec : BOOL;
             END_VAR
-            IF (NOT _AxisRef^.isPowerdOn) THEN
+            IF (NOT _AxisRef^.IsPoweredOn()) THEN
                 THIS.SetError(WORD#16#8001);
             ELSE
                 _AxisRef^.Run(TRUE);

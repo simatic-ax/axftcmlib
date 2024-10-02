@@ -16,7 +16,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             cmdHomeDirect : commandActiveHoming; 
             encoder : MockEncoder;
             RefSensor : BinSignal;
-            M1 : MotorFT;
+            M1 : MotorBiDirectional;
         END_VAR
         
         {TestSetup}

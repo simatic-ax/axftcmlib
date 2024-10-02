@@ -14,7 +14,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             moveRelativeStateLess : commandMoveRelative;
             cmd : itfCommand;
             encoder : MockEncoder;
-            motor : MotorFT;
+            motor : MotorBiDirectional;
             qNeg : BinOutput;
             qPos : BinOutput;
         END_VAR
@@ -23,15 +23,15 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         METHOD PUBLIC TestSetup
             to_pos := to_pos_Stateless;
             moveRelative := moveRelativeStateLess;    
-            motor.Forward := qPos;
-            motor.Reverse := qNeg;
+            motor.QForward := qPos;
+            motor.QReverse := qNeg;
             to_pos.Motor := motor;
             to_pos.Encoder := encoder;
         END_METHOD
 
         {Test}
         METHOD PUBLIC Start_not_homed_axis_returns_error
-            to_pos.isPowerdOn := TRUE;
+            to_pos.PowerOn();
             cmd := moveRelative.Start(AxisRef := REF(to_pos), Distance := 100);
             Equal(expected := TRUE, actual := cmd.Error());
             Equal(expected := WORD#16#8003, actual := cmd.ErrorID());
@@ -43,7 +43,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
 
         {Test}
         METHOD PUBLIC Start_Homed_Axis_with_Distance_100_returns_busy
-            to_pos.isPowerdOn := TRUE;
+            to_pos.PowerOn();
             to_pos.SetPosition(0);
             cmd := moveRelative.Start(AxisRef := REF(to_pos), distance := 100);
             Equal(expected := TRUE, actual := cmd.Busy());

@@ -37,7 +37,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             IF NOT(_exec) THEN
                 RETURN;
             END_IF;
-            IF (NOT _AxisRef^.isPowerdOn) THEN
+            IF (NOT _AxisRef^.IsPoweredOn()) THEN
                 THIS.SetError(WORD#16#8001);
             ELSE
                 _AxisRef^.Run(TRUE);
@@ -63,7 +63,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                     THIS.SetError(WORD#16#8004);
                     RETURN;
                 END_IF;
-                IF (NOT _AxisRef^.isPowerdOn) THEN
+                IF (NOT _AxisRef^.IsPoweredOn()) THEN
                     THIS.SetError(WORD#16#8001);
                 ELSIF (_AxisRef^.IsRunning()) THEN
                     THIS.SetError(WORD#16#8002); // Can not be homed because axis is not stillstanding

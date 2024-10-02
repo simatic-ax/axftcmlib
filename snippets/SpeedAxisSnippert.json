@@ -1,0 +1,16 @@
+{
+    "NamespaceSupport": {
+    "scope": "st",
+    "prefix": ["Create a temlate for a Speedaxis"],
+    "body": [
+        "$0_DQ_MFwd AT %Q$1.$2 : BOOL;",
+        "$0_DQ_MRvs AT %Q$3.$4 : BOOL;",
+        "$0_Q_MFwd : BinOutput;",
+        "$0_Q_MRvs : BinOutput;",
+        "$0_Motor : MotorBiDirectional := (QForward := $0_Q_MFwd, QReverse := $0_Q_MRvs);",
+        "$0_To_Axis : TO_SppedAxis := (Motor := $0_Motor);",
+        "$0_Axis : SpeedAxis;"
+    ],
+    "description": "Creates an namespace template"
+    }    
+}

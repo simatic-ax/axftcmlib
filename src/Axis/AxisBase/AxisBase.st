@@ -21,11 +21,11 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         END_METHOD
         
         METHOD PUBLIC PowerOn
-            _AxisRef^.isPowerdOn := TRUE; 
+            _AxisRef^.PowerOn();
         END_METHOD
 
         METHOD PUBLIC PowerOff
-            _AxisRef^.isPowerdOn := FALSE; 
+            _AxisRef^.PowerOff(); 
         END_METHOD
 
     END_CLASS

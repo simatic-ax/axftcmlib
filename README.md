@@ -3,7 +3,6 @@
 
 ![GitHub branch status](https://img.shields.io/github/checks-status/sjuergen/https%3A%2F%2Fgithub.com%2Fsimatic-ax%2Faxftcmlib/main)
 
-
 ## Description
 
 This library was created for the `Fischertechnik Factorysimulation 24V`. It contains classes for the basic elements of this Model.
@@ -74,9 +73,9 @@ classDiagram
     }
 ```
 
-|Method|Description|
-|-|-|
-|Start()|Actuator will be activated for the time `OnDuration`|
+| Method  | Description                                          |
+|---------|------------------------------------------------------|
+| Start() | Actuator will be activated for the time `OnDuration` |
 
 <details><summary>Example for the class Cylinder ... </summary>
   
@@ -103,10 +102,10 @@ classDiagram
 
 ### Class Compressor
 
-|Method|Description|
-|-|-|
-|Enable()|Turns the compressor on|
-|Disable()|Turns the compressor off|
+| Method    | Description              |
+|-----------|--------------------------|
+| Enable()  | Turns the compressor on  |
+| Disable() | Turns the compressor off |
 
 <details><summary>Example for the class Compressor ... </summary>
   
@@ -134,9 +133,9 @@ classDiagram
 
 ### Class ColorSensor
 
-|Method|Description|
-|-|-|
-|DetectColor(DetectedColor : INT, ColorArray : ARRAY[*] OF ColorRange) : INT |Takes INT-value from sensor and compares it to a Array to find the correct color. ColorArray is a Array of ColorRanges which contains the thresholds for the corresponding color |
+| Method                                                                      | Description                                                                                                                                                                      |
+|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DetectColor(DetectedColor : INT, ColorArray : ARRAY[*] OF ColorRange) : INT | Takes INT-value from sensor and compares it to a Array to find the correct color. ColorArray is a Array of ColorRanges which contains the thresholds for the corresponding color |
 
 <details><summary>Example for the class ColorSensor ... </summary>
   
@@ -184,7 +183,7 @@ classDiagram
 
 This Axis concept has the same look and feel like the Motion Control Library in Siamtic AX. It is designed for Fischertechnik Models whre just a simple On/Off-Motor is used.
 
-### Class Diagram 
+### Class Diagram
 
 ```mermaid
 classDiagram  
@@ -211,27 +210,98 @@ classDiagram
   AxisBase <|-- SpeedAxis
   SpeedAxis <|-- PosAxis    
   itfAxis <|-- AxisBase    
-  TO_Axis <|-- TO_SpeedAxis  
-  TO_SpeedAxis <|-- TO_PosAxis  
-  AxisBase --> TO_Axis
-  SpeedAxis --> TO_SpeedAxis
-  PosAxis --> TO_PosAxis
-  SpeedAxis --|> itfSpeedAxis
-  PosAxis --|> itfPosAxis
 ```
 
 ### SpeedAxis
 
+**Methods:**
+
+| Method                                                 | Description                                |
+|--------------------------------------------------------|--------------------------------------------|
+| PowerOn()                                              | Switch the SpeedAxis on                    |
+| PowerOff()                                             | Switch the SpeedAxis off                   |
+| Attach(REF_TO TO_Axis)                                 | Attach the TO_Axis to the AxisBase         |
+| MoveVelocity (Velocity : LREAL, Direction : Direction) | starts movement depending on the direction |
+| Halt()                                                 | Stops any current movement                 |
+
 ### PosAxis
+
+| Method                                                                        | Description                                      |
+|-------------------------------------------------------------------------------|--------------------------------------------------|
+| PowerOn()                                                                     | Switch the SpeedAxis on                          |
+| PowerOff()                                                                    | Switch the SpeedAxis off                         |
+| Attach(REF_TO TO_Axis)                                                        | Attach the TO_Axis to the AxisBase               |
+| MoveVelocity (Velocity : LREAL, Direction : Direction)                        | starts movement depending on the direction       |
+| MoveRelative( distance : LREAL, velocity : LREAL)                             | Moves the axis by `distance`                     |
+| MoveAbsolute( position : LREAL, velocity : LREAL)                             | Moves the axis to the `position`                 |
+| HomeDirect(Position : LREAL)                                                  | Set the actual position to `value`               |
+| ActiveHoming(Position : LREAL, Direction : Direction, RefSensor : IBinSignal) | Find the reference sensor and set the `position` |
+| Halt()                                                                        | Stops any current movement                       |
+
+### Example
+
+```iec-st
+    
+VAR_GLOBAL
+  TASK Main (PRIORITY := 1);
+  PROGRAM P1 WITH Main : MyAxis;
+  DQ_MFwd AT %Q0.0 : BOOL;
+  DQ_MRvs AT %Q0.1 : BOOL;
+  Q_MFwd : BinOutput;
+  Q_MRvs : BinOutput;
+  Motor : MotorBiDirectional := (QForward := Q_MFwd, QReverse := Q_MRvs);
+  To_Axis : TO_PosAxis := (Motor := Motor, Encoder := timeBasedEncoder);
+  Axis : PosAxis;
+  TimeProvider : TimeProvider;
+  TimeBasedEncoder : TimeBasedEncoder := (
+    Velocity := 0.065,
+    TO_Axis := REF(To_Axis),
+    TimeProvider := TimeProvider);
+  start : BOOL;
+END_VAR
+
+PROGRAM MyAxis 
+  VAR_EXTERNAL
+    DQ_MFwd : BOOL;
+    DQ_MRvs : BOOL;
+    Q_MFwd : BinOutput;
+    Q_MRvs : BinOutput;
+    Axis : PosAxis;
+    To_Axis : TO_PosAxis;
+    start : BOOL;
+  END_VAR
+  VAR_TEMP
+    cmd : itfCommand;
+  END_VAR
+  Axis.Attach(axis := REF(To_Axis));
+  Axis.PowerOn();
+  Axis.HomeDirect(Position := 0.0);
+  IF (start) THEN
+    cmd := Axis.MoveRelative(Distance := 100.0);
+    start := FALSE;
+  END_IF;
+  IF cmd <> NULL THEN
+    IF NOT(cmd.Busy()) THEN
+      IF cmd.Done() THEN
+        Axis.PowerOff();
+        cmd := NULL;
+      ELSIF cmd.Error() THEN
+        ;
+      END_IF;
+    END_IF;
+  END_IF;
+END_PROGRAM
+
+```
 
 ### MotorBiDirectional
 
 <details><summary>Motor ... </summary>
   
-|Method|Description|
-|-|-|
-|Move(Velocity : LREAL, direction := Direction) | starts movement depending on the direction|
-|Halt()| Stops any current movement|
+| Method                                         | Description                                |
+|------------------------------------------------|--------------------------------------------|
+| Move(Velocity : LREAL, direction := Direction) | starts movement depending on the direction |
+| Halt()                                         | Stops any current movement                 |
 
 The motor is usually completely controlled through the Axis but needs to manually write on the output.
 
@@ -260,19 +330,19 @@ If you haven't a hardware encoder for the Axis, then you can simulate this hardw
 
 ### Class TimeBasedEncoder
 
-|Method|Description|
-|-|-|
-|Reset()|Sets current Position to 0|
-|SetValue(value : LINT)|Sets position to a certain value|
-|GetValue() : LINT|Outputs current value as LINT in mm|
-|Evaluate()|Measures change in position based on the velocity and cycle time (from the encoder)|
+| Method                 | Description                                                                         |
+|------------------------|-------------------------------------------------------------------------------------|
+| Reset()                | Sets current Position to 0                                                          |
+| SetValue(value : LINT) | Sets position to a certain value                                                    |
+| GetValue() : LINT      | Outputs current value as LINT in mm                                                 |
+| Evaluate()             | Measures change in position based on the velocity and cycle time (from the encoder) |
 
 ### Class TimeProvider
 
-|Method|Description|
-|-|-|
-|Evaluate()| Measures the time needed for one cycle of the CPU|
-|GetElapsedSeconds()| Outputs the measured time|
+| Method              | Description                                       |
+|---------------------|---------------------------------------------------|
+| Evaluate()          | Measures the time needed for one cycle of the CPU |
+| GetElapsedSeconds() | Outputs the measured time                         |
 
 ```iec-st
 
