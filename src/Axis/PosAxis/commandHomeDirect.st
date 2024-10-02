@@ -22,7 +22,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         END_METHOD
 
         METHOD PROTECTED OVERRIDE Execute
-            IF (NOT _AxisRef^.isPowerdOn) THEN
+            IF (NOT _AxisRef^.IsPoweredOn()) THEN
                 THIS.SetError(WORD#16#8001);
             ELSE
                 ;
@@ -36,7 +36,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             IF (_AxisRef = NULL) THEN
                 RETURN;
             END_IF;
-            IF (NOT _AxisRef^.isPowerdOn) THEN
+            IF (NOT _AxisRef^.IsPoweredOn()) THEN
                 THIS.SetError(WORD#16#8001);
             ELSIF (_AxisRef^.IsRunning()) THEN
                 THIS.SetError(WORD#16#8002);  // Con not be homed because axis is not stillstanding

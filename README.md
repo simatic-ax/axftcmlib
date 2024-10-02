@@ -244,17 +244,51 @@ classDiagram
 ```iec-st
     
 VAR_GLOBAL
-  Q_MotorFwd : BinOutput;
-  Q_MotorRvs : BinOutput;
-  TimeBasedEncoder : TimeBasedEncoder;
-  Motor : MotorBiDirectional := (QForward := Q_MotorFwd, Q_MotorRvs := DQRvs);
-  To_Axis : TO_PosAxis := (Motor := Motor, Encoder := TimeBasedEncoder);
+  DQ_MFwd AT %Q0.0 : BOOL;
+  DQ_MRvs AT %Q0.1 : BOOL;
+  Q_MFwd : BinOutput;
+  Q_MRvs : BinOutput;
+  Motor : MotorBiDirectional := (QForward := Q_MFwd, QReverse := Q_MRvs);
+  To_Axis : TO_PosAxis := (Motor := Motor, Encoder := timeBasedEncoder);
   Axis : PosAxis;
+  TimeProvider : TimeProvider;
+  TimeBasedEncoder : TimeBasedEncoder := (
+    Velocity := 0.065,
+    TO_Axis := REF(To_Axis),
+    TimeProvider := TimeProvider);
+  start : BOOL;
 END_VAR
 
-PROGRAM
+PROGRAM MyAxis
   VAR_EXTERNAL
+    DQ_MFwd : BOOL;
+    DQ_MRvs : BOOL;
+    Q_MFwd : BinOutput;
+    Q_MRvs : BinOutput;
+    Axis : PosAxis;
+    To_Axis : TO_PosAxis;
+    start : BOOL;
   END_VAR
+  VAR_TEMP
+    cmd : itfCommand;
+  END_VAR
+  Axis.Attach(axis := REF(To_Axis));
+  Axis.PowerOn();
+  Axis.HomeDirect(Position := 0.0);
+  IF (start) THEN
+    cmd := Axis.MoveRelative(Distance := 100.0);
+    start := FALSE;
+  END_IF;
+  IF cmd <> NULL THEN
+    IF NOT(cmd.Busy()) THEN
+      IF cmd.Done() THEN
+        Axis.PowerOff();
+        cmd := NULL;
+      ELSIF cmd.Error() THEN
+        ;
+      END_IF;
+    END_IF;
+  END_IF;
 END_PROGRAM
 
 ```

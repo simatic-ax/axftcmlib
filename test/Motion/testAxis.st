@@ -19,14 +19,14 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         {Test}
         METHOD PUBLIC PowerOn_Leads_To_Powered_Axis
             o.PowerOn();
-            Equal(expected := TRUE, actual := toAxis.isPowerdOn);
+            Equal(expected := TRUE, actual := toAxis.IsPoweredOn());
         END_METHOD
 
         {Test}
         METHOD PUBLIC PowerOff_Leads_To_Off_Powered_Axis
             o.PowerOn();
             o.PowerOff();
-            Equal(expected := FALSE, actual := toAxis.isPowerdOn);
+            Equal(expected := FALSE, actual := toAxis.IsPoweredOn());
         END_METHOD
 
     END_CLASS
