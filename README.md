@@ -301,6 +301,7 @@ The time-based encoder can be used when no physical encoder (such as an incremen
 If you invoke the encoder in a different task (e.g., a 10ms interrupt), you can implement an alternative `TimeProvider` that consistently returns 10.0 [ms].
 
 **Properties**
+
 | Property     | Description                                                                              |
 |--------------|------------------------------------------------------------------------------------------|
 | Velocity     | Velocity of the mechanical part                                                          |
@@ -308,6 +309,7 @@ If you invoke the encoder in a different task (e.g., a 10ms interrupt), you can 
 | TimeProvider | An interface that provides time-related functions, to calculate the distance ds = dt * v |
 
 **Methods**
+
 | Method        | Description                                                                                                             |
 |---------------|-------------------------------------------------------------------------------------------------------------------------|
 | Reset         | Resets the encoder position to 0.0.                                                                                     |
@@ -320,8 +322,8 @@ If you invoke the encoder in a different task (e.g., a 10ms interrupt), you can 
 | SetDirection  | Sets the direction mode for counting. Takes `mode` as input, which specifies the count mode.                            |
 | GetModulo     | Method implemented due to the interface. Currently serves no other purpose.                                             |
 
+### TimeProvider
 
-### TimeProvider 
 ```mermaid
 classDiagram
 class ITimeprovider {
@@ -329,7 +331,6 @@ class ITimeprovider {
 }
 ITimeprovider <|-- TimeProvider
 ```
-
 
 | Method                                         | Description                                |
 |------------------------------------------------|--------------------------------------------|
