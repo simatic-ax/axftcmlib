@@ -244,6 +244,8 @@ classDiagram
 ```iec-st
     
 VAR_GLOBAL
+  TASK Main (PRIORITY := 1);
+  PROGRAM P1 WITH Main : MyAxis;
   DQ_MFwd AT %Q0.0 : BOOL;
   DQ_MRvs AT %Q0.1 : BOOL;
   Q_MFwd : BinOutput;
@@ -259,7 +261,7 @@ VAR_GLOBAL
   start : BOOL;
 END_VAR
 
-PROGRAM MyAxis
+PROGRAM MyAxis 
   VAR_EXTERNAL
     DQ_MFwd : BOOL;
     DQ_MRvs : BOOL;
