@@ -1,5 +1,6 @@
-![example workflow](https://github.com/simatic-ax/axftcmlib/actions/workflows/build-library.yml/badge.svg)
-![example workflow](https://github.com/simatic-ax/axftcmlib/actions/workflows/lint-repo.yml/badge.svg)
+[![.github/workflows/build-library.yml](https://github.com/simatic-ax/axftcmlib/actions/workflows/build-library.yml/badge.svg)](https://github.com/simatic-ax/axftcmlib/actions/workflows/build-library.yml)
+[![.github/workflows/lint-repo.yml](https://github.com/simatic-ax/axftcmlib/actions/workflows/lint-repo.yml/badge.svg)](https://github.com/simatic-ax/axftcmlib/actions/workflows/lint-repo.yml)
+[![.github/workflows/release-library.yml](https://github.com/simatic-ax/axftcmlib/actions/workflows/release-library.yml/badge.svg)](https://github.com/simatic-ax/axftcmlib/actions/workflows/release-library.yml)
 
 # @simatic-ax.axftcmlib
 
