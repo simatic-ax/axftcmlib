@@ -1,3 +1,5 @@
+![example workflow](https://github.com/simatic-ax/axftcmlib/actions/workflows/build-library.yml/badge.svg)
+![example workflow](https://github.com/simatic-ax/axftcmlib/actions/workflows/lint-repo.yml/badge.svg)
 
 # @simatic-ax.axftcmlib
 
