@@ -6,8 +6,8 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
     {TestFixture}
     CLASS TestMotor
         VAR
-            o : MotorFT;
-            oStateless : MotorFT;
+            o : MotorBiDirectional;
+            oStateless : MotorBiDirectional;
             QPos : BinOutput;
             QNeg : BinOutput;
             QStateless : BinOutput;
@@ -16,8 +16,8 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         {TestSetup}
         METHOD PUBLIC TestSetup
             o := oStateLess;
-            o.Forward := QPos;
-            o.Reverse := QNeg;
+            o.QForward := QPos;
+            o.QReverse := QNeg;
             QPos := QStateless;
             QNeg := QStateless;
             ;

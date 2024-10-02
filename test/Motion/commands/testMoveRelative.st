@@ -14,7 +14,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             moveRelativeStateLess : commandMoveRelative;
             cmd : itfCommand;
             encoder : MockEncoder;
-            motor : MotorFT;
+            motor : MotorBiDirectional;
             qNeg : BinOutput;
             qPos : BinOutput;
         END_VAR
@@ -23,8 +23,8 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         METHOD PUBLIC TestSetup
             to_pos := to_pos_Stateless;
             moveRelative := moveRelativeStateLess;    
-            motor.Forward := qPos;
-            motor.Reverse := qNeg;
+            motor.QForward := qPos;
+            motor.QReverse := qNeg;
             to_pos.Motor := motor;
             to_pos.Encoder := encoder;
         END_METHOD

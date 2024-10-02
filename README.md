@@ -74,9 +74,9 @@ classDiagram
     }
 ```
 
-|Method|Description|
-|-|-|
-|Start()|Actuator will be activated for the time `OnDuration`|
+| Method  | Description                                          |
+|---------|------------------------------------------------------|
+| Start() | Actuator will be activated for the time `OnDuration` |
 
 <details><summary>Example for the class Cylinder ... </summary>
   
@@ -103,10 +103,10 @@ classDiagram
 
 ### Class Compressor
 
-|Method|Description|
-|-|-|
-|Enable()|Turns the compressor on|
-|Disable()|Turns the compressor off|
+| Method    | Description              |
+|-----------|--------------------------|
+| Enable()  | Turns the compressor on  |
+| Disable() | Turns the compressor off |
 
 <details><summary>Example for the class Compressor ... </summary>
   
@@ -134,9 +134,9 @@ classDiagram
 
 ### Class ColorSensor
 
-|Method|Description|
-|-|-|
-|DetectColor(DetectedColor : INT, ColorArray : ARRAY[*] OF ColorRange) : INT |Takes INT-value from sensor and compares it to a Array to find the correct color. ColorArray is a Array of ColorRanges which contains the thresholds for the corresponding color |
+| Method                                                                      | Description                                                                                                                                                                      |
+|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| DetectColor(DetectedColor : INT, ColorArray : ARRAY[*] OF ColorRange) : INT | Takes INT-value from sensor and compares it to a Array to find the correct color. ColorArray is a Array of ColorRanges which contains the thresholds for the corresponding color |
 
 <details><summary>Example for the class ColorSensor ... </summary>
   
@@ -211,27 +211,62 @@ classDiagram
   AxisBase <|-- SpeedAxis
   SpeedAxis <|-- PosAxis    
   itfAxis <|-- AxisBase    
-  TO_Axis <|-- TO_SpeedAxis  
-  TO_SpeedAxis <|-- TO_PosAxis  
-  AxisBase --> TO_Axis
-  SpeedAxis --> TO_SpeedAxis
-  PosAxis --> TO_PosAxis
-  SpeedAxis --|> itfSpeedAxis
-  PosAxis --|> itfPosAxis
 ```
 
 ### SpeedAxis
 
+**Methods:**
+
+| Method                                                 | Description                                |
+|--------------------------------------------------------|--------------------------------------------|
+| PowerOn()                                              | Switch the SpeedAxis on                    |
+| PowerOff()                                             | Switch the SpeedAxis off                   |
+| Attach(REF_TO TO_Axis)                                 | Attach the TO_Axis to the AxisBase         |
+| MoveVelocity (Velocity : LREAL, Direction : Direction) | starts movement depending on the direction |
+| Halt()                                                 | Stops any current movement                 |
+
 ### PosAxis
+
+| Method                                                                        | Description                                      |
+|-------------------------------------------------------------------------------|--------------------------------------------------|
+| PowerOn()                                                                     | Switch the SpeedAxis on                          |
+| PowerOff()                                                                    | Switch the SpeedAxis off                         |
+| Attach(REF_TO TO_Axis)                                                        | Attach the TO_Axis to the AxisBase               |
+| MoveVelocity (Velocity : LREAL, Direction : Direction)                        | starts movement depending on the direction       |
+| MoveRelative( distance : LREAL, velocity : LREAL)                             | Moves the axis by `distance`                     |
+| MoveAbsolute( position : LREAL, velocity : LREAL)                             | Moves the axis to the `position`                 |
+| HomeDirect(Position : LREAL)                                                  | Set the actual position to `value`               |
+| ActiveHoming(Position : LREAL, Direction : Direction, RefSensor : IBinSignal) | Find the reference sensor and set the `position` |
+| Halt()                                                                        | Stops any current movement                       |
+
+### Example
+
+```iec-st
+    
+VAR_GLOBAL
+  Q_MotorFwd : BinOutput;
+  Q_MotorRvs : BinOutput;
+  TimeBasedEncoder : TimeBasedEncoder;
+  Motor : MotorBiDirectional := (QForward := Q_MotorFwd, Q_MotorRvs := DQRvs);
+  To_Axis : TO_PosAxis := (Motor := Motor, Encoder := TimeBasedEncoder);
+  Axis : PosAxis;
+END_VAR
+
+PROGRAM
+  VAR_EXTERNAL
+  END_VAR
+END_PROGRAM
+
+```
 
 ### MotorBiDirectional
 
 <details><summary>Motor ... </summary>
   
-|Method|Description|
-|-|-|
-|Move(Velocity : LREAL, direction := Direction) | starts movement depending on the direction|
-|Halt()| Stops any current movement|
+| Method                                         | Description                                |
+|------------------------------------------------|--------------------------------------------|
+| Move(Velocity : LREAL, direction := Direction) | starts movement depending on the direction |
+| Halt()                                         | Stops any current movement                 |
 
 The motor is usually completely controlled through the Axis but needs to manually write on the output.
 
@@ -260,19 +295,19 @@ If you haven't a hardware encoder for the Axis, then you can simulate this hardw
 
 ### Class TimeBasedEncoder
 
-|Method|Description|
-|-|-|
-|Reset()|Sets current Position to 0|
-|SetValue(value : LINT)|Sets position to a certain value|
-|GetValue() : LINT|Outputs current value as LINT in mm|
-|Evaluate()|Measures change in position based on the velocity and cycle time (from the encoder)|
+| Method                 | Description                                                                         |
+|------------------------|-------------------------------------------------------------------------------------|
+| Reset()                | Sets current Position to 0                                                          |
+| SetValue(value : LINT) | Sets position to a certain value                                                    |
+| GetValue() : LINT      | Outputs current value as LINT in mm                                                 |
+| Evaluate()             | Measures change in position based on the velocity and cycle time (from the encoder) |
 
 ### Class TimeProvider
 
-|Method|Description|
-|-|-|
-|Evaluate()| Measures the time needed for one cycle of the CPU|
-|GetElapsedSeconds()| Outputs the measured time|
+| Method              | Description                                       |
+|---------------------|---------------------------------------------------|
+| Evaluate()          | Measures the time needed for one cycle of the CPU |
+| GetElapsedSeconds() | Outputs the measured time                         |
 
 ```iec-st
 
