@@ -294,6 +294,49 @@ END_PROGRAM
 
 ```
 
+## TimebasedEncoder
+
+The time-based encoder can be used when no physical encoder (such as an incremental encoder or TM-Count module) is available. For this purpose, a `TimeProvider` is required. The `TimeProvider` measures the elapsed time between two calls, enabling the calculation of the moved distance based on the given speed and the elapsed time.
+
+If you invoke the encoder in a different task (e.g., a 10ms interrupt), you can implement an alternative `TimeProvider` that consistently returns 10.0 [ms].
+
+**Properties**
+
+| Property     | Description                                                                              |
+|--------------|------------------------------------------------------------------------------------------|
+| Velocity     | Velocity of the mechanical part                                                          |
+| TO_Axis      | A reference to a TO_PosAxis                                                              |
+| TimeProvider | An interface that provides time-related functions, to calculate the distance ds = dt * v |
+
+**Methods**
+
+| Method        | Description                                                                                                             |
+|---------------|-------------------------------------------------------------------------------------------------------------------------|
+| Reset         | Resets the encoder position to 0.0.                                                                                     |
+| SetValue      | Sets the encoder to a specific position. Takes `value` as input, which is the position to be set.                       |
+| GetValue      | Returns the current encoder position in millimeters.                                                                    |
+| Evaluate      | Calculates the change in position based on the elapsed time and velocity. Updates position if the axis is running.      |
+| HasMoved      | Method implemented due to the interface. Currently serves no other purpose.                                             |
+| RelativeCount | Returns the relative count position in millimeters. Converts the internal relative position from meters to millimeters. |
+| ResetRelative | Resets the relative position to 0.0.                                                                                    |
+| SetDirection  | Sets the direction mode for counting. Takes `mode` as input, which specifies the count mode.                            |
+| GetModulo     | Method implemented due to the interface. Currently serves no other purpose.                                             |
+
+### TimeProvider
+
+```mermaid
+classDiagram
+class ITimeprovider {
+  GetElapsedSeconds() LREAL
+}
+ITimeprovider <|-- TimeProvider
+```
+
+| Method                                         | Description                                |
+|------------------------------------------------|--------------------------------------------|
+| Move(Velocity : LREAL, direction := Direction) | starts movement depending on the direction |
+| Halt()                                         | Stops any current movement                 |
+
 ### MotorBiDirectional
 
 <details><summary>Motor ... </summary>
