@@ -34,17 +34,18 @@ NAMESPACE Simatic.Ax.axftcmlib
             _qToWork := _outputStateLess;
             _qToHome := _outputStateLess;
             busy := FALSE;
+            cmd := NULL;
         END_METHOD
 
-        // {Test}
-        // METHOD PUBLIC GoToWorkPosition_Swiches_Q_ToWorkPosition_On_And_Returns_Busy
-        //     cmd := _actuator.GoToWorkPosition();
-        //     busy := cmd.Busy();
-        //     AxUnit.Assert.Equal(expected := TRUE, actual := busy);
-        //     AxUnit.Assert.Equal(expected := TRUE, actual := _qToWork.IsOn());
-        //     AxUnit.Assert.Equal(expected := FALSE, actual := _qToHome.IsOn());
-        //     Equal(expected := TRUE, actual := _actuator.GetState() = ActuatorState#MoveToWorkPosition);
-        // END_METHOD
+        {Test}
+        METHOD PUBLIC GoToWorkPosition_Swiches_Q_ToWorkPosition_On_And_Returns_Busy
+            cmd := _actuator.GoToWorkPosition();
+            busy := cmd.Busy();
+            AxUnit.Assert.Equal(expected := TRUE, actual := busy);
+            AxUnit.Assert.Equal(expected := TRUE, actual := _qToWork.IsOn());
+            AxUnit.Assert.Equal(expected := FALSE, actual := _qToHome.IsOn());
+            Equal(expected := TRUE, actual := _actuator.GetState() = ActuatorState#MoveToWorkPosition);
+        END_METHOD
 
         {Test}
         METHOD PUBLIC GoToWorkPosition_Returns_Done_When_end_position_is_already_reached
