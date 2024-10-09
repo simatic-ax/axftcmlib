@@ -24,6 +24,7 @@ apaxVersion: 3.2.1
 # Dependencies
 devDependencies:
   '@ax/sdk': 2405.1.0
+  "@ax/axunitst": 5.2.6
   "@simatic-ax/snippetscollection": 1.0.0
 # Files, which will be shipped with the library
 files:
@@ -34,10 +35,11 @@ files:
   - 'snippets'
 dependencies:
   "@ax/simatic-1500-clocks": 7.0.4
-  "@simatic-ax/simple-control-modules": 6.1.0
-  "@simatic-ax/io": 6.1.0
+  "@simatic-ax/simple-control-modules": 6.0.0
+  "@simatic-ax/io": 6.0.0
+  "@ax/system-timer": 7.1.47
   "@simatic-ax/commands": 1.0.0
   "@simatic-ax/statemachine": 6.1.0
-  # "@simatic-ax/types": ^1.0.0
+  "@simatic-ax/types": ^1.0.0
   # "@ax/simatic-1500-technology-objects": ^0.1.52
-installStrategy: strict
+installStrategy: overridable
