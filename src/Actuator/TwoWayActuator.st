@@ -32,10 +32,9 @@ NAMESPACE Simatic.Ax.axftcmlib
             CASE _state OF
                 // Switch all outputs off, when actuator is idle in home position
                 ActuatorState#InHomePosition:
-                    // IF () 
                     Q_ToWorkPosition.SetOff();
                     Q_ToHomePosition.SetOff();
-                // Received the command GoToWorkPosition
+                // Received the command GoToWorkPosition switch on ToWorkPosition
                 ActuatorState#MoveToWorkPosition:
                     Q_ToWorkPosition.SetOn();
                     IF (I_InWorkPosition.Q()) THEN

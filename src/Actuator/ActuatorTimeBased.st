@@ -28,17 +28,21 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_IF;
             _tonOnDuration(signal := Q_ToWorkPosition.IsOn(), Duration := OnDuration);
             CASE _state OF
+                // Switch all outputs off, when actuator is idle in home position
                 ActuatorState#InHomePosition:
-                    // IF () 
                     Q_ToWorkPosition.SetOff();
+                
+                // Received the command GoToWorkPosition switch on ToWorkPosition
                 ActuatorState#MoveToWorkPosition:
                     Q_ToWorkPosition.SetOn();
                     _state := ActuatorState#InWorkPosition;
+                // After Timeout switch off "ToWorkPosition"
                 ActuatorState#InWorkPosition:
                     IF (_tonOnDuration.output) THEN
                         _state := ActuatorState#MoveToHomePosition;
                         Q_ToWorkPosition.SetOff();
                     END_IF;
+                // Send done
                 ActuatorState#MoveToHomePosition:
                     Q_ToWorkPosition.SetOff();
                     _state := ActuatorState#InHomePosition;
