@@ -2,14 +2,14 @@
   "name": "@simatic-ax/axftcmlib",
   "version": "0.0.0-placeholder",
   "lockFileVersion": "2",
-  "installStrategy": "overridable",
+  "installStrategy": "strict",
   "root": {
     "name": "@simatic-ax/axftcmlib",
     "version": "0.0.0-placeholder",
     "dependencies": {
       "@ax/simatic-1500-clocks": "7.0.4",
-      "@simatic-ax/simple-control-modules": "6.0.0",
-      "@simatic-ax/io": "6.0.0",
+      "@simatic-ax/simple-control-modules": "6.1.0",
+      "@simatic-ax/io": "6.1.0",
       "@ax/system-timer": "7.1.47",
       "@simatic-ax/commands": "1.0.0",
       "@simatic-ax/statemachine": "6.1.0",
@@ -77,28 +77,28 @@
     },
     "@simatic-ax/simple-control-modules": {
       "name": "@simatic-ax/simple-control-modules",
-      "version": "6.0.0",
-      "integrity": "sha512-1VPYgkwxNljCJTITTR9ns7WGw+HMn4xq7zuSYTSrDQygomkuXDfydNYgu1/iTqk0Jv3OlPaMC3SuASZlc2XVRA==",
-      "resolved": "https://npm.pkg.github.com/download/@simatic-ax/simple-control-modules/6.0.0/c9b1263348fbb676e4bae43efaf1f9ebfd660e9f",
+      "version": "6.1.0",
+      "integrity": "sha512-OlpJ1XXyhHYxMatKmZ4SQMsBOW1Cv+Atuuamx0tOYit/XOqkx5KjXh7u7veJA05nlZVN8Jq31+gIK9R/8MJbsQ==",
+      "resolved": "https://npm.pkg.github.com/download/@simatic-ax/simple-control-modules/6.1.0/f968bfcf5273515adcb2d3884b73c31dde92e419",
       "dependencies": {
-        "@ax/system-timer": "7.0.17",
-        "@simatic-ax/io": "6.0.0"
+        "@ax/system-timer": "7.1.47",
+        "@simatic-ax/io": "6.1.0"
       }
     },
     "@simatic-ax/io": {
       "name": "@simatic-ax/io",
-      "version": "6.0.0",
-      "integrity": "sha512-4HoXkzHNubr/tksNCbYNdyPHyl3iY2HuWfalvBLyomqthIh262k/MAdk9yjURoTI91Uzd88s3TTHrS2wWFI0mQ==",
-      "resolved": "https://npm.pkg.github.com/download/@simatic-ax/io/6.0.0/a41b213542c3e91485f6500466bba00cc630cd61",
+      "version": "6.1.0",
+      "integrity": "sha512-JnSm9RJ23hoIl67e1v7gU46DG6IRNNpQPh0H+Lm6zLHG6cCsJeyaKlBhdlTNglSvu7RN3lzV45wPK1bf3oQGJQ==",
+      "resolved": "https://npm.pkg.github.com/download/@simatic-ax/io/6.1.0/aac5ac5162048e066ff96c5b4425beeafb00fc7c",
       "dependencies": {
-        "@ax/system-timer": "7.0.17"
+        "@ax/system-timer": "^7.1.47"
       }
     },
     "@ax/system-timer": {
       "name": "@ax/system-timer",
-      "version": "7.0.17",
-      "integrity": "sha512-JC2qA1x0C1loDgzyTO3T3GxT5a7VjXWhRMBovIhoTwbXmY/hs1nD28DvpIPCU1hNz6vxCV0s/BDw+ZwkZXx6hA==",
-      "resolved": "https://registry.simatic-ax.siemens.io/@ax/system-timer/-/system-timer-7.0.17.tgz",
+      "version": "7.1.47",
+      "integrity": "sha512-RnY3X/Glo9rClP+V5GVOCi5PFDXjWrNnXzVCX4GnDmcRG+fSfpelkghRgqMsSoFxc56m1AGbAsfa6PUxHqwtLw==",
+      "resolved": "https://registry.simatic-ax.siemens.io/@ax/system-timer/-/system-timer-7.1.47.tgz",
       "dependencies": {}
     },
     "@simatic-ax/commands": {
