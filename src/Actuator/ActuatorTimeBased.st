@@ -5,9 +5,9 @@ USING Simatic.Ax.Io.Output;
 NAMESPACE Simatic.Ax.axftcmlib
     CLASS ActuatorTimeBased
         EXTENDS ExecuteControlModuleAbstract
-        IMPLEMENTS IActuator
+        IMPLEMENTS itfActuator
         VAR PUBLIC
-            QControl : IBinOutput;
+            Q_ToWorkPosition : IBinOutput;
             OnDuration : TIME;
         END_VAR
         VAR
@@ -20,36 +20,36 @@ NAMESPACE Simatic.Ax.axftcmlib
         END_METHOD
 
         METHOD PROTECTED OVERRIDE _executeCustom
-            IF (QControl = NULL) THEN 
+            IF (Q_ToWorkPosition = NULL) THEN 
                 THIS.SetError(WORD#16#8101);
                 RETURN;
             ELSE
                 THIS.SetError(FALSE);
             END_IF;
-            _tonOnDuration(signal := QControl.IsOn(), Duration := OnDuration);
+            _tonOnDuration(signal := Q_ToWorkPosition.IsOn(), Duration := OnDuration);
             CASE _state OF
-                ActuatorState#Retracted:
+                ActuatorState#InHomePosition:
                     // IF () 
-                    QControl.SetOff();
-                ActuatorState#Activating:
-                    QControl.SetOn();
-                    _state := ActuatorState#Activated;
-                ActuatorState#Activated:
+                    Q_ToWorkPosition.SetOff();
+                ActuatorState#MoveToWorkPosition:
+                    Q_ToWorkPosition.SetOn();
+                    _state := ActuatorState#InWorkPosition;
+                ActuatorState#InWorkPosition:
                     IF (_tonOnDuration.output) THEN
-                        _state := ActuatorState#Retracting;
-                        QControl.SetOff();
+                        _state := ActuatorState#MoveToHomePosition;
+                        Q_ToWorkPosition.SetOff();
                     END_IF;
-                ActuatorState#Retracting:
-                    QControl.SetOff();
-                    _state := ActuatorState#Retracted;
+                ActuatorState#MoveToHomePosition:
+                    Q_ToWorkPosition.SetOff();
+                    _state := ActuatorState#InHomePosition;
                     THIS.SetDone();
             END_CASE;
         END_METHOD
 
-        METHOD PUBLIC Start : itfCommand
+        METHOD PUBLIC GoToHomePosition : itfCommand
             THIS.InitState();
-            _state := ActuatorState#Activating;
-            Start := THIS;
+            _state := ActuatorState#MoveToWorkPosition;
+            GoToHomePosition := THIS;
         END_METHOD
 
         METHOD PUBLIC GetState : ActuatorState
