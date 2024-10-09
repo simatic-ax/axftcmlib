@@ -36,30 +36,30 @@ NAMESPACE Simatic.Ax.axftcmlib
             busy := FALSE;
         END_METHOD
 
-        {Test}
-        METHOD PUBLIC GoToWorkPosition_Swiches_Q_ToWorkPosition_On_And_Returns_Busy
-            cmd := _actuator.GoToWorkPosition();
-            busy := cmd.Busy();
-            AxUnit.Assert.Equal(expected := TRUE, actual := busy);
-            AxUnit.Assert.Equal(expected := TRUE, actual := _qToWork.IsOn());
-            AxUnit.Assert.Equal(expected := FALSE, actual := _qToHome.IsOn());
-            Equal(expected := TRUE, actual := _actuator.GetState() = ActuatorState#MoveToWorkPosition);
-        END_METHOD
-
         // {Test}
-        // METHOD PUBLIC GoToWorkPosition_Returns_Done_When_end_position_is_already_reached
-        //     _iInWorkPos.ReadCyclic(signal := TRUE);
+        // METHOD PUBLIC GoToWorkPosition_Swiches_Q_ToWorkPosition_On_And_Returns_Busy
         //     cmd := _actuator.GoToWorkPosition();
         //     busy := cmd.Busy();
-        //     IF NOT(busy) THEN
-        //         done := cmd.Done();
-        //     END_IF;                
-        //     AxUnit.Assert.Equal(expected := FALSE, actual := busy);
-        //     AxUnit.Assert.Equal(expected := TRUE, actual := done);
-        //     AxUnit.Assert.Equal(expected := FALSE, actual := _qToWork.IsOn());
+        //     AxUnit.Assert.Equal(expected := TRUE, actual := busy);
+        //     AxUnit.Assert.Equal(expected := TRUE, actual := _qToWork.IsOn());
         //     AxUnit.Assert.Equal(expected := FALSE, actual := _qToHome.IsOn());
-        //     Equal(expected := TRUE, actual := _actuator.GetState() = ActuatorState#InWorkPosition);
+        //     Equal(expected := TRUE, actual := _actuator.GetState() = ActuatorState#MoveToWorkPosition);
         // END_METHOD
+
+        {Test}
+        METHOD PUBLIC GoToWorkPosition_Returns_Done_When_end_position_is_already_reached
+            _iInWorkPos.ReadCyclic(signal := TRUE);
+            cmd := _actuator.GoToWorkPosition();
+            busy := cmd.Busy();
+            IF NOT(busy) THEN
+                done := cmd.Done();
+            END_IF;                
+            AxUnit.Assert.Equal(expected := FALSE, actual := busy);
+            AxUnit.Assert.Equal(expected := TRUE, actual := done);
+            AxUnit.Assert.Equal(expected := FALSE, actual := _qToWork.IsOn());
+            AxUnit.Assert.Equal(expected := FALSE, actual := _qToHome.IsOn());
+            Equal(expected := TRUE, actual := _actuator.GetState() = ActuatorState#InWorkPosition);
+        END_METHOD
 
         // {Test}
         // METHOD PUBLIC Reaching_WorkPosition_Switches_Q_ToWorkPosition_Off_And_Returns_Done
