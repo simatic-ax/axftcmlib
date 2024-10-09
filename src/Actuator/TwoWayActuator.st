@@ -6,16 +6,12 @@ USING Simatic.Ax.Io.Output;
 NAMESPACE Simatic.Ax.axftcmlib
 
     CLASS TwoWayActuator
-        EXTENDS ExecuteControlModuleAbstract
+        EXTENDS ActuatorTimeBased
         IMPLEMENTS itfTwoWayActuator
         VAR PUBLIC
             I_InHomePosition : IBinSignal;
             I_InWorkPosition : IBinSignal;
-            Q_ToWorkPosition : IBinOutput;
             Q_ToHomePosition : IBinOutput;
-        END_VAR
-        VAR
-            _state : ActuatorState;
         END_VAR
 
         METHOD PROTECTED OVERRIDE _initmethod
@@ -56,11 +52,6 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_CASE;
         END_METHOD
 
-        METHOD PUBLIC GoToWorkPosition : itfCommand
-            THIS.InitState();
-            _state := ActuatorState#MoveToWorkPosition;
-            GoToWorkPosition := THIS;
-        END_METHOD
 
         METHOD PUBLIC GoToHomePosition : itfCommand
             THIS.InitState();
@@ -68,9 +59,6 @@ NAMESPACE Simatic.Ax.axftcmlib
             GoToHomePosition := THIS;
         END_METHOD
 
-        METHOD PUBLIC GetState : ActuatorState
-            GetState := _state;
-        END_METHOD
     END_CLASS
 
 END_NAMESPACE

@@ -50,10 +50,10 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_CASE;
         END_METHOD
 
-        METHOD PUBLIC GoToHomePosition : itfCommand
+        METHOD PUBLIC GoToWorkPosition : itfCommand
             THIS.InitState();
             _state := ActuatorState#MoveToWorkPosition;
-            GoToHomePosition := THIS;
+            GoToWorkPosition := THIS;
         END_METHOD
 
         METHOD PUBLIC GetState : ActuatorState
