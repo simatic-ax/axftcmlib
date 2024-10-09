@@ -6,10 +6,10 @@ USING AxUnit.Assert;
 NAMESPACE Simatic.Ax.axftcmlib
 
     {TestFixture}
-    CLASS ActuatorTimeBasedTest
+    CLASS TwoWayActuatorTest
         VAR PROTECTED
-            _actuator : ActuatorTimeBased;
-            _actuatorStateLess : ActuatorTimeBased;
+            _actuator : TimeBasedActuator;
+            _actuatorStateLess : TimeBasedActuator;
             _output : BinOutput;
             cmd : itfCommand;
             busy : BOOL;

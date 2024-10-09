@@ -3,7 +3,7 @@ USING System.Timer;
 USING Simatic.Ax.Io.Output;
 
 NAMESPACE Simatic.Ax.axftcmlib
-    CLASS ActuatorTimeBased
+    CLASS TimeBasedActuator
         EXTENDS ExecuteControlModuleAbstract
         IMPLEMENTS itfActuator
         VAR PUBLIC

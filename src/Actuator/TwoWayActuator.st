@@ -6,7 +6,7 @@ USING Simatic.Ax.Io.Output;
 NAMESPACE Simatic.Ax.axftcmlib
 
     CLASS TwoWayActuator
-        EXTENDS ActuatorTimeBased
+        EXTENDS TimeBasedActuator
         IMPLEMENTS itfTwoWayActuator
         VAR PUBLIC
             I_InHomePosition : IBinSignal;
