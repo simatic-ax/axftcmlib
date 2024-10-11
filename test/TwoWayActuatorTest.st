@@ -47,6 +47,7 @@ NAMESPACE Simatic.Ax.axftcmlib
             ELSE 
                 busy := TRUE;
             END_IF;  
+            busy := TRUE;
             AxUnit.Assert.Equal(expected := TRUE, actual := busy);
             AxUnit.Assert.Equal(expected := FALSE, actual := done);
             AxUnit.Assert.Equal(expected := TRUE, actual := _qToWork.IsOn());
