@@ -7,7 +7,7 @@ USING AxUnit.Assert;
 NAMESPACE Simatic.Ax.axftcmlib
 
     {TestFixture}
-    CLASS TwoWayActuatorTest_old
+    CLASS TwoWayActuatorTest
         VAR PROTECTED
             _actuator : TwoWayActuator;
             _actuatorStateLess : TwoWayActuator;
@@ -121,3 +121,4 @@ NAMESPACE Simatic.Ax.axftcmlib
     END_CLASS
 
 END_NAMESPACE
+
