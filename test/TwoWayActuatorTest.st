@@ -46,7 +46,7 @@ NAMESPACE Simatic.Ax.axftcmlib
                 done := cmd.Done();
             END_IF;  
             AxUnit.Assert.Equal(expected := TRUE, actual := busy);
-            AxUnit.Assert.Equal(expected := TRUE, actual := done);
+            AxUnit.Assert.Equal(expected := FALSE, actual := done);
             AxUnit.Assert.Equal(expected := TRUE, actual := _qToWork.IsOn());
             AxUnit.Assert.Equal(expected := FALSE, actual := _qToHome.IsOn());
             Equal(expected := TRUE, actual := _actuator.GetState() = ActuatorState#MoveToWorkPosition);
