@@ -83,7 +83,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC GoToHomePosition_Swiches_Q_ToHomePosition_On_And_Returns_Busy
             cmd := _actuator.GoToHomePosition();
             busy := cmd.Busy();
-            AxUnit.Assert.Equal(expected := FALSE, actual := busy);
+            AxUnit.Assert.Equal(expected := TRUE, actual := busy);
             AxUnit.Assert.Equal(expected := FALSE, actual := _qToWork.IsOn());
             AxUnit.Assert.Equal(expected := TRUE, actual := _qToHome.IsOn());
             Equal(expected := TRUE, actual := _actuator.GetState() = ActuatorState#MoveToHomePosition);
