@@ -34,6 +34,7 @@ NAMESPACE Simatic.Ax.axftcmlib
             _qToWork := _outputStateLess;
             _qToHome := _outputStateLess;
             busy := FALSE;
+            done := FALSE;
             cmd := NULL;
         END_METHOD
 
@@ -41,7 +42,11 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC GoToWorkPosition_Swiches_Q_ToWorkPosition_On_And_Returns_Busy
             cmd := _actuator.GoToWorkPosition();
             busy := cmd.Busy();
+            IF NOT(busy) THEN
+                done := cmd.Done();
+            END_IF;  
             AxUnit.Assert.Equal(expected := TRUE, actual := busy);
+            AxUnit.Assert.Equal(expected := TRUE, actual := done);
             AxUnit.Assert.Equal(expected := TRUE, actual := _qToWork.IsOn());
             AxUnit.Assert.Equal(expected := FALSE, actual := _qToHome.IsOn());
             Equal(expected := TRUE, actual := _actuator.GetState() = ActuatorState#MoveToWorkPosition);
