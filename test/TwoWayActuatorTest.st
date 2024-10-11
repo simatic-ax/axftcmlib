@@ -44,6 +44,8 @@ NAMESPACE Simatic.Ax.axftcmlib
             busy := cmd.Busy();
             IF NOT(busy) THEN
                 done := cmd.Done();
+            ELSE 
+                busy := TRUE;
             END_IF;  
             AxUnit.Assert.Equal(expected := TRUE, actual := busy);
             AxUnit.Assert.Equal(expected := FALSE, actual := done);
