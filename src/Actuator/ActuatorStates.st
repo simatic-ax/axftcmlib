@@ -1,5 +1,5 @@
 NAMESPACE Simatic.Ax.axftcmlib
     TYPE
-        ActuatorState : (Retracted, Activating, Activated, Retracting) := Retracted;
+        ActuatorState : (InHomePosition, MoveToWorkPosition, InWorkPosition, MoveToHomePosition) := InHomePosition;
     END_TYPE
 END_NAMESPACE

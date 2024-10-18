@@ -56,21 +56,21 @@ classDiagram
     }
 ```
 
-### Class ActuatorTimeBased
+### Class TimeBasedActuator
 
 ```mermaid
 ---
-title: ActuatorTimeBased
+title: TimeBasedActuator
 ---
 classDiagram
-    ControlModuleAbstract <|-- ActuatorTimeBased
+    ControlModuleAbstract <|-- TimeBasedActuator
     class ControlModuleAbstract{
         +WORD GetErrorStatus()
     }
-    class ActuatorTimeBased{
+    class TimeBasedActuator{
         +QControl : IBinOutput;
         +OnDuration : TIME;
-        +itfCommand Start()
+        +itfCommand GoToWorkPosition()
     }
 ```
 
@@ -82,7 +82,7 @@ classDiagram
   
 ```iec-st
   VAR_GLOBAL
-      Actuator : ActuatorTimeBased := (QControl := Q_Actuator) ;
+      Actuator : TimeBasedActuator := (QControl := Q_Actuator) ;
       Q_Actuator : BinOutput;
       DQ : BOOL;
   END_VAR
