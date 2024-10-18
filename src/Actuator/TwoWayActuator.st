@@ -22,8 +22,6 @@ NAMESPACE Simatic.Ax.axftcmlib
             IF (Q_ToWorkPosition = NULL) THEN
                 THIS.SetError(WORD#16#8101);
                 RETURN;
-            ELSE
-                THIS.SetError(FALSE);
             END_IF;
             CASE _state OF
                 // Switch all outputs off, when actuator is idle in home position

@@ -23,8 +23,6 @@ NAMESPACE Simatic.Ax.axftcmlib
             IF (Q_ToWorkPosition = NULL) THEN 
                 THIS.SetError(WORD#16#8101);
                 RETURN;
-            ELSE
-                THIS.SetError(FALSE);
             END_IF;
             _tonOnDuration(signal := Q_ToWorkPosition.IsOn(), Duration := OnDuration);
             CASE _state OF
