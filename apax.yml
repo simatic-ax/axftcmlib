@@ -34,7 +34,7 @@ files:
   - 'src'
   - 'snippets'
 dependencies:
-  "@ax/simatic-1500-clocks": 7.0.4
+  "@ax/simatic-1500-clocks": 8.0.8
   "@simatic-ax/simple-control-modules": 6.1.0
   "@simatic-ax/io": 6.1.0
   "@ax/system-timer": 7.1.47
