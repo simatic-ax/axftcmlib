@@ -24,7 +24,7 @@ apaxVersion: 3.2.1
 # Dependencies
 devDependencies:
   '@ax/sdk': 2405.1.0
-  "@ax/axunitst": 5.2.6
+  "@ax/axunitst": 5.3.4
   "@simatic-ax/snippetscollection": 1.0.0
 # Files, which will be shipped with the library
 files:
