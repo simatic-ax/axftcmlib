@@ -19,13 +19,25 @@ variables:
 targets:
   - '1500'
   - 'llvm'
+  
 # Install Setting
 apaxVersion: 3.2.1
+installStrategy: strict
+
 # Dependencies
 devDependencies:
-  '@ax/sdk': 2405.1.0
-  "@ax/axunitst": 5.2.6
+  '@ax/sdk': 2411.1.0
   "@simatic-ax/snippetscollection": 1.0.0
+
+dependencies:
+  "@ax/simatic-1500-clocks": 8.0.8
+  "@ax/system-timer": 8.0.8
+  "@simatic-ax/simple-control-modules": 7.0.0
+  "@simatic-ax/io": 7.1.0
+  "@simatic-ax/commands": 1.0.0
+  "@simatic-ax/statemachine": 7.0.0
+  "@simatic-ax/types": ^1.0.0
+
 # Files, which will be shipped with the library
 files:
   - 'README.md'
@@ -33,12 +45,3 @@ files:
   - 'doc'
   - 'src'
   - 'snippets'
-dependencies:
-  "@ax/simatic-1500-clocks": 7.0.4
-  "@simatic-ax/simple-control-modules": 6.1.0
-  "@simatic-ax/io": 6.1.0
-  "@ax/system-timer": 7.1.47
-  "@simatic-ax/commands": 1.0.0
-  "@simatic-ax/statemachine": 6.1.0
-  "@simatic-ax/types": ^1.0.0
-installStrategy: strict
