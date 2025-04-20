@@ -30,8 +30,8 @@ devDependencies:
   "@simatic-ax/snippetscollection": 1.0.0
 
 dependencies:
-  "@ax/simatic-1500-clocks": 8.0.8
-  "@ax/system-timer": 8.0.8
+  "@ax/simatic-1500-clocks": 10.0.6
+  "@ax/system-timer": 10.0.24
   "@simatic-ax/simple-control-modules": 7.0.0
   "@simatic-ax/io": 7.1.0
   "@simatic-ax/commands": 1.0.0
