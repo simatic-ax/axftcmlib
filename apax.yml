@@ -40,9 +40,8 @@ dependencies:
   "@simatic-ax/io": ^9.0.0
   "@simatic-ax/commands": ^3.0.0
   "@simatic-ax/statemachine": ^8.0.0
-  "@simatic-ax/types": ^1.0.0
 
-# Files, which will be shipped with the library
+  # Files, which will be shipped with the library
 files:
   - 'README.md'
   - 'LICENSE.md'

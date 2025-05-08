@@ -12,8 +12,7 @@
       "@simatic-ax/simple-control-modules": "^8.0.0",
       "@simatic-ax/io": "^9.0.0",
       "@simatic-ax/commands": "^3.0.0",
-      "@simatic-ax/statemachine": "^8.0.0",
-      "@simatic-ax/types": "^1.0.0"
+      "@simatic-ax/statemachine": "^8.0.0"
     },
     "devDependencies": {
       "@ax/sdk": "^2504.0.0",
@@ -111,13 +110,6 @@
       "dependencies": {
         "@ax/system-timer": "^10.0.24"
       }
-    },
-    "@simatic-ax/types": {
-      "name": "@simatic-ax/types",
-      "version": "1.0.0",
-      "integrity": "sha512-E8yKADC1HQAIpEAGNDmr4LQkijtlkUHcOwDNDCiUpG2Eyck3eib2dGsQoBdyDk8fQjBsMm1imYeq81Xw3S7Xaw==",
-      "resolved": "https://npm.pkg.github.com/download/@simatic-ax/types/1.0.0/8d5234b7b6cab437eb92be9fc3f0ae6715514701",
-      "dependencies": {}
     },
     "@ax/apax-build": {
       "name": "@ax/apax-build",
