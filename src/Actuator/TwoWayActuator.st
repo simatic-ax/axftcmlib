@@ -9,9 +9,9 @@ NAMESPACE Simatic.Ax.axftcmlib
         EXTENDS TimeBasedActuator
         IMPLEMENTS itfTwoWayActuator
         VAR PUBLIC
-            I_InHomePosition : IBinSignal;
-            I_InWorkPosition : IBinSignal;
-            Q_ToHomePosition : IBinOutput;
+            I_InHomePosition : ItfBinSignal;
+            I_InWorkPosition : ItfBinSignal;
+            Q_ToHomePosition : ItfBinOutput;
         END_VAR
 
         METHOD PROTECTED OVERRIDE _initmethod
@@ -24,11 +24,11 @@ NAMESPACE Simatic.Ax.axftcmlib
                 RETURN;
             END_IF;
             CASE _state OF
-                // Switch all outputs off, when actuator is idle in home position
+// Switch all outputs off, when actuator is idle in home position
                 ActuatorState#InHomePosition:
                     Q_ToWorkPosition.SetOff();
                     Q_ToHomePosition.SetOff();
-                // Received the command GoToWorkPosition switch on ToWorkPosition
+// Received the command GoToWorkPosition switch on ToWorkPosition
                 ActuatorState#MoveToWorkPosition:
                     Q_ToWorkPosition.SetOn();
                     IF (I_InWorkPosition.Q()) THEN
@@ -50,13 +50,11 @@ NAMESPACE Simatic.Ax.axftcmlib
             END_CASE;
         END_METHOD
 
-
         METHOD PUBLIC GoToHomePosition : itfCommand
             THIS.InitState();
             _state := ActuatorState#MoveToHomePosition;
             GoToHomePosition := THIS;
         END_METHOD
-
     END_CLASS
 
 END_NAMESPACE

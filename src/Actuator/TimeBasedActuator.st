@@ -3,11 +3,12 @@ USING System.Timer;
 USING Simatic.Ax.Io.Output;
 
 NAMESPACE Simatic.Ax.axftcmlib
+
     CLASS TimeBasedActuator
         EXTENDS ExecuteControlModuleAbstract
         IMPLEMENTS itfActuator
         VAR PUBLIC
-            Q_ToWorkPosition : IBinOutput;
+            Q_ToWorkPosition : ItfBinOutput;
             OnDuration : TIME;
         END_VAR
         VAR
@@ -20,27 +21,26 @@ NAMESPACE Simatic.Ax.axftcmlib
         END_METHOD
 
         METHOD PROTECTED OVERRIDE _executeCustom
-            IF (Q_ToWorkPosition = NULL) THEN 
+            IF (Q_ToWorkPosition = NULL) THEN
                 THIS.SetError(WORD#16#8101);
                 RETURN;
             END_IF;
             _tonOnDuration(signal := Q_ToWorkPosition.IsOn(), Duration := OnDuration);
             CASE _state OF
-                // Switch all outputs off, when actuator is idle in home position
+// Switch all outputs off, when actuator is idle in home position
                 ActuatorState#InHomePosition:
                     Q_ToWorkPosition.SetOff();
-                
-                // Received the command GoToWorkPosition switch on ToWorkPosition
+// Received the command GoToWorkPosition switch on ToWorkPosition
                 ActuatorState#MoveToWorkPosition:
                     Q_ToWorkPosition.SetOn();
                     _state := ActuatorState#InWorkPosition;
-                // After Timeout switch off "ToWorkPosition"
+// After Timeout switch off "ToWorkPosition"
                 ActuatorState#InWorkPosition:
                     IF (_tonOnDuration.output) THEN
                         _state := ActuatorState#MoveToHomePosition;
                         Q_ToWorkPosition.SetOff();
                     END_IF;
-                // Send done
+// Send done
                 ActuatorState#MoveToHomePosition:
                     Q_ToWorkPosition.SetOff();
                     _state := ActuatorState#InHomePosition;
@@ -57,7 +57,6 @@ NAMESPACE Simatic.Ax.axftcmlib
         METHOD PUBLIC GetState : ActuatorState
             GetState := _state;
         END_METHOD
-    
     END_CLASS
 
 END_NAMESPACE

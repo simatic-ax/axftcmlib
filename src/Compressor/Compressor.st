@@ -5,12 +5,12 @@ USING Simatic.Ax.Commands;
 NAMESPACE Simatic.Ax.axftcmlib
 
     ///Implementation of the Compressor interface
-    /// needs an IBinOutout that is used to write on the PLC-Variables
+    /// needs an ItfBinOutout that is used to write on the PLC-Variables
     CLASS Compressor
         EXTENDS EnablingControlModuleAbstract
         IMPLEMENTS IEnablingCm
         VAR PUBLIC
-            QControl : IBinOutput;
+            QControl : ItfBinOutput;
         END_VAR
         ///turns the compressor on
 

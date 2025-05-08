@@ -1,7 +1,3 @@
-[![.github/workflows/build-library.yml](https://github.com/simatic-ax/axftcmlib/actions/workflows/build-library.yml/badge.svg)](https://github.com/simatic-ax/axftcmlib/actions/workflows/build-library.yml)
-[![.github/workflows/lint-repo.yml](https://github.com/simatic-ax/axftcmlib/actions/workflows/lint-repo.yml/badge.svg)](https://github.com/simatic-ax/axftcmlib/actions/workflows/lint-repo.yml)
-[![.github/workflows/release-library.yml](https://github.com/simatic-ax/axftcmlib/actions/workflows/release-library.yml/badge.svg)](https://github.com/simatic-ax/axftcmlib/actions/workflows/release-library.yml)
-
 # @simatic-ax.axftcmlib
 
 ## Description
@@ -68,7 +64,7 @@ classDiagram
         +WORD GetErrorStatus()
     }
     class TimeBasedActuator{
-        +QControl : IBinOutput;
+        +QControl : ItfBinOutput;
         +OnDuration : TIME;
         +itfCommand GoToWorkPosition()
     }
@@ -236,7 +232,7 @@ classDiagram
 | MoveRelative( distance : LREAL, velocity : LREAL)                             | Moves the axis by `distance`                     |
 | MoveAbsolute( position : LREAL, velocity : LREAL)                             | Moves the axis to the `position`                 |
 | HomeDirect(Position : LREAL)                                                  | Set the actual position to `value`               |
-| ActiveHoming(Position : LREAL, Direction : Direction, RefSensor : IBinSignal) | Find the reference sensor and set the `position` |
+| ActiveHoming(Position : LREAL, Direction : Direction, RefSensor : ItfBinSignal) | Find the reference sensor and set the `position` |
 | Halt()                                                                        | Stops any current movement                       |
 
 ### Example
