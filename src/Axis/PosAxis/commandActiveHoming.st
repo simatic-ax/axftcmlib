@@ -12,7 +12,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             _velocity : LREAL;
             _direction : Direction;
             _position : LREAL;
-            _iRefSensor : IBinSignal;
+            _iRefSensor : ItfBinSignal;
             _exec : BOOL;
         END_VAR
 
@@ -22,7 +22,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 Velocity : LREAL := 100.0;
                 Direction : Direction;
                 Position : LREAL := 0.0;
-                RefSensor : IBinSignal;
+                RefSensor : ItfBinSignal;
             END_VAR
             _AxisRef := AxisRef;
             _velocity := Velocity;
@@ -34,7 +34,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         END_METHOD
 
         METHOD PROTECTED OVERRIDE Execute
-            IF NOT(_exec) THEN
+            IF NOT (_exec) THEN
                 RETURN;
             END_IF;
             IF (NOT _AxisRef^.IsPoweredOn()) THEN

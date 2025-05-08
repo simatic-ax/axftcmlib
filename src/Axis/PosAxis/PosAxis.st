@@ -62,7 +62,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             VAR_INPUT
                 Position : LREAL;
                 Direction : Direction;
-                RefSensor : IBinSignal;
+                RefSensor : ItfBinSignal;
             END_VAR
             ActiveHoming := _commandActiveHoming.Start(AxisRef := _PosAxisRef, Direction := Direction, Position := Position, RefSensor := RefSensor);
         END_METHOD

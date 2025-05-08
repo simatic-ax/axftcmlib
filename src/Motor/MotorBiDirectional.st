@@ -9,8 +9,8 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
     CLASS MotorBiDirectional
         IMPLEMENTS IMotorBiDiretional
         VAR PUBLIC
-            QForward : IBinOutput;
-            QReverse : IBinOutput;
+            QForward : ItfBinOutput;
+            QReverse : ItfBinOutput;
         END_VAR
         VAR PROTECTED
         END_VAR
@@ -41,12 +41,12 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
         ///Stops every movement of the Motor
 
         METHOD PUBLIC Halt
-              IF (QForward <> NULL) THEN
-                    QForward.SetOff();
-                END_IF;
-                IF (QReverse <> NULL) THEN
-                    QReverse.SetOff();
-                END_IF;
+            IF (QForward <> NULL) THEN
+                QForward.SetOff();
+            END_IF;
+            IF (QReverse <> NULL) THEN
+                QReverse.SetOff();
+            END_IF;
             ;
         END_METHOD
     END_CLASS
