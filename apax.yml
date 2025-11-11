@@ -3,7 +3,7 @@ name: "@simatic-ax/axftcmlib"
 version: 0.0.0-placeholder
 author: Siemens AG
 # Description will be displayed in the apax extension
-description: Basic control modules for fabric simulation for AX training purposes
+description: "Library for Fischertechnik Factory Simulation 24V providing classes for actuators, sensors, axes and time-based encoders"
 type: lib
 #URL to the repository
 repository:
