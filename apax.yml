@@ -26,20 +26,20 @@ installStrategy: strict
 
 # Catalogs
 catalogs:
-  "@ax/simatic-ax": ^2504.0.0
+  "@ax/simatic-ax": ^2510.0.0
 
 # Dependencies
 devDependencies:
-  '@ax/sdk': ^2504.0.0
+  '@ax/sdk': ^2510.0.0
   "@simatic-ax/snippetscollection": ^1.0.0
 
 dependencies:
   "@ax/simatic-1500-clocks": ^10.0.6
   "@ax/system-timer": ^10.0.24
-  "@simatic-ax/simple-control-modules": ^8.0.0
-  "@simatic-ax/io": ^9.0.0
+  "@simatic-ax/simple-control-modules": ^9.0.0
+  "@simatic-ax/io": ^10.0.0
   "@simatic-ax/commands": ^3.0.0
-  "@simatic-ax/statemachine": ^8.0.0
+  "@simatic-ax/statemachine": ^9.0.0
 
   # Files, which will be shipped with the library
 files:
