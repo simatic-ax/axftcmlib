@@ -1,4 +1,4 @@
-USING Siemens.Simatic.S71500.Clocks;
+USING Siemens.Simatic.Clocks;
 NAMESPACE Simatic.Ax.axftcmlib
     ///Interface to implement a Timeprovider
     /// is used to generate the cycletime of the cpu 
