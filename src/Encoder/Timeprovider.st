@@ -1,4 +1,4 @@
-USING Siemens.Simatic.S71500.Clocks;
+USING Siemens.Simatic.Clocks;
  NAMESPACE Simatic.Ax.axftcmlib   
     
     /// Timeprovider based on RuntimeMeasurement
