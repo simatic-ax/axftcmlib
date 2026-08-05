@@ -37,7 +37,7 @@ dependencies:
   "@ax/simatic-1500-clocks": ^10.0.6
   "@ax/system-timer": ^10.0.24
   "@simatic-ax/simple-control-modules": ^8.0.0
-  "@simatic-ax/io": ^9.0.0
+  "@simatic-ax/io": ^11.0.0
   "@simatic-ax/commands": ^3.0.0
   "@simatic-ax/statemachine": ^8.0.0
 
