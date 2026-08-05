@@ -39,7 +39,7 @@ dependencies:
   "@simatic-ax/simple-control-modules": ^8.0.0
   "@simatic-ax/io": ^9.0.0
   "@simatic-ax/commands": ^3.0.0
-  "@simatic-ax/statemachine": ^8.0.0
+  "@simatic-ax/statemachine": ^9.0.0
 
   # Files, which will be shipped with the library
 files:
