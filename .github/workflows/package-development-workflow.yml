@@ -51,7 +51,7 @@ jobs:
           immutable: true
 
       - name: Build source code
-        uses: simatic-ax/actions/apax-build@v4
+        uses: simatic-ax/actions/apax-make@v4
 
       - name: Test source code
         uses: simatic-ax/actions/apax-test@v4
@@ -67,6 +67,6 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: build-artifacts
-          path: bin
+          path: out/Debug
           retention-days: 90
           if-no-files-found: error

@@ -9,8 +9,8 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
     CLASS MotorBiDirectional
         IMPLEMENTS IMotorBiDiretional
         VAR PUBLIC
-            QForward : ItfBinOutput;
-            QReverse : ItfBinOutput;
+            QForward : IBinOutput;
+            QReverse : IBinOutput;
         END_VAR
         VAR PROTECTED
         END_VAR

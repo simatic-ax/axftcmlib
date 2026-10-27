@@ -10,7 +10,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         EXTENDS EnablingControlModuleAbstract
         IMPLEMENTS IEnablingCm
         VAR PUBLIC
-            QControl : ItfBinOutput;
+            QControl : IBinOutput;
         END_VAR
         ///turns the compressor on
 

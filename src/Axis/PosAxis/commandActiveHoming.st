@@ -12,7 +12,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
             _velocity : LREAL;
             _direction : Direction;
             _position : LREAL;
-            _iRefSensor : ItfBinSignal;
+            _iRefSensor : IBinSignal;
             _exec : BOOL;
         END_VAR
 
@@ -22,7 +22,7 @@ NAMESPACE Simatic.Ax.axftcmlib.Motion
                 Velocity : LREAL := 100.0;
                 Direction : Direction;
                 Position : LREAL := 0.0;
-                RefSensor : ItfBinSignal;
+                RefSensor : IBinSignal;
             END_VAR
             _AxisRef := AxisRef;
             _velocity := Velocity;
