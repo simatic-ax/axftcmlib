@@ -9,9 +9,9 @@ NAMESPACE Simatic.Ax.axftcmlib
         EXTENDS TimeBasedActuator
         IMPLEMENTS itfTwoWayActuator
         VAR PUBLIC
-            I_InHomePosition : ItfBinSignal;
-            I_InWorkPosition : ItfBinSignal;
-            Q_ToHomePosition : ItfBinOutput;
+            I_InHomePosition : IBinSignal;
+            I_InWorkPosition : IBinSignal;
+            Q_ToHomePosition : IBinOutput;
         END_VAR
 
         METHOD PROTECTED OVERRIDE _initmethod

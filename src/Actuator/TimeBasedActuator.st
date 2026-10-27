@@ -8,7 +8,7 @@ NAMESPACE Simatic.Ax.axftcmlib
         EXTENDS ExecuteControlModuleAbstract
         IMPLEMENTS itfActuator
         VAR PUBLIC
-            Q_ToWorkPosition : ItfBinOutput;
+            Q_ToWorkPosition : IBinOutput;
             OnDuration : TIME;
         END_VAR
         VAR

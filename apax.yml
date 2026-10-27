@@ -12,13 +12,6 @@ repository:
 # Registry information, where the package will be published
 registries:
   '@simatic-ax': 'https://npm.pkg.github.com/'
-# Environment variables
-variables:
-  APAX_BUILD_ARGS:
-    - '--debug'
-targets:
-  - '1500'
-  - 'llvm'
 
 # Install Setting
 apaxVersion: 3.5.0
@@ -26,7 +19,7 @@ installStrategy: strict
 
 # Catalogs
 catalogs:
-  "@ax/simatic-ax": ^2510.0.0
+  "@ax-as/s7-catalog": ^2610.0.0
 
 publicKeys:
   "@simatic-ax":
@@ -35,21 +28,22 @@ publicKeys:
 
 # Dependencies
 devDependencies:
-  '@ax/sdk': ^2510.0.0
+  '@ax-as/s7-sdk': ^2610.0.0
   "@simatic-ax/snippetscollection": ^1.1.0
 
 dependencies:
-  "@ax/simatic-clocks": ^11.0.14
-  "@ax/system-timer": ^10.0.24
-  "@simatic-ax/simple-control-modules": ^9.0.1
-  "@simatic-ax/io": ^10.0.1
-  "@simatic-ax/commands": ^4.0.0
-  "@simatic-ax/statemachine": ^9.0.1
+  "@ax-as/s7-clocks-lib": ^12.0.86
+  "@ax-as/system-timer-lib": ^11.0.232
+  "@simatic-ax/simple-control-modules": ^10.0.0
+  "@simatic-ax/io": ^12.0.0
+  "@simatic-ax/commands": ^5.0.0
+  "@simatic-ax/statemachine": ^10.0.0
 
   # Files, which will be shipped with the library
 files:
   - 'README.md'
   - 'LICENSE.md'
   - 'doc'
-  - 'bin'
+  - 'out/Debug/s7'
+  - 'out/Debug/llvm'
   - 'snippets'
